@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "thebetweenlands:angler_tooth_arrow"
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.adventurer.marksman.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.adventurer.marksman.description"
+    },
+    "frame": "challenge"
+  },
+  "parent": "realmtweaks:adventurer/mob_battle",
+  "criteria": {
+    "Kill a Mob 50m away": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "killing_blow": {
+          "is_projectile": true
+        },
+        "entity": {
+          "distance": {
+            "horizontal": {
+              "min": 50
+            }
+          }
+        }
+      }
+    }
+  }
+}

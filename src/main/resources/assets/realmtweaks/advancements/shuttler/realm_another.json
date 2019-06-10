@@ -1,0 +1,47 @@
+{
+  "display": {
+    "icon": {
+      "item": "realmtweaks:another_sapling"
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.shuttler.realm_another.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.shuttler.realm_another.description"
+    }
+  },
+  "parent": "realmtweaks:shuttler/swamp_talisman",
+  "criteria": {
+    "Has Swamp Talisman": {
+      "trigger": "thebetweenlands:has_advancement",
+      "conditions": {
+        "advancement": "realmtweaks:shuttler/swamp_talisman"
+      }
+    },
+    "Obtain Green Gem": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "thebetweenlands:green_middle_gem"
+          }
+        ]
+      }
+    },
+    "Obtain Realm Sapling": {
+      "trigger": "thebetweenlands:right_click_block",
+      "conditions": {
+        "blocks": [
+          {
+            "block": "thebetweenlands:sapling_weedwood"
+          }
+        ],
+        "items": [
+          {
+            "item": "thebetweenlands:green_middle_gem"
+          }
+        ]
+      }
+    }
+  }
+}

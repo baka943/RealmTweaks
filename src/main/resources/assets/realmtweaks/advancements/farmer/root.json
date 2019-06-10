@@ -1,0 +1,24 @@
+{
+  "display": {
+    "icon": {
+      "item": "thebetweenlands:weedwood_shovel"
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.farmer.root.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.farmer.root.description"
+    },
+    "background": "minecraft:textures/blocks/concrete_powder_orange.png",
+    "announce_to_chat": false,
+    "show_toast": false
+  },
+  "criteria": {
+    "has_dank_world": {
+      "trigger": "thebetweenlands:has_advancement",
+      "conditions": {
+        "advancement": "realmtweaks:shuttler/outside_sky"
+      }
+    }
+  }
+}

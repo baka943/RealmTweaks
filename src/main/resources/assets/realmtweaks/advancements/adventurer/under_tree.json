@@ -1,0 +1,19 @@
+{
+  "display": {
+    "icon": {
+      "item": "thebetweenlands:pyrad_flame"
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.adventurer.under_tree.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.adventurer.under_tree.description"
+    }
+  },
+  "parent": "realmtweaks:adventurer/weedwood_tree",
+  "criteria": {
+    "Don't Get Pyrad Angry": {
+      "trigger": "thebetweenlands:pyrad_aggro"
+    }
+  }
+}

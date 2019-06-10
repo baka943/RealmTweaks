@@ -1,0 +1,16 @@
+[
+{
+  "modid": "realmtweaks",
+  "name": "Realm Tweaks",
+  "description": "A simple mod for Between Realm (modpack)",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["baka943"],
+  "credits": "The Forge and FML guys",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

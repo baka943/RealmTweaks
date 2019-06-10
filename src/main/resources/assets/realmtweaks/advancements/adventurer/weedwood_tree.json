@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "thebetweenlands:sapling_weedwood"
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.adventurer.weedwood_tree.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.adventurer.weedwood_tree.description"
+    }
+  },
+  "parent": "realmtweaks:adventurer/root",
+  "criteria": {
+    "Shuttler": {
+      "trigger": "thebetweenlands:location",
+      "conditions": {
+        "name": "giant_tree"
+      }
+    }
+  }
+}

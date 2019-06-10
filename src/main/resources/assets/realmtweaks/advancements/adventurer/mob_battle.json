@@ -1,0 +1,65 @@
+{
+  "display": {
+    "icon": {
+      "item": "thebetweenlands:weedwood_sword"
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.adventurer.mob_battle.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.adventurer.mob_battle.description"
+    }
+  },
+  "parent": "realmtweaks:adventurer/root",
+  "criteria": {
+    "Kill Cave Spider": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:cave_spider"
+        }
+      }
+    },
+    "Kill Wight": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "thebetweenlands:wight"
+        }
+      }
+    },
+    "Kill Tar Beast": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "thebetweenlands:tar_beast"
+        }
+      }
+    },
+    "Kill Sludge": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "thebetweenlands:sludge"
+        }
+      }
+    },
+    "Kill Peat Mummy": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "thebetweenlands:peat_mummy"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "Kill Cave Spider",
+      "Kill Wight",
+      "Kill Tar Beast",
+      "Kill Sludge",
+      "Kill Peat Mummy"
+    ]
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "display": {
+    "icon": {
+      "item": "realmtweaks:nightmare_sapling"
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.shuttler.realm_nightmare.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.shuttler.realm_nightmare.description"
+    }
+  },
+  "parent": "realmtweaks:shuttler/swamp_talisman",
+  "criteria": {
+    "Has Swamp Talisman": {
+      "trigger": "thebetweenlands:has_advancement",
+      "conditions": {
+        "advancement": "realmtweaks:shuttler/swamp_talisman"
+      }
+    },
+    "Obtain Aqua Gem": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "thebetweenlands:aqua_middle_gem"
+          }
+        ]
+      }
+    },
+    "Obtain Realm Sapling": {
+      "trigger": "thebetweenlands:right_click_block",
+      "conditions": {
+        "blocks": [
+          {
+            "block": "thebetweenlands:sapling_weedwood"
+          }
+        ],
+        "items": [
+          {
+            "item": "thebetweenlands:aqua_middle_gem"
+          }
+        ]
+      }
+    }
+  }
+}

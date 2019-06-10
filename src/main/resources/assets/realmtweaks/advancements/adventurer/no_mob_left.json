@@ -1,0 +1,164 @@
+{
+  "display": {
+    "icon": {
+      "item": "thebetweenlands:octine_sword"
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.adventurer.no_mob_left.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.adventurer.no_mob_left.description"
+    },
+    "frame": "challenge"
+  },
+  "parent": "realmtweaks:adventurer/mob_battle",
+  "criteria": {
+    "Kill Cave Spider": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:cave_spider"
+        }
+      }
+    },
+    "Kill Spider": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:spider"
+        }
+      }
+    },
+    "Kill Enderman": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:enderman"
+        }
+      }
+    },
+    "Kill Blaze": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:blaze"
+        }
+      }
+    },
+    "Kill Creeper": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:creeper"
+        }
+      }
+    },
+    "Kill Ghast": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:ghast"
+        }
+      }
+    },
+    "Kill Guardian": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:guardian"
+        }
+      }
+    },
+    "Kill Magma Cube": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:magma_cube"
+        }
+      }
+    },
+    "Kill Shulker": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:shulker"
+        }
+      }
+    },
+    "Kill Skeleton": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:skeleton"
+        }
+      }
+    },
+    "Kill Witch": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:witch"
+        }
+      }
+    },
+    "Kill Wither Skeleton": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:wither_skeleton"
+        }
+      }
+    },
+    "Kill Zombie": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:zombie"
+        }
+      }
+    },
+    "Kill Zombie Villager": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:zombie_villager"
+        }
+      }
+    },
+    "Kill Wight": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "thebetweenlands:wight"
+        }
+      }
+    },
+    "Kill Tar Beast": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "thebetweenlands:tar_beast"
+        }
+      }
+    },
+    "Kill Sludge": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "thebetweenlands:sludge"
+        }
+      }
+    },
+    "Kill Peat Mummy": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "thebetweenlands:peat_mummy"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 500
+  }
+}

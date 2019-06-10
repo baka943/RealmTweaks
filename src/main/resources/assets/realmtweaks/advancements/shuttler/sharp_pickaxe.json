@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "thebetweenlands:weedwood_pickaxe"
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.shuttler.sharp_pickaxe.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.shuttler.sharp_pickaxe.description"
+    }
+  },
+  "parent": "realmtweaks:shuttler/crafting_table",
+  "criteria": {
+    "Obtain Weedwood Pickaxe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "thebetweenlands:weedwood_pickaxe"
+          }
+        ]
+      }
+    }
+  }
+}

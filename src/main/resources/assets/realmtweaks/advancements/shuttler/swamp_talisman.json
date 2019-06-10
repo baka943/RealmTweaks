@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "thebetweenlands:swamp_talisman"
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.shuttler.swamp_talisman.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.shuttler.swamp_talisman.description"
+    }
+  },
+  "parent": "realmtweaks:shuttler/crafting_table",
+  "criteria": {
+    "Obtain Swamp Talisman": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "thebetweenlands:swamp_talisman"
+          }
+        ]
+      }
+    }
+  }
+}

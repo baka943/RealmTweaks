@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "item": "thebetweenlands:weedwood"
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.shuttler.hard_wood.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.shuttler.hard_wood.description"
+    }
+  },
+  "parent": "realmtweaks:shuttler/outside_sky",
+  "criteria": {
+    "Obtain Weedwood": {
+      "trigger": "thebetweenlands:break_block",
+      "conditions": {
+        "blocks": [
+          {
+            "block": "thebetweenlands:weedwood"
+          },
+          {
+            "block": "thebetweenlands:log_weedwood"
+          }
+        ]
+      }
+    }
+  }
+}

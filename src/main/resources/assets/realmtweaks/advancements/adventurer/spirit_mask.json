@@ -1,0 +1,42 @@
+{
+  "display": {
+    "icon": {
+      "item": "thebetweenlands:spirit_tree_face_small_mask_animated"
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.adventurer.spirit_mask.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.adventurer.spirit_mask.description"
+    }
+  },
+  "parent": "realmtweaks:adventurer/spirit_tree",
+  "criteria": {
+    "Obtain Large Mask": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "thebetweenlands:spirit_tree_face_large_mask"
+          }
+        ]
+      }
+    },
+    "Obtain Small Mask": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "thebetweenlands:spirit_tree_face_small_mask"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "Obtain Large Mask",
+      "Obtain Small Mask"
+    ]
+  ]
+}

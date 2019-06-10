@@ -1,0 +1,20 @@
+{
+  "pools": [
+    {
+      "name": "archaic_brick",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "embers:archaic_brick",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "thebetweenlands:marsh_mallow"
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.herbalist.herbs_everywhere.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.herbalist.herbs_everywhere.description"
+    }
+  },
+  "parent": "realmtweaks:herbalist/root",
+  "criteria": {
+    "Herbalist": {
+      "trigger": "thebetweenlands:has_advancement",
+      "conditions": {
+        "advancement": "realmtweaks:herbalist/root"
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "display": {
+    "icon": {
+      "item": "thebetweenlands:valonite_boots"
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.adventurer.exotic_traveller.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.adventurer.exotic_traveller.description"
+    },
+    "frame": "challenge"
+  },
+  "parent": "realmtweaks:adventurer/made_map",
+  "criteria": {
+    "Tour Deep Ocean": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "minecraft:deep_ocean"
+      }
+    },
+    "Tour Nether": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "minecraft:hell"
+      }
+    },
+    "Tour End": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "minecraft:sky"
+      }
+    },
+    "Tour Coarse Islands": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "thebetweenlands:coarse_islands"
+      }
+    },
+    "Tour Deep Waters": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "thebetweenlands:deep_waters"
+      }
+    },
+    "Tour Marsh": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "thebetweenlands:marsh_0"
+      }
+    },
+    "Tour another Marsh": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "thebetweenlands:marsh_1"
+      }
+    },
+    "Tour Patchy Islands": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "thebetweenlands:patchy_islands"
+      }
+    },
+    "Tour Sludge Plains": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "thebetweenlands:sludge_plains"
+      }
+    },
+    "Tour Swamplands": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "thebetweenlands:swamplands"
+      }
+    },
+    "Tour Swamplands Clearing": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "thebetweenlands:swamplands_clearing"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "Tour Marsh",
+      "Tour another Marsh"
+    ],
+    [
+      "Tour Deep Ocean"
+    ],
+    [
+      "Tour Nether"
+    ],
+    [
+      "Tour End"
+    ],
+    [
+      "Tour Coarse Islands"
+    ],
+    [
+      "Tour Deep Waters"
+    ],
+    [
+      "Tour Patchy Islands"
+    ],
+    [
+      "Tour Sludge Plains"
+    ],
+    [
+      "Tour Swamplands"
+    ],
+    [
+      "Tour Swamplands Clearing"
+    ]
+  ],
+  "rewards": {
+    "experience": 500
+  }
+}

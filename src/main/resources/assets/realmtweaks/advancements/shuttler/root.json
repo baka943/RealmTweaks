@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "item": "realmtweaks:advancement_book"
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.shuttler.root.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.shuttler.root.description"
+    },
+    "background": "minecraft:textures/blocks/concrete_powder_orange.png",
+    "announce_to_chat": false,
+    "show_toast": false
+  },
+  "criteria": {
+    "Into Minecraft": {
+      "trigger": "minecraft:location"
+    }
+  }
+}

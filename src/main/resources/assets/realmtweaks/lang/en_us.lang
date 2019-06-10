@@ -1,0 +1,77 @@
+#Blocks
+tile.realmtweaks.alternate_sapling.name=Alternate Sapling
+tile.realmtweaks.another_sapling.name=Another Sapling
+tile.realmtweaks.nightmare_sapling.name=Nightmare Sapling
+
+#Items
+item.realmtweaks.ender_shard.name=Ender Shard
+item.realmtweaks.advancement_book.name=Advancement Book
+
+#World Type
+generator.realmtweaks_atlantis=Atlantis
+generator.realmtweaks_atlantis.info=Notice: Endless Ocean
+
+#Chats
+chat.realmtweaks.world_sapling=World Sapling %s
+chat.realmtweaks.wrong=What went wrong?
+
+#Text
+text.realmtweaks.writable_book.name=Research Notebook
+text.realmtweaks.writable_book.lore=§5To record any interesting things...
+
+#Advancements
+#Adventurer
+advancements.realmtweaks.adventurer.root.title=Adventurer
+advancements.realmtweaks.adventurer.root.description=2
+advancements.realmtweaks.adventurer.mob_battle.title=The Mob Battle
+advancements.realmtweaks.adventurer.mob_battle.description=I don't want to die yet, Sorry
+advancements.realmtweaks.adventurer.no_mob_left.title=No Mob Left
+advancements.realmtweaks.adventurer.no_mob_left.description=Mobs, rest in peace
+advancements.realmtweaks.adventurer.marksman.title=Marksman 50 Meters Away
+advancements.realmtweaks.adventurer.marksman.description=To this extent, I can finish 28 more times
+advancements.realmtweaks.adventurer.made_map.title=Ready-made Map
+advancements.realmtweaks.adventurer.made_map.description=The map records the terrain you walked through, also records your menories
+advancements.realmtweaks.adventurer.weedwood_tree.title=Towering Weedwood Tree
+advancements.realmtweaks.adventurer.weedwood_tree.description=Is it the Yggdrasil?
+advancements.realmtweaks.adventurer.under_tree.title=Guardian under The Tree
+advancements.realmtweaks.adventurer.under_tree.description=What is inside the tree?
+advancements.realmtweaks.adventurer.spirit_tree.title=Conscious Spirit Tree
+advancements.realmtweaks.adventurer.spirit_tree.description=Malicious existence
+advancements.realmtweaks.adventurer.spirit_mask.title=Mask of The Spirit Tree
+advancements.realmtweaks.adventurer.spirit_mask.description=It doesn't matter with Loki
+advancements.realmtweaks.adventurer.exotic_traveller.title=Exotic Traveller
+advancements.realmtweaks.adventurer.exotic_traveller.description=Your footprints are full of the whole world
+
+#Farmer
+advancements.realmtweaks.farmer.root.title=Farmer
+advancements.realmtweaks.farmer.root.description=2
+advancements.realmtweaks.farmer.scattered_seeds.title=Some Scattered Seeds
+advancements.realmtweaks.farmer.scattered_seeds.description=2
+
+#Herbalist
+advancements.realmtweaks.herbalist.root.title=Herbalist
+advancements.realmtweaks.herbalist.root.description=2
+advancements.realmtweaks.herbalist.herbs_everywhere.title=Herbs Everywhere
+advancements.realmtweaks.herbalist.herbs_everywhere.description=They are not just weeds
+
+#Magic
+advancements.realmtweaks.magic.root.title=Magic and Tech
+advancements.realmtweaks.magic.root.description=2
+advancements.realmtweaks.magic.tinker_hammer.title=Tinker's Hammer
+advancements.realmtweaks.magic.tinker_hammer.description=Solid and practical
+advancements.realmtweaks.magic.under_bedrock.title=Tinker's Hammer
+advancements.realmtweaks.magic.under_bedrock.description=Solid and practical
+advancements.realmtweaks.magic.alchemy_tablet.title=Tinker's Hammer
+advancements.realmtweaks.magic.alchemy_tablet.description=Solid and practical
+
+#Shuttler
+advancements.realmtweaks.shuttler.root.title=Realm Shuttler
+advancements.realmtweaks.shuttler.root.description=2
+advancements.realmtweaks.shuttler.outside_sky.title=Sky outside The World
+advancements.realmtweaks.shuttler.outside_sky.description=The sky you see does not seem to belong to this world
+
+#Tooltips
+tooltip.realmtweaks.alternate_sapling=Right Click Weedwood Sapling with §1Crimson Gem
+tooltip.realmtweaks.another_sapling=Right Click Weedwood Sapling with §2Green Gem
+tooltip.realmtweaks.nightmare_sapling=Right Click Weedwood Sapling with §4Aqua Gem
+tooltip.realmtweaks.advancement_book=Don't Open, please!

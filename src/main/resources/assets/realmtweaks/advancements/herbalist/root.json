@@ -1,0 +1,324 @@
+{
+  "display": {
+    "icon": {
+      "item": "thebetweenlands:items_plant_drop",
+      "data": 28
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.herbalist.root.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.herbalist.root.description"
+    },
+    "background": "minecraft:textures/blocks/concrete_powder_orange.png",
+    "announce_to_chat": false,
+    "show_toast": false
+  },
+  "criteria": {
+    "Enter Swamp Tallgrass": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:swamp_tallgrass"
+      }
+    },
+    "Enter Swamp Plant": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:swamp_plant"
+      }
+    },
+    "Enter Mire Coral": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:mire_coral"
+      }
+    },
+    "Enter Deep Water Coral": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:deep_water_coral"
+      }
+    },
+    "Enter Water Weeds": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:water_weeds"
+      }
+    },
+    "Enter Algae": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:algae"
+      }
+    },
+    "Enter Poison Ivy": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:poison_ivy"
+      }
+    },
+    "Enter Arrow Arum": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:arrow_arum"
+      }
+    },
+    "Enter Blue Eyed Grass": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:blue_eyed_grass"
+      }
+    },
+    "Enter Blue Iris": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:blue_iris"
+      }
+    },
+    "Enter Boneset": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:boneset"
+      }
+    },
+    "Enter Bottle Brush Grass": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:bottle_brush_grass"
+      }
+    },
+    "Enter Broomsedge": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:broomsedge"
+      }
+    },
+    "Enter Button Bush": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:button_bush"
+      }
+    },
+    "Enter Cardinal Flower": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:cardinal_flower"
+      }
+    },
+    "Enter Cattail": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:cattail"
+      }
+    },
+    "Enter Cave Grass": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:cave_grass"
+      }
+    },
+    "Enter Copper Iris": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:copper_iris"
+      }
+    },
+    "Enter Marsh Hibiscus": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:marsh_hibiscus"
+      }
+    },
+    "Enter Marsh Mallow": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:marsh_mallow"
+      }
+    },
+    "Enter Bladderwort Flower": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:bladderwort_flower"
+      }
+    },
+    "Enter Bladderwort Stalk": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:bladderwort_stalk"
+      }
+    },
+    "Enter Bog Bean Flower": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:bog_bean_flower"
+      }
+    },
+    "Enter Golden Club Flower": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:golden_club_flower"
+      }
+    },
+    "Enter Marsh Marigold Flower": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:marsh_marigold_flower"
+      }
+    },
+    "Enter Swamp Double Tallgrass": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:swamp_double_tallgrass"
+      }
+    },
+    "Enter Milkweed": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:milkweed"
+      }
+    },
+    "Enter Nettle": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:nettle"
+      }
+    },
+    "Enter Nettle Flowered": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:nettle_flowered"
+      }
+    },
+    "Enter Pickerel Weed": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:pickerel_weed"
+      }
+    },
+    "Enter Phragmites": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:phragmites"
+      }
+    },
+    "Enter Shoots": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:shoots"
+      }
+    },
+    "Enter Sludgecreep": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:sludgecreep"
+      }
+    },
+    "Enter Soft Rush": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:soft_rush"
+      }
+    },
+    "Enter Thorns": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:thorns"
+      }
+    },
+    "Enter Tall Cattail": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:tall_cattail"
+      }
+    },
+    "Enter Dead Weedwood Bush": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:dead_weedwood_bush"
+      }
+    },
+    "Enter Cave Moss": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:cave_moss"
+      }
+    },
+    "Enter Moss": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:moss"
+      }
+    },
+    "Enter Lichen": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:lichen"
+      }
+    },
+    "Enter Hanger": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:hanger"
+      }
+    },
+    "Enter Swamp Kelp": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:swamp_kelp"
+      }
+    },
+    "Enter Fallen Leaves": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "thebetweenlands:fallen_leaves"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "Enter Swamp Tallgrass",
+      "Enter Swamp Plant",
+      "Enter Mire Coral",
+      "Enter Deep Water Coral",
+      "Enter Water Weeds",
+      "Enter Algae",
+      "Enter Poison Ivy",
+      "Enter Arrow Arum",
+      "Enter Blue Eyed Grass",
+      "Enter Blue Iris",
+      "Enter Boneset",
+      "Enter Bottle Brush Grass",
+      "Enter Broomsedge",
+      "Enter Button Bush",
+      "Enter Cardinal Flower",
+      "Enter Cattail",
+      "Enter Cave Grass",
+      "Enter Copper Iris",
+      "Enter Marsh Hibiscus",
+      "Enter Marsh Mallow",
+      "Enter Bladderwort Flower",
+      "Enter Bladderwort Stalk",
+      "Enter Bog Bean Flower",
+      "Enter Golden Club Flower",
+      "Enter Marsh Marigold Flower",
+      "Enter Swamp Double Tallgrass",
+      "Enter Milkweed",
+      "Enter Nettle",
+      "Enter Nettle Flowered",
+      "Enter Pickerel Weed",
+      "Enter Phragmites",
+      "Enter Shoots",
+      "Enter Sludgecreep",
+      "Enter Soft Rush",
+      "Enter Thorns",
+      "Enter Tall Cattail",
+      "Enter Dead Weedwood Bush",
+      "Enter Cave Moss",
+      "Enter Moss",
+      "Enter Lichen",
+      "Enter Hanger",
+      "Enter Swamp Kelp",
+      "Enter Fallen Leaves"
+    ]
+  ]
+}

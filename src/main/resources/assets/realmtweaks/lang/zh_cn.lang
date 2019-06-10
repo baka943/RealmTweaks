@@ -1,0 +1,11 @@
+tile.realmtweaks.alternate_sapling.name=Alternate Sapling
+tile.realmtweaks.another_sapling.name=Another Sapling
+tile.realmtweaks.nightmare_sapling.name=Nightmare Sapling
+
+item.realmtweaks.ender_shard.name=末影碎片
+
+generator.realmtweaks_atlantis=Atlantis
+generator.realmtweaks_atlantis.info=注意: 无尽之海
+
+chat.realmtweaks.world_sapling=World Sapling %s
+chat.realmtweaks.wrong=Wrong Wrong
