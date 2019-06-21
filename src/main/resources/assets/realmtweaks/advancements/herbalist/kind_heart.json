@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "thebetweenlands:gecko"
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.herbalist.kind_heart.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.herbalist.kind_heart.description"
+    }
+  },
+  "parent": "realmtweaks:herbalist/feed_gecko",
+  "criteria": {
+    "Release Gecko": {
+      "trigger": "thebetweenlands:gecko",
+      "conditions": {
+        "release": true
+      }
+    }
+  }
+}

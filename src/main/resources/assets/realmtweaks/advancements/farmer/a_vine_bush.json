@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "thebetweenlands:middle_fruit"
+    },
+    "title": {
+      "translate": "advancements.thebetweenlands.farmer.a_vine_bush.title"
+    },
+    "description": {
+      "translate": "advancements.thebetweenlands.farmer.a_vine_bush.description"
+    }
+  },
+  "parent": "realmtweaks:farmer/waterless_cultivation",
+  "criteria": {
+    "Plant White Pear": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "block": "thebetweenlands:middle_fruit_bush",
+        "item": {
+          "item": "thebetweenlands:middle_fruit_bush_seeds"
+        }
+      }
+    },
+    "Collect White Pear": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "thebetweenlands:middle_fruit"
+          }
+        ]
+      }
+    }
+  }
+}

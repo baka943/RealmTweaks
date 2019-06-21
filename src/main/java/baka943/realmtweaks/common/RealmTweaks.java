@@ -61,7 +61,7 @@ public class RealmTweaks {
 			Advancement advancement = (Advancement) iterator.next();
 			String modid = advancement.getId().getNamespace();
 
-			if(!modid.matches("realmtweaks")) {
+			if(!modid.matches("realmtweaks") && !modid.matches("tombstone")) {
 				iterator.remove();
 			}
 		}

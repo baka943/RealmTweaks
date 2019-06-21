@@ -22,8 +22,10 @@ import java.util.List;
 
 public class ItemAdvancementBook extends ItemMod {
 
-	public ItemAdvancementBook() {
-		super("advancement_book");
+	private static final String NAME = "advancement_book";
+
+	protected ItemAdvancementBook() {
+		super(NAME);
 	}
 
 	@Override
@@ -43,6 +45,7 @@ public class ItemAdvancementBook extends ItemMod {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> list, ITooltipFlag flagIn) {
-		list.addAll(ItemTooltipHandler.splitTooltip(I18n.format("tooltip." + LibMisc.MOD_ID + "." + this.getRegistryName().getPath(), new Object[0]), 0));
+		list.addAll(ItemTooltipHandler.splitTooltip(I18n.format("tooltip." + LibMisc.MOD_ID + "." + NAME), 0));
 	}
+
 }

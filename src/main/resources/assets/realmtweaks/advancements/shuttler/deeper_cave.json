@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "thebetweenlands:betweenstone"
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.shuttler.deeper_cave.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.shuttler.deeper_cave.description"
+    }
+  },
+  "parent": "realmtweaks:shuttler/crafting_table",
+  "criteria": {
+    "Dig into Cave": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "dimension": "betweenlands",
+        "position": {
+          "y": {
+            "min": 0,
+            "max": 100
+          }
+        }
+      }
+    }
+  }
+}

@@ -12,6 +12,8 @@ public class ModItems {
 
 	public static final Item ENDER_SHARD = new ItemMod("ender_shard");
 	public static final Item ADVANCEMENT_BOOK = new ItemAdvancementBook();
+	public static final Item WEEDWOOD_FISHING_ROD = new ItemWeedwoodRod();
+	public static final Item REALM_TALISMAN = new ItemRealmTalisman();
 
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event) {
@@ -19,6 +21,8 @@ public class ModItems {
 
 		registry.register(ENDER_SHARD);
 		registry.register(ADVANCEMENT_BOOK);
+		registry.register(WEEDWOOD_FISHING_ROD);
+		registry.register(REALM_TALISMAN);
 	}
 
 }

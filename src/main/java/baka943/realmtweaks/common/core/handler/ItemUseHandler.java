@@ -1,8 +1,8 @@
 package baka943.realmtweaks.common.core.handler;
 
 import baka943.realmtweaks.common.block.ModBlocks;
+import baka943.realmtweaks.common.lib.Utils;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockSapling;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -53,19 +53,19 @@ public class ItemUseHandler {
 							case AQUA:
 								world.setBlockState(pos,
 										ModBlocks.NIGHTMARE_SAPLING.getDefaultState());
-								this.worldSaplingText(player, ModBlocks.NIGHTMARE_SAPLING);
+								Utils.worldSaplingText(player, ModBlocks.NIGHTMARE_SAPLING);
 								break;
 
 							case CRIMSON:
 								world.setBlockState(pos,
 										ModBlocks.ALTERNATE_SAPLING.getDefaultState());
-								this.worldSaplingText(player, ModBlocks.ALTERNATE_SAPLING);
+								Utils.worldSaplingText(player, ModBlocks.ALTERNATE_SAPLING);
 								break;
 
 							case GREEN:
 								world.setBlockState(pos,
 										ModBlocks.ANOTHER_SAPLING.getDefaultState());
-								this.worldSaplingText(player, ModBlocks.ANOTHER_SAPLING);
+								Utils.worldSaplingText(player, ModBlocks.ANOTHER_SAPLING);
 								break;
 						}
 					}
@@ -77,26 +77,16 @@ public class ItemUseHandler {
 			boolean inCustomListed = BetweenlandsConfig.WORLD_AND_DIMENSION.portalDimensionTargetsList.isListed(state);
 
 			//Disable Vanilla WeedwoodPortalTree
-			if(item instanceof ItemSwampTalisman && (block instanceof BlockSapling || inCustomListed)) {
+			if(item instanceof ItemSwampTalisman) {
 				event.setUseItem(Event.Result.DENY);
 				event.setCanceled(true);
 
 				if(EnumTalisman.SWAMP_TALISMAN_0.isItemOf(stack)
 						|| EnumTalisman.SWAMP_TALISMAN_5.isItemOf(stack)) {
-					player.sendStatusMessage(new TextComponentTranslation("chat.talisman.wrongdimension"), true);
+					player.sendStatusMessage(new TextComponentTranslation("chat.realmtweaks.wrong"), true);
 				}
 			}
 		}
-	}
-
-	private void worldSaplingText(EntityPlayer playerIn, Block sapling) {
-		playerIn.sendStatusMessage(
-				new TextComponentTranslation(
-						"chat.realmtweaks.world_sapling",
-						new TextComponentTranslation(sapling.getTranslationKey() + ".name")
-				),
-				true
-		);
 	}
 
 }

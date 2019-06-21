@@ -11,9 +11,9 @@
     },
     "frame": "challenge"
   },
-  "parent": "realmtweaks:adventurer/mob_battle",
+  "parent": "realmtweaks:adventurer/monster_battle",
   "criteria": {
-    "Kill a Mob 50m away": {
+    "Shot Mob 50m away": {
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "killing_blow": {

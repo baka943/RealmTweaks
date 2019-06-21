@@ -9,15 +9,15 @@
     "description": {
       "translate": "advancements.realmtweaks.adventurer.root.description"
     },
-    "background": "minecraft:textures/blocks/concrete_powder_orange.png",
+    "background": "minecraft:textures/blocks/concrete_black.png",
     "announce_to_chat": false,
     "show_toast": false
   },
   "criteria": {
-    "Shuttler": {
+    "Adventurer": {
       "trigger": "thebetweenlands:has_advancement",
       "conditions": {
-        "advancement": "realmtweaks:shuttler/root"
+        "advancement": "realmtweaks:shuttler/outside_sky"
       }
     }
   }

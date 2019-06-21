@@ -6,72 +6,103 @@ tile.realmtweaks.nightmare_sapling.name=Nightmare Sapling
 #Items
 item.realmtweaks.ender_shard.name=Ender Shard
 item.realmtweaks.advancement_book.name=Advancement Book
+item.realmtweaks.weedwood_fishing_rod.name=Weedwood Fishing Rod
 
 #World Type
 generator.realmtweaks_atlantis=Atlantis
 generator.realmtweaks_atlantis.info=Notice: Endless Ocean
 
 #Chats
-chat.realmtweaks.world_sapling=World Sapling %s
+chat.realmtweaks.world_sapling=Activate the %s
 chat.realmtweaks.wrong=What went wrong?
 
-#Text
-text.realmtweaks.writable_book.name=Research Notebook
-text.realmtweaks.writable_book.lore=§5To record any interesting things...
-
 #Advancements
-#Adventurer
+##Adventurer
 advancements.realmtweaks.adventurer.root.title=Adventurer
-advancements.realmtweaks.adventurer.root.description=2
-advancements.realmtweaks.adventurer.mob_battle.title=The Mob Battle
-advancements.realmtweaks.adventurer.mob_battle.description=I don't want to die yet, Sorry
+advancements.realmtweaks.adventurer.root.description=It’s too dangerous here
+advancements.realmtweaks.adventurer.monster_battle.title=Monster Battle
+advancements.realmtweaks.adventurer.monster_battle.description=I don't want to die yet, Sorry
 advancements.realmtweaks.adventurer.no_mob_left.title=No Mob Left
-advancements.realmtweaks.adventurer.no_mob_left.description=Mobs, rest in peace
-advancements.realmtweaks.adventurer.marksman.title=Marksman 50 Meters Away
+advancements.realmtweaks.adventurer.no_mob_left.description=Monster must die
+advancements.realmtweaks.adventurer.marksman.title=Marksman 50M Away
 advancements.realmtweaks.adventurer.marksman.description=To this extent, I can finish 28 more times
 advancements.realmtweaks.adventurer.made_map.title=Ready-made Map
 advancements.realmtweaks.adventurer.made_map.description=The map records the terrain you walked through, also records your menories
 advancements.realmtweaks.adventurer.weedwood_tree.title=Towering Weedwood Tree
 advancements.realmtweaks.adventurer.weedwood_tree.description=Is it the Yggdrasil?
-advancements.realmtweaks.adventurer.under_tree.title=Guardian under The Tree
+advancements.realmtweaks.adventurer.under_tree.title=Guardian Under Tree
 advancements.realmtweaks.adventurer.under_tree.description=What is inside the tree?
 advancements.realmtweaks.adventurer.spirit_tree.title=Conscious Spirit Tree
 advancements.realmtweaks.adventurer.spirit_tree.description=Malicious existence
-advancements.realmtweaks.adventurer.spirit_mask.title=Mask of The Spirit Tree
+advancements.realmtweaks.adventurer.spirit_mask.title=Mask of Spirit Tree
 advancements.realmtweaks.adventurer.spirit_mask.description=It doesn't matter with Loki
 advancements.realmtweaks.adventurer.exotic_traveller.title=Exotic Traveller
 advancements.realmtweaks.adventurer.exotic_traveller.description=Your footprints are full of the whole world
 
-#Farmer
+##Farmer
 advancements.realmtweaks.farmer.root.title=Farmer
-advancements.realmtweaks.farmer.root.description=2
-advancements.realmtweaks.farmer.scattered_seeds.title=Some Scattered Seeds
-advancements.realmtweaks.farmer.scattered_seeds.description=2
+advancements.realmtweaks.farmer.root.description=Even if I donot have a hoe, I can make a farm for you with a shovel
+advancements.realmtweaks.farmer.waterless_cultivation.title=Waterless Cultivation
+advancements.realmtweaks.farmer.waterless_cultivation.description=With compost, who still needs watering
+advancements.realmtweaks.farmer.snail_snail.title=Snail to Snail
+advancements.realmtweaks.farmer.snail_snail.description=Breed together two Mire Snails with Sludge Ball
 
-#Herbalist
+##Herbalist
 advancements.realmtweaks.herbalist.root.title=Herbalist
-advancements.realmtweaks.herbalist.root.description=2
+advancements.realmtweaks.herbalist.root.description=I have a dream, to become a doctor
 advancements.realmtweaks.herbalist.herbs_everywhere.title=Herbs Everywhere
 advancements.realmtweaks.herbalist.herbs_everywhere.description=They are not just weeds
+advancements.realmtweaks.herbalist.specimen_enthusiast.title=Specimen Enthusiast
+advancements.realmtweaks.herbalist.specimen_enthusiast.description=These are not bugs, they are specimens
+advancements.realmtweaks.herbalist.feed_gecko.title=Don't Feed the Gecko
+advancements.realmtweaks.herbalist.feed_gecko.description=Eating strange food may get sick
+advancements.realmtweaks.herbalist.kind_heart.title=A Kind Heart
+advancements.realmtweaks.herbalist.kind_heart.description=Go home soon, little guy
+advancements.realmtweaks.herbalist.herblore_book.title=Herblore Book
+advancements.realmtweaks.herbalist.herblore_book.description=Qualified-herbalist must record his findings
+advancements.realmtweaks.herbalist.taste_all_herbs.title=Taste All the Herbs
+advancements.realmtweaks.herbalist.taste_all_herbs.description=Gecko is a good partner for herbalists
 
-#Magic
-advancements.realmtweaks.magic.root.title=Magic and Tech
-advancements.realmtweaks.magic.root.description=2
+##Magic
+advancements.realmtweaks.magic.root.title=Dwarven Magic
+advancements.realmtweaks.magic.root.description=High temperature at low altitude
 advancements.realmtweaks.magic.tinker_hammer.title=Tinker's Hammer
 advancements.realmtweaks.magic.tinker_hammer.description=Solid and practical
-advancements.realmtweaks.magic.under_bedrock.title=Tinker's Hammer
-advancements.realmtweaks.magic.under_bedrock.description=Solid and practical
-advancements.realmtweaks.magic.alchemy_tablet.title=Tinker's Hammer
-advancements.realmtweaks.magic.alchemy_tablet.description=Solid and practical
+advancements.realmtweaks.magic.under_bedrock.title=Under the Bedrock
+advancements.realmtweaks.magic.under_bedrock.description=What is it underneath?
+advancements.realmtweaks.magic.alchemy_tablet.title=Arcane Arts
+advancements.realmtweaks.magic.alchemy_tablet.description=Is this the magic of the dwarves?
+advancements.realmtweaks.magic.codex.title=Vivid Encyclopedia
+advancements.realmtweaks.magic.codex.description=With this book, I can understand the dwarf more
 
-#Shuttler
+##Shuttler
 advancements.realmtweaks.shuttler.root.title=Realm Shuttler
-advancements.realmtweaks.shuttler.root.description=2
-advancements.realmtweaks.shuttler.outside_sky.title=Sky outside The World
-advancements.realmtweaks.shuttler.outside_sky.description=The sky you see does not seem to belong to this world
+advancements.realmtweaks.shuttler.root.description=Thanks for playing the Between Realm (modpack)
+advancements.realmtweaks.shuttler.hard_wood.title=Acquire Hardwood
+advancements.realmtweaks.shuttler.hard_wood.description=Slightly harder than Iron
+advancements.realmtweaks.shuttler.crafting_table.title=Traditional Handicraft
+advancements.realmtweaks.shuttler.crafting_table.description=In short, I need a wrokbench
+advancements.realmtweaks.shuttler.moss_bed.title=Hard to Sleep
+advancements.realmtweaks.shuttler.moss_bed.description=The surrounding atmosphere makes you uneasy
+advancements.realmtweaks.shuttler.deeper_cave.title=Deeper Cave
+advancements.realmtweaks.shuttler.deeper_cave.description=We need to go deeper
+advancements.realmtweaks.shuttler.swamp_talisman.title=Key to The Realm
+advancements.realmtweaks.shuttler.swamp_talisman.description=Why do I have to transfer through the tree hole?
+advancements.realmtweaks.shuttler.realm_alternate.title=Alternate Realm
+advancements.realmtweaks.shuttler.realm_alternate.description=2
+advancements.realmtweaks.shuttler.realm_another.title=Another Realm
+advancements.realmtweaks.shuttler.realm_another.description=2
+advancements.realmtweaks.shuttler.realm_nightmare.title=Nightmare Realm
+advancements.realmtweaks.shuttler.realm_nightmare.description=2
+advancements.realmtweaks.shuttler.wither.title=Monster from Nether
+advancements.realmtweaks.shuttler.wither.description=She is Wither
+advancements.realmtweaks.shuttler.end_dragon.title=Disappeared Dragon
+advancements.realmtweaks.shuttler.end_dragon.description=Once had one
+advancements.realmtweaks.shuttler.stronghold.title=Stronghold Not Found
+advancements.realmtweaks.shuttler.stronghold.description=What went wrong?
 
 #Tooltips
-tooltip.realmtweaks.alternate_sapling=Right Click Weedwood Sapling with §1Crimson Gem
-tooltip.realmtweaks.another_sapling=Right Click Weedwood Sapling with §2Green Gem
-tooltip.realmtweaks.nightmare_sapling=Right Click Weedwood Sapling with §4Aqua Gem
-tooltip.realmtweaks.advancement_book=Don't Open, please!
+tooltip.realmtweaks.alternate_sapling=Right-click Weedwood Sapling with §4Crimson Gem
+tooltip.realmtweaks.another_sapling=Right-click Weedwood Sapling with §2Green Gem
+tooltip.realmtweaks.nightmare_sapling=Right-click Weedwood Sapling with §1Aqua Gem
+tooltip.realmtweaks.advancement_book=Forget-book-not

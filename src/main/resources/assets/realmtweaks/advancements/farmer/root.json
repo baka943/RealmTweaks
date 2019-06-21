@@ -9,12 +9,12 @@
     "description": {
       "translate": "advancements.realmtweaks.farmer.root.description"
     },
-    "background": "minecraft:textures/blocks/concrete_powder_orange.png",
+    "background": "minecraft:textures/blocks/concrete_green.png",
     "announce_to_chat": false,
     "show_toast": false
   },
   "criteria": {
-    "has_dank_world": {
+    "Outside Sky": {
       "trigger": "thebetweenlands:has_advancement",
       "conditions": {
         "advancement": "realmtweaks:shuttler/outside_sky"

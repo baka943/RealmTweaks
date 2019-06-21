@@ -8,16 +8,11 @@
     },
     "description": {
       "translate": "advancements.realmtweaks.shuttler.realm_alternate.description"
-    }
+    },
+    "frame": "goal"
   },
   "parent": "realmtweaks:shuttler/swamp_talisman",
   "criteria": {
-    "Has Swamp Talisman": {
-      "trigger": "thebetweenlands:has_advancement",
-      "conditions": {
-        "advancement": "realmtweaks:shuttler/swamp_talisman"
-      }
-    },
     "Obtain Crimson Gem": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {

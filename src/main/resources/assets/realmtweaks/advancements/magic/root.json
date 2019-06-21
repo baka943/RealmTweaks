@@ -9,7 +9,7 @@
     "description": {
       "translate": "advancements.realmtweaks.magic.root.description"
     },
-	"background": "minecraft:textures/blocks/concrete_powder_orange.png",
+	"background": "embers:textures/blocks/ashen_stone.png",
     "announce_to_chat": false,
     "show_toast": false
   },

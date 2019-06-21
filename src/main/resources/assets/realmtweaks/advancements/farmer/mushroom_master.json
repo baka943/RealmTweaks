@@ -1,0 +1,56 @@
+{
+  "display": {
+    "icon": {
+      "item": "thebetweenlands:bulb_capped_mushroom_item"
+    },
+    "title": {
+      "translate": "advancements.thebetweenlands.farmer.mushroom_master.title"
+    },
+    "description": {
+      "translate": "advancements.thebetweenlands.farmer.mushroom_master.description"
+    }
+  },
+  "parent": "realmtweaks:farmer/sporadically_radical",
+  "criteria": {
+    "Obtain Yellow Fungus": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "thebetweenlands:yellow_dotted_fungus"
+          }
+        ]
+      }
+    },
+    "Obtain Bulb-Capped": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "thebetweenlands:bulb_capped_mushroom_item"
+          }
+        ]
+      }
+    },
+    "Obtain Black Hat": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "thebetweenlands:black_hat_mushroom_item"
+          }
+        ]
+      }
+    },
+    "Obtain Flathead": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "thebetweenlands:flat_head_mushroom_item"
+          }
+        ]
+      }
+    }
+  }
+}

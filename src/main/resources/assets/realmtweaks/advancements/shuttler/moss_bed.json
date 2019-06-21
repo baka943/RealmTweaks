@@ -1,23 +1,23 @@
 {
   "display": {
     "icon": {
-      "item": "thebetweenlands:weedwood_pickaxe"
+      "item": "thebetweenlands:moss_bed_item"
     },
     "title": {
-      "translate": "advancements.realmtweaks.shuttler.sharp_pickaxe.title"
+      "translate": "advancements.realmtweaks.shuttler.moss_bed.title"
     },
     "description": {
-      "translate": "advancements.realmtweaks.shuttler.sharp_pickaxe.description"
+      "translate": "advancements.realmtweaks.shuttler.moss_bed.description"
     }
   },
   "parent": "realmtweaks:shuttler/crafting_table",
   "criteria": {
-    "Obtain Weedwood Pickaxe": {
+    "Obtain Moss Bed": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "thebetweenlands:weedwood_pickaxe"
+            "item": "thebetweenlands:moss_bed_item"
           }
         ]
       }

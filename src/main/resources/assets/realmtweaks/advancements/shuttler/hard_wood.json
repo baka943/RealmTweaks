@@ -10,7 +10,7 @@
       "translate": "advancements.realmtweaks.shuttler.hard_wood.description"
     }
   },
-  "parent": "realmtweaks:shuttler/outside_sky",
+  "parent": "realmtweaks:shuttler/root",
   "criteria": {
     "Obtain Weedwood": {
       "trigger": "thebetweenlands:break_block",

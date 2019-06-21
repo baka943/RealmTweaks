@@ -10,13 +10,11 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentTranslation;
@@ -26,10 +24,9 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import thebetweenlands.client.handler.ItemTooltipHandler;
 import thebetweenlands.client.tab.BLCreativeTabs;
-import thebetweenlands.common.item.misc.ItemSwampTalisman.EnumTalisman;
-import thebetweenlands.common.registries.SoundRegistry;
+import thebetweenlands.common.capability.circlegem.CircleGemType;
+import thebetweenlands.common.item.misc.ItemGem;
 import thebetweenlands.common.world.WorldProviderBetweenlands;
-import thebetweenlands.common.world.gen.feature.structure.WorldGenWeedwoodPortalTree;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -53,31 +50,58 @@ public class BlockRealmSapling extends BlockBush implements IModelRegister {
 		this.dim = dim;
 	}
 
+	public int getDim() {
+		return dim;
+	}
+
 	@Override
-	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-		ItemStack stack = playerIn.getHeldItem(hand);
+	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+		ItemStack stack = player.getHeldItem(hand);
+		Item item = stack.getItem();
 
-		if(!worldIn.isRemote && (EnumTalisman.SWAMP_TALISMAN_0.isItemOf(stack)
-				|| EnumTalisman.SWAMP_TALISMAN_5.isItemOf(stack))) {
-			if(worldIn.provider instanceof WorldProviderBetweenlands) {
-				WorldGenWeedwoodPortalTree gen = new WorldGenWeedwoodPortalTree(dim);
+		if(!world.isRemote && item instanceof ItemGem) {
+			if(world.provider instanceof WorldProviderBetweenlands) {
+				CircleGemType type = ((ItemGem) item).type;
 
-				if(gen.generate(worldIn, worldIn.rand, pos)) {
-					double X = pos.getX();
-					double Y = pos.getY() + 2;
-					double Z = pos.getZ();
-
-					worldIn.playSound(null, pos, SoundRegistry.PORTAL_ACTIVATE, SoundCategory.PLAYERS, 0.5F, 1.0F);
-					playerIn.setLocationAndAngles(X, Y, Z, playerIn.rotationYaw, playerIn.rotationPitch);
-
-					if(playerIn instanceof EntityPlayerMP) {
-						((EntityPlayerMP) playerIn).connection.setPlayerLocation(X, Y, Z, playerIn.rotationYaw, playerIn.rotationPitch);
-					}
+				if(type == CircleGemType.NONE) {
+					player.sendStatusMessage(new TextComponentTranslation("chat.realmtweaks.wrong"), true);
 				} else {
-					playerIn.sendStatusMessage(new TextComponentTranslation("chat.talisman.noplace"), true);
+					if(!player.capabilities.isCreativeMode) stack.shrink(1);
+
+					switch(type) {
+						case AQUA:
+							if(this != ModBlocks.NIGHTMARE_SAPLING) {
+								world.setBlockToAir(pos);
+								world.setBlockState(pos,
+										ModBlocks.NIGHTMARE_SAPLING.getDefaultState());
+								Utils.worldSaplingText(player, ModBlocks.NIGHTMARE_SAPLING);
+							}
+
+							break;
+
+						case CRIMSON:
+							if(this != ModBlocks.ALTERNATE_SAPLING) {
+								world.setBlockToAir(pos);
+								world.setBlockState(pos,
+										ModBlocks.ALTERNATE_SAPLING.getDefaultState());
+								Utils.worldSaplingText(player, ModBlocks.ALTERNATE_SAPLING);
+							}
+
+							break;
+
+						case GREEN:
+							if(this != ModBlocks.ANOTHER_SAPLING) {
+								world.setBlockToAir(pos);
+								world.setBlockState(pos,
+										ModBlocks.ANOTHER_SAPLING.getDefaultState());
+								Utils.worldSaplingText(player, ModBlocks.ANOTHER_SAPLING);
+							}
+
+							break;
+					}
 				}
 			} else {
-				playerIn.sendStatusMessage(new TextComponentTranslation("chat.talisman.wrongdimension"), true);
+				player.sendStatusMessage(new TextComponentTranslation("chat.realmtweaks.wrong"), true);
 			}
 		}
 
@@ -93,7 +117,7 @@ public class BlockRealmSapling extends BlockBush implements IModelRegister {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> list, ITooltipFlag flagIn) {
-		list.addAll(ItemTooltipHandler.splitTooltip(I18n.format("tooltip." + LibMisc.MOD_ID + "." + this.name, new Object[0]), 0));
+		list.addAll(ItemTooltipHandler.splitTooltip(I18n.format("tooltip." + LibMisc.MOD_ID + "." + this.name), 0));
 	}
 
 	@Override

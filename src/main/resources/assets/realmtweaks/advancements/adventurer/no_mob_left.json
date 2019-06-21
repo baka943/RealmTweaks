@@ -11,7 +11,7 @@
     },
     "frame": "challenge"
   },
-  "parent": "realmtweaks:adventurer/mob_battle",
+  "parent": "realmtweaks:adventurer/monster_battle",
   "criteria": {
     "Kill Cave Spider": {
       "trigger": "minecraft:player_killed_entity",
