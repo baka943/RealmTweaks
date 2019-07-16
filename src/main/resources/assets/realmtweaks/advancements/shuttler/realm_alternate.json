@@ -11,32 +11,10 @@
     },
     "frame": "goal"
   },
-  "parent": "realmtweaks:shuttler/swamp_talisman",
+  "parent": "realmtweaks:shuttler/realm_key",
   "criteria": {
-    "Obtain Crimson Gem": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "thebetweenlands:crimson_middle_gem"
-          }
-        ]
-      }
-    },
-    "Obtain Realm Sapling": {
-      "trigger": "thebetweenlands:right_click_block",
-      "conditions": {
-        "blocks": [
-          {
-            "block": "thebetweenlands:sapling_weedwood"
-          }
-        ],
-        "items": [
-          {
-            "item": "thebetweenlands:crimson_middle_gem"
-          }
-        ]
-      }
+    "Obtain Alternate Sapling": {
+      "trigger": "realmtweaks:realm_alternate"
     }
   }
 }

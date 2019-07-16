@@ -9,28 +9,23 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import thebetweenlands.client.handler.ItemTooltipHandler;
 import thebetweenlands.client.tab.BLCreativeTabs;
-import thebetweenlands.common.capability.circlegem.CircleGemType;
-import thebetweenlands.common.item.misc.ItemGem;
-import thebetweenlands.common.world.WorldProviderBetweenlands;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.Random;
 
 public class BlockRealmSapling extends BlockBush implements IModelRegister {
 
@@ -54,74 +49,38 @@ public class BlockRealmSapling extends BlockBush implements IModelRegister {
 		return dim;
 	}
 
-	@Override
-	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-		ItemStack stack = player.getHeldItem(hand);
-		Item item = stack.getItem();
-
-		if(!world.isRemote && item instanceof ItemGem) {
-			if(world.provider instanceof WorldProviderBetweenlands) {
-				CircleGemType type = ((ItemGem) item).type;
-
-				if(type == CircleGemType.NONE) {
-					player.sendStatusMessage(new TextComponentTranslation("chat.realmtweaks.wrong"), true);
-				} else {
-					if(!player.capabilities.isCreativeMode) stack.shrink(1);
-
-					switch(type) {
-						case AQUA:
-							if(this != ModBlocks.NIGHTMARE_SAPLING) {
-								world.setBlockToAir(pos);
-								world.setBlockState(pos,
-										ModBlocks.NIGHTMARE_SAPLING.getDefaultState());
-								Utils.worldSaplingText(player, ModBlocks.NIGHTMARE_SAPLING);
-							}
-
-							break;
-
-						case CRIMSON:
-							if(this != ModBlocks.ALTERNATE_SAPLING) {
-								world.setBlockToAir(pos);
-								world.setBlockState(pos,
-										ModBlocks.ALTERNATE_SAPLING.getDefaultState());
-								Utils.worldSaplingText(player, ModBlocks.ALTERNATE_SAPLING);
-							}
-
-							break;
-
-						case GREEN:
-							if(this != ModBlocks.ANOTHER_SAPLING) {
-								world.setBlockToAir(pos);
-								world.setBlockState(pos,
-										ModBlocks.ANOTHER_SAPLING.getDefaultState());
-								Utils.worldSaplingText(player, ModBlocks.ANOTHER_SAPLING);
-							}
-
-							break;
-					}
-				}
-			} else {
-				player.sendStatusMessage(new TextComponentTranslation("chat.realmtweaks.wrong"), true);
-			}
-		}
-
-		return false;
-	}
-
-	@Override
 	@Nonnull
+	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
 		return REALM_SAPLING_AABB;
 	}
 
-	@Override
 	@SideOnly(Side.CLIENT)
+	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> list, ITooltipFlag flagIn) {
 		list.addAll(ItemTooltipHandler.splitTooltip(I18n.format("tooltip." + LibMisc.MOD_ID + "." + this.name), 0));
 	}
 
-	@Override
 	@SideOnly(Side.CLIENT)
+	@Override
+	public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
+		for (int i = 0; i < 3; ++i) {
+			int j = rand.nextInt(4) - 1;
+			int k = rand.nextInt(4) - 1;
+
+			double posX = (double)pos.getX() + 0.5D + 0.25D * (double)j;
+			double posY = (double)((float)pos.getY() + rand.nextFloat());
+			double posZ = (double)pos.getZ() + 0.5D + 0.25D * (double)k;
+			double xV = (double)(rand.nextFloat() * (float)j);
+			double yV = ((double)rand.nextFloat() - 0.5D) * 0.125D;
+			double zV = (double)(rand.nextFloat() * (float)k);
+
+			worldIn.spawnParticle(EnumParticleTypes.PORTAL, posX, posY, posZ, xV, yV, zV);
+		}
+	}
+
+	@SideOnly(Side.CLIENT)
+	@Override
 	public void registerModels() {
 		if(Item.getItemFromBlock(this) != Items.AIR) {
 			ModelHandler.registerInventoryVariant(this);

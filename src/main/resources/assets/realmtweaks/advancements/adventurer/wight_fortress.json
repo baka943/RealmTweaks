@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "thebetweenlands:glowing_betweenstone_tile"
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.adventurer.wight_fortress.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.adventurer.wight_fortress.description"
+    }
+  },
+  "parent": "realmtweaks:adventurer/root",
+  "criteria": {
+    "Enter Wight Tower": {
+      "trigger": "thebetweenlands:location",
+      "conditions": {
+        "name": "wight_tower"
+      }
+    }
+  }
+}

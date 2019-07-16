@@ -7,7 +7,7 @@
       "translate": "advancements.thebetweenlands.farmer.baby_murderer.title"
     },
     "description": {
-      "translate": "advancements.thebetweenlands.farmer.baby_murderer.description"
+      "translate": "advancements.realmtweaks.farmer.baby_murderer.description"
     }
   },
   "parent": "realmtweaks:farmer/snail_snail",

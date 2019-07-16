@@ -2,6 +2,9 @@ package baka943.realmtweaks.common;
 
 import baka943.realmtweaks.common.core.handler.*;
 import baka943.realmtweaks.common.core.proxy.IProxy;
+import baka943.realmtweaks.common.core.tutorial.BetterGuiToast;
+import baka943.realmtweaks.common.entity.ModEntites;
+import baka943.realmtweaks.common.fluid.ModFluids;
 import baka943.realmtweaks.common.lib.LibMisc;
 import baka943.realmtweaks.common.world.gen.feature.WorldGenEntityMob;
 import net.minecraft.advancements.Advancement;
@@ -28,28 +31,29 @@ public class RealmTweaks {
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		MinecraftForge.EVENT_BUS.register(new WorldTypeHandler());
+		MinecraftForge.EVENT_BUS.register(new BetterGuiToast());
 		MinecraftForge.TERRAIN_GEN_BUS.register(new MapGenHandler());
 		MinecraftForge.ORE_GEN_BUS.register(new OreGenHandler());
 		MinecraftForge.EVENT_BUS.register(new MobHandler());
 
+		CriterionHandler.preInit();
+		ModEntites.init();
+		ModFluids.registerFluids();
 		proxy.preInit(event);
 	}
 
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
 		MinecraftForge.EVENT_BUS.register(new ItemUseHandler());
-		MinecraftForge.EVENT_BUS.register(new StartItemHandler());
-		MinecraftForge.EVENT_BUS.register(new PortalHandler());
+		MinecraftForge.EVENT_BUS.register(new EventHandler());
 
 		WorldGenEntityMob.init();
-
 		proxy.init(event);
 	}
 
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
 		OreDictHandler.registerOreDict();
-
 		proxy.postInit(event);
 	}
 
@@ -59,9 +63,9 @@ public class RealmTweaks {
 
 		while(iterator.hasNext()) {
 			Advancement advancement = (Advancement) iterator.next();
-			String modid = advancement.getId().getNamespace();
+			String modid = advancement.getId().toString();
 
-			if(!modid.matches("realmtweaks") && !modid.matches("tombstone")) {
+			if(!modid.contains("realmtweaks") && !modid.contains("tombstone")) {
 				iterator.remove();
 			}
 		}

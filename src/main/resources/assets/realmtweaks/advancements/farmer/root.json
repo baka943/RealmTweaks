@@ -9,15 +9,15 @@
     "description": {
       "translate": "advancements.realmtweaks.farmer.root.description"
     },
-    "background": "minecraft:textures/blocks/concrete_green.png",
+    "background": "minecraft:textures/blocks/concrete_powder_brown.png",
     "announce_to_chat": false,
     "show_toast": false
   },
   "criteria": {
-    "Outside Sky": {
+    "Join Game": {
       "trigger": "thebetweenlands:has_advancement",
       "conditions": {
-        "advancement": "realmtweaks:shuttler/outside_sky"
+        "advancement": "realmtweaks:shuttler/root"
       }
     }
   }

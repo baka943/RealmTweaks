@@ -15,7 +15,6 @@ public class OreGenHandler {
 			case GOLD:
 			case LAPIS:
 			case REDSTONE:
-			case QUARTZ:
 			case DIAMOND:
 			case EMERALD:
 				event.setResult(Event.Result.DENY);

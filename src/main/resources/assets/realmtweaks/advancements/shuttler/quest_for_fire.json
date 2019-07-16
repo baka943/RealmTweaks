@@ -7,12 +7,12 @@
       "translate": "advancements.thebetweenlands.survivalist.quest_for_fire.title"
     },
     "description": {
-      "translate": "advancements.thebetweenlands.survivalist.quest_for_fire.description"
+      "translate": "advancements.realmtweaks.shuttler.quest_for_fire.description"
     }
   },
   "parent": "realmtweaks:shuttler/pyromaniac",
   "criteria": {
-    "set_fire": {
+    "Peat Fire": {
       "trigger": "thebetweenlands:peat_fire"
     }
   }

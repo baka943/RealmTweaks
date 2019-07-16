@@ -1,0 +1,14 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "forge:fluid"
+  },
+  "variants": {
+    "octine": [{
+      "custom": {"fluid": "octine"}
+    }],
+    "syrmorite": [{
+      "custom": {"fluid": "syrmorite"}
+    }]
+  }
+}

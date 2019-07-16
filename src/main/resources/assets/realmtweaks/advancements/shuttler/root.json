@@ -9,7 +9,7 @@
     "description": {
       "translate": "advancements.realmtweaks.shuttler.root.description"
     },
-    "background": "minecraft:textures/blocks/concrete_purple.png"
+    "background": "minecraft:textures/blocks/concrete_powder_purple.png"
   },
   "criteria": {
     "Into Minecraft": {

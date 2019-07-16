@@ -1,11 +1,153 @@
+# Blocks
 tile.realmtweaks.alternate_sapling.name=Alternate Sapling
 tile.realmtweaks.another_sapling.name=Another Sapling
 tile.realmtweaks.nightmare_sapling.name=Nightmare Sapling
 
+# Items
 item.realmtweaks.ender_shard.name=末影碎片
+item.realmtweaks.advancement_book.name=进度之书
+item.realmtweaks.realm_key.name=领域之钥
+item.realmtweaks.aqua_crystal.name=Aqua Crystal
+item.realmtweaks.crimson_crystal.name=Crimson Crystal
+item.realmtweaks.green_crystal.name=Green Crystal
+item.realmtweaks.forestry_bat.name=森林蝙蝠
+item.realmtweaks.paper_tool.name=纸质工具（%s）
+item.realmtweaks.paper_tool_empty.name=纸质工具
 
+# Fluid
+fluid.realmtweaks.octine=熔融炽炎铁
+fluid.realmtweaks.syrmorite=熔融赛摩铜
+
+# Entity
+entity.realmtweaks.swamp_spider.name=沼泽蜘蛛
+
+# World Type
 generator.realmtweaks_atlantis=Atlantis
 generator.realmtweaks_atlantis.info=注意: 无尽之海
 
-chat.realmtweaks.world_sapling=World Sapling %s
-chat.realmtweaks.wrong=Wrong Wrong
+# Chats
+chat.realmtweaks.wrong=啥情况?
+chat.realmtweaks.fishing_spider=什么？沼泽蜘蛛？
+
+# Advancements
+# #Adventurer
+advancements.realmtweaks.adventurer.root.title=沼泽冒险家
+advancements.realmtweaks.adventurer.root.description=这里太危险了
+advancements.realmtweaks.adventurer.monster_battle.title=怪物攻防战
+advancements.realmtweaks.adventurer.monster_battle.description=抱歉，我还不想死
+advancements.realmtweaks.adventurer.no_mob_left.title=一个不留
+advancements.realmtweaks.adventurer.no_mob_left.description=怪物必须死
+advancements.realmtweaks.adventurer.marksman.title=五十米外的神射手
+advancements.realmtweaks.adventurer.marksman.description=这种程度，我能再来28次
+advancements.realmtweaks.adventurer.made_map.title=绘制的地图
+advancements.realmtweaks.adventurer.made_map.description=地图上记录的不止你的足迹，还有你的记忆
+advancements.realmtweaks.adventurer.weedwood_tree.title=高耸的杂草树
+advancements.realmtweaks.adventurer.weedwood_tree.description=它是世界树么？
+advancements.realmtweaks.adventurer.under_tree.title=树下守护者
+advancements.realmtweaks.adventurer.under_tree.description=树里面有什么呢？
+advancements.realmtweaks.adventurer.spirit_tree.title=自我的灵魂树
+advancements.realmtweaks.adventurer.spirit_tree.description=恶意的存在
+advancements.realmtweaks.adventurer.spirit_mask.title=灵魂树面具
+advancements.realmtweaks.adventurer.spirit_mask.description=它和洛基没有关系
+advancements.realmtweaks.adventurer.exotic_traveller.title=异域漫游者
+advancements.realmtweaks.adventurer.exotic_traveller.description=你的足迹遍布整个世界
+advancements.realmtweaks.adventurer.cragrock_tower.title=碎岩塔
+advancements.realmtweaks.adventurer.cragrock_tower.description=一座直插云霄的高塔
+advancements.realmtweaks.adventurer.tower_top.title=登临塔顶
+advancements.realmtweaks.adventurer.tower_top.description=占领这座塔的人就是你
+advancements.realmtweaks.adventurer.wight_fortress.title=鬼魂城堡
+advancements.realmtweaks.adventurer.wight_fortress.description=这里到处都是迷雾和鬼魂
+advancements.realmtweaks.adventurer.shockwave_sword.title=冲击波剑
+advancements.realmtweaks.adventurer.shockwave_sword.description=谁会是这把剑的主人？
+advancements.realmtweaks.adventurer.primordial_malevolence.title=原始恶意
+advancements.realmtweaks.adventurer.primordial_malevolence.description=击败最终领主
+
+# #Farmer
+advancements.realmtweaks.farmer.root.title=沼泽农场
+advancements.realmtweaks.farmer.root.description=我要用铲子造一个农场给你看
+advancements.realmtweaks.farmer.waterless_cultivation.title=无水栽培
+advancements.realmtweaks.farmer.waterless_cultivation.description=有堆肥，谁还需要浇水
+advancements.realmtweaks.farmer.snail_snail.title=蜗牛对蜗牛
+advancements.realmtweaks.farmer.snail_snail.description=用泥浆球喂养泥潭蜗牛，让它们得以繁衍
+advancements.realmtweaks.farmer.a_vine_bush.description=[Betweenlands]收集白梨种子并种植它
+advancements.realmtweaks.farmer.baby_murderer.description=[Betweenlands]煮熟一个泥潭蜗牛蛋再做成炒蛋
+advancements.realmtweaks.farmer.flower_power.description=[Betweenlands]在你的农场上种花
+advancements.realmtweaks.farmer.lively_crops.description=[Betweenlands]让蘑菇精灵从你的作物里孵化出来
+advancements.realmtweaks.farmer.mushroom_master.description=[Betweenlands]收集所有种类的蘑菇
+advancements.realmtweaks.farmer.necrofarmer.description=[Betweenlands]用植物营养剂治疗腐化的作物
+advancements.realmtweaks.farmer.sporadically_radical.description=[Betweenlands]种植黄点蘑菇孢子并收获黄点蘑菇
+
+# #Herbalist
+advancements.realmtweaks.herbalist.root.title=草药学
+advancements.realmtweaks.herbalist.root.description=我有一个梦想，成为一名医生
+advancements.realmtweaks.herbalist.herbs_everywhere.title=遍地草药
+advancements.realmtweaks.herbalist.herbs_everywhere.description=它们不止是杂草而已
+advancements.realmtweaks.herbalist.specimen_enthusiast.title=标本爱好者
+advancements.realmtweaks.herbalist.specimen_enthusiast.description=它们不是昆虫，它们是标本
+advancements.realmtweaks.herbalist.feed_gecko.title=别喂壁虎
+advancements.realmtweaks.herbalist.feed_gecko.description=吃了奇怪的食物会得病的
+advancements.realmtweaks.herbalist.kind_heart.title=善意的心
+advancements.realmtweaks.herbalist.kind_heart.description=回家吧，小家伙
+advancements.realmtweaks.herbalist.herblore_book.title=药学手册
+advancements.realmtweaks.herbalist.herblore_book.description=合格的草药师必须记录下他的发现
+advancements.realmtweaks.herbalist.taste_all_herbs.title=尝遍百草
+advancements.realmtweaks.herbalist.taste_all_herbs.description=壁虎是草药师的好伙伴
+
+# #Magic
+advancements.realmtweaks.magic.root.title=矮人魔法
+advancements.realmtweaks.magic.root.description=地底高温
+advancements.realmtweaks.magic.tinker_hammer.title=工匠锤
+advancements.realmtweaks.magic.tinker_hammer.description=结实又实用
+advancements.realmtweaks.magic.under_bedrock.title=基岩之下
+advancements.realmtweaks.magic.under_bedrock.description=下面藏有什么呢？
+advancements.realmtweaks.magic.alchemy_tablet.title=奇妙的工艺
+advancements.realmtweaks.magic.alchemy_tablet.description=这是矮人们的魔法么？
+advancements.realmtweaks.magic.codex.title=生动的百科全书
+advancements.realmtweaks.magic.codex.description=有了这本书，我能进一步的了解矮人们的一切
+
+# #Shuttler
+advancements.realmtweaks.shuttler.root.title=领域穿梭者
+advancements.realmtweaks.shuttler.root.description=感谢游玩 Between Realm 整合包
+advancements.realmtweaks.shuttler.hard_wood.title=来点硬的木头
+advancements.realmtweaks.shuttler.hard_wood.description=比铁还要硬
+advancements.realmtweaks.shuttler.crafting_table.title=传统手艺
+advancements.realmtweaks.shuttler.crafting_table.description=总之，我需要一个工作台
+advancements.realmtweaks.shuttler.moss_bed.title=难以入眠
+advancements.realmtweaks.shuttler.moss_bed.description=周围的气氛让你感到不安
+advancements.realmtweaks.shuttler.deeper_cave.title=更深的洞穴
+advancements.realmtweaks.shuttler.deeper_cave.description=我们需要再深入些
+advancements.realmtweaks.shuttler.realm_key.title=领域间的钥匙
+advancements.realmtweaks.shuttler.realm_key.description=这真的不是一条鱼？
+advancements.realmtweaks.shuttler.between_realm.title=打开传送门
+advancements.realmtweaks.shuttler.between_realm.description=为什么是从树洞里穿越？
+advancements.realmtweaks.shuttler.realm_alternate.title=Alternate Realm
+advancements.realmtweaks.shuttler.realm_alternate.description=充满熔岩和火焰的领域
+advancements.realmtweaks.shuttler.realm_another.title=Another Realm
+advancements.realmtweaks.shuttler.realm_another.description=水天一色的领域
+advancements.realmtweaks.shuttler.realm_nightmare.title=Nightmare Realm
+advancements.realmtweaks.shuttler.realm_nightmare.description=代表终末与虚空的领域
+advancements.realmtweaks.shuttler.wither.title=来自下界的怪物
+advancements.realmtweaks.shuttler.wither.description=她叫凋灵
+advancements.realmtweaks.shuttler.end_dragon.title=消失的末影龙
+advancements.realmtweaks.shuttler.end_dragon.description=她大概是去了旅游
+advancements.realmtweaks.shuttler.stronghold.title=查无要塞
+advancements.realmtweaks.shuttler.stronghold.description=啥情况？
+advancements.realmtweaks.shuttler.fishing.title=无钓鱼不游戏
+advancements.realmtweaks.shuttler.fishing.description=我就是喜欢钓鱼
+advancements.realmtweaks.shuttler.emerald_life.title=翡翠人生
+advancements.realmtweaks.shuttler.emerald_life.description=就像村民一样交换物品
+advancements.realmtweaks.shuttler.a_cure.description=[Betweenlands]收集凝胶球
+advancements.realmtweaks.shuttler.fetch.description=[Betweenlands]用闪光石吸引泥炭木乃伊的注意
+advancements.realmtweaks.shuttler.hardcore_munchies.description=[Betweenlands]吃下翼手怪的翅膀
+advancements.realmtweaks.shuttler.hardware_laundry.description=[Betweenlands]净化你的工具和武器
+advancements.realmtweaks.shuttler.onions_have_layers.description=[Betweenlands]用痂壳晶包裹，保护你的工具
+advancements.realmtweaks.shuttler.pyromaniac.description=[Betweenlands]用炽炎铁锭点燃苔藓
+advancements.realmtweaks.shuttler.quest_for_fire.description=[Betweenlands]在泥炭上点火
+advancements.realmtweaks.shuttler.say_nay_to_decay.description=[Betweenlands]收集哭泣蓝花瓣
+
+# Tooltips
+tooltip.realmtweaks.alternate_sapling=用 Crimson Crystal 右键杂草树苗
+tooltip.realmtweaks.another_sapling=用 Aqua Crystal 右键杂草树苗
+tooltip.realmtweaks.nightmare_sapling=用 Green Crystal 右键杂草树苗
+tooltip.realmtweaks.realm_crystal=藏有什么秘密呢？
+tooltip.realmtweaks.realm_key=只是打开传送门的钥匙

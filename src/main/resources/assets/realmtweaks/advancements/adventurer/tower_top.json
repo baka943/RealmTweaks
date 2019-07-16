@@ -1,0 +1,19 @@
+{
+  "display": {
+    "icon": {
+      "item": "thebetweenlands:mob_spawner"
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.adventurer.tower_top.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.adventurer.tower_top.description"
+    }
+  },
+  "parent": "realmtweaks:adventurer/cragrock_tower",
+  "criteria": {
+    "Board Tower Top": {
+      "trigger": "thebetweenlands:cragrock_tower_top"
+    }
+  }
+}

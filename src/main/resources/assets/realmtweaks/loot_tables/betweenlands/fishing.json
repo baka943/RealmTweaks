@@ -1,0 +1,24 @@
+{
+  "pools": [
+    {
+      "name": "fishing",
+      "entries": [
+        {
+          "entryName": "betweenlands_junk",
+          "weight": 10,
+          "quality": -2,
+          "type": "loot_table",
+          "name": "realmtweaks:betweenlands/fishing/junk"
+        },
+        {
+          "entryName": "betweenlands_treasure",
+          "weight": 5,
+          "quality": 2,
+          "type": "loot_table",
+          "name": "realmtweaks:betweenlands/fishing/treasure"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

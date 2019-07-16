@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "group": "realmtweaks:tool",
   "result": {
-    "item": "realmtweaks:weedwood_fishing_rod"
+    "item": "minecraft:fishing_rod"
   },
   "pattern": [
     "  W",

@@ -8,12 +8,12 @@
       "translate": "advancements.thebetweenlands.survivalist.onions_have_layers.title"
     },
     "description": {
-      "translate": "advancements.thebetweenlands.survivalist.onions_have_layers.description"
+      "translate": "advancements.realmtweaks.shuttler.onions_have_layers.description"
     }
   },
   "parent": "realmtweaks:shuttler/hardware_laundry",
   "criteria": {
-    "set_fire": {
+    "Coat Tool": {
       "trigger": "thebetweenlands:coat_tool"
     }
   }

@@ -8,7 +8,7 @@
       "translate": "advancements.thebetweenlands.farmer.flower_power.title"
     },
     "description": {
-      "translate": "advancements.thebetweenlands.farmer.flower_power.description"
+      "translate": "advancements.realmtweaks.farmer.flower_power.description"
     }
   },
   "parent": "realmtweaks:farmer/waterless_cultivation",

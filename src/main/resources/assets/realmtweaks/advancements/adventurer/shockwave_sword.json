@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "thebetweenlands:shockwave_sword"
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.adventurer.shockwave_sword.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.adventurer.shockwave_sword.description"
+    }
+  },
+  "parent": "realmtweaks:adventurer/wight_fortress",
+  "criteria": {
+    "Obtain Shockwave Sword": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "thebetweenlands:shockwave_sword"
+          }
+        ]
+      }
+    }
+  }
+}

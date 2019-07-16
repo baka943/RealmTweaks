@@ -16,14 +16,14 @@ public class WorldTypeAtlantis extends WorldType {
 		super("atlantis");
 	}
 
-	@Override
 	@Nonnull
+	@Override
 	public BiomeProvider getBiomeProvider(@Nonnull World world) {
 		return new BiomeProviderSingle(Biomes.DEEP_OCEAN);
 	}
 
-	@Override
 	@Nonnull
+	@Override
 	public String getTranslationKey() {
 		return "generator." + LibMisc.MOD_ID + "_" + this.getName();
 	}

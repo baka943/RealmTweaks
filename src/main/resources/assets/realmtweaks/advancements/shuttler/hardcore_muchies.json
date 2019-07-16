@@ -7,12 +7,12 @@
       "translate": "advancements.thebetweenlands.survivalist.hardcore_munchies.title"
     },
     "description": {
-      "translate": "advancements.thebetweenlands.survivalist.hardcore_munchies.description"
+      "translate": "advancements.realmtweaks.shuttler.hardcore_munchies.description"
     }
   },
   "parent": "realmtweaks:shuttler/root",
   "criteria": {
-    "have_sap": {
+    "Eat Chiromaw Wing": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {

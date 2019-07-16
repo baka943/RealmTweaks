@@ -9,9 +9,7 @@
     "description": {
       "translate": "advancements.realmtweaks.magic.root.description"
     },
-	"background": "embers:textures/blocks/ashen_stone.png",
-    "announce_to_chat": false,
-    "show_toast": false
+	"background": "minecraft:textures/blocks/concrete_powder_black.png"
   },
   "criteria": {
     "Mining Metal Ore": {

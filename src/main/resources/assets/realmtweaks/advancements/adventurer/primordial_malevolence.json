@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "item": "thebetweenlands:amulet_slot"
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.adventurer.primordial_malevolence.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.adventurer.primordial_malevolence.description"
+    },
+    "frame": "challenge"
+  },
+  "parent": "realmtweaks:adventurer/shockwave_sword",
+  "criteria": {
+    "Kill Primordial Malevolence": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "thebetweenlands:fortress_boss"
+        }
+      }
+    }
+  }
+}

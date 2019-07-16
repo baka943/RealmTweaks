@@ -7,7 +7,7 @@
       "translate": "advancements.thebetweenlands.farmer.lively_crops.title"
     },
     "description": {
-      "translate": "advancements.thebetweenlands.farmer.lively_crops.description"
+      "translate": "advancements.realmtweaks.farmer.lively_crops.description"
     }
   },
   "parent": "realmtweaks:farmer/sporadically_radical",

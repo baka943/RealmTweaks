@@ -1,5 +1,6 @@
 package baka943.realmtweaks.common.core.handler;
 
+import baka943.realmtweaks.common.block.ModBlocks;
 import baka943.realmtweaks.common.item.ModItems;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -10,6 +11,10 @@ public class OreDictHandler {
 
 	public static void registerOreDict() {
 		OreDictionary.registerOre("enderShard", ModItems.ENDER_SHARD);
+
+		OreDictionary.registerOre("treeSapling", ModBlocks.ALTERNATE_SAPLING);
+		OreDictionary.registerOre("treeSapling", ModBlocks.ANOTHER_SAPLING);
+		OreDictionary.registerOre("treeSapling", ModBlocks.NIGHTMARE_SAPLING);
 
 		OreDictionary.registerOre("logWeedwood", BlockRegistry.WEEDWOOD);
 		OreDictionary.registerOre("logWeedwood", new ItemStack(BlockRegistry.LOG_WEEDWOOD, 1, 0));

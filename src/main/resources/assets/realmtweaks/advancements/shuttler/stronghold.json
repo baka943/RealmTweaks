@@ -9,7 +9,6 @@
     "description": {
       "translate": "advancements.realmtweaks.shuttler.stronghold.description"
     },
-    "hidden": true,
     "frame": "challenge"
   },
   "parent": "realmtweaks:shuttler/realm_another",

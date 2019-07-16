@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "thebetweenlands:octine_sword"
+      "item": "thebetweenlands:bone_helmet"
     },
     "title": {
       "translate": "advancements.realmtweaks.adventurer.no_mob_left.title"
@@ -18,6 +18,14 @@
       "conditions": {
         "entity": {
           "type": "minecraft:cave_spider"
+        }
+      }
+    },
+    "Kill Swamp Spider": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "realmtweaks:swamp_spider"
         }
       }
     },

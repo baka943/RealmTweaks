@@ -1,0 +1,19 @@
+{
+  "display": {
+    "icon": {
+      "item": "realmtweaks:green_crystal"
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.shuttler.between_realm.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.shuttler.between_realm.description"
+    }
+  },
+  "parent": "realmtweaks:shuttler/realm_key",
+  "criteria": {
+    "Action Portal": {
+      "trigger": "realmtweaks:realm_key"
+    }
+  }
+}

@@ -8,12 +8,12 @@
       "translate": "advancements.thebetweenlands.survivalist.hardware_laundry.title"
     },
     "description": {
-      "translate": "advancements.thebetweenlands.survivalist.hardware_laundry.description"
+      "translate": "advancements.realmtweaks.shuttler.hardware_laundry.description"
     }
   },
   "parent": "realmtweaks:shuttler/root",
   "criteria": {
-    "set_fire": {
+    "Purify Tool": {
       "trigger": "thebetweenlands:purify_tool"
     }
   }

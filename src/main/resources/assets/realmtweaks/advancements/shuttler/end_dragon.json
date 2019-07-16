@@ -10,7 +10,6 @@
     "description": {
       "translate": "advancements.realmtweaks.shuttler.end_dragon.description"
     },
-    "hidden": true,
     "frame": "challenge"
   },
   "parent": "realmtweaks:shuttler/realm_nightmare",

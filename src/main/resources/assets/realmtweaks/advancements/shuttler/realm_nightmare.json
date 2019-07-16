@@ -11,32 +11,10 @@
     },
     "frame": "goal"
   },
-  "parent": "realmtweaks:shuttler/swamp_talisman",
+  "parent": "realmtweaks:shuttler/realm_key",
   "criteria": {
-    "Obtain Aqua Gem": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "thebetweenlands:aqua_middle_gem"
-          }
-        ]
-      }
-    },
-    "Obtain Realm Sapling": {
-      "trigger": "thebetweenlands:right_click_block",
-      "conditions": {
-        "blocks": [
-          {
-            "block": "thebetweenlands:sapling_weedwood"
-          }
-        ],
-        "items": [
-          {
-            "item": "thebetweenlands:aqua_middle_gem"
-          }
-        ]
-      }
+    "Obtain Nightmare Sapling": {
+      "trigger": "realmtweaks:realm_nightmare"
     }
   }
 }

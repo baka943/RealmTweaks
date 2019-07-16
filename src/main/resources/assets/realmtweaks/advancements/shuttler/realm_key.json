@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "realmtweaks:realm_key"
+    },
+    "title": {
+      "translate": "advancements.realmtweaks.shuttler.realm_key.title"
+    },
+    "description": {
+      "translate": "advancements.realmtweaks.shuttler.realm_key.description"
+    }
+  },
+  "parent": "realmtweaks:shuttler/crafting_table",
+  "criteria": {
+    "Obtain Realm Key": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "realmtweaks:realm_key"
+          }
+        ]
+      }
+    }
+  }
+}

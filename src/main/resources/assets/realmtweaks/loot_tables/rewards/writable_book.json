@@ -2,19 +2,20 @@
   "pools": [
     {
       "name": "writable_book",
-      "rolls": 1,
       "entries": [
         {
-          "type": "item",
-          "name": "minecraft:writable_book",
+          "entryName": "writable_book",
           "functions": [
             {
               "function": "set_nbt",
               "tag": "{display: {Lore: [\"§5To record any interesting things...\"]}}"
             }
-          ]
+          ],
+          "type": "item",
+          "name": "minecraft:writable_book"
         }
-      ]
+      ],
+      "rolls": 1.0
     }
   ]
 }

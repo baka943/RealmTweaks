@@ -10,7 +10,7 @@
     "description": {
       "translate": "advancements.realmtweaks.herbalist.root.description"
     },
-    "background": "minecraft:textures/blocks/concrete_blue.png",
+    "background": "minecraft:textures/blocks/concrete_powder_cyan.png",
     "announce_to_chat": false,
     "show_toast": false
   },
@@ -18,7 +18,7 @@
     "Herbalist": {
       "trigger": "thebetweenlands:has_advancement",
       "conditions": {
-        "advancement": "realmtweaks:shuttler/outside_sky"
+        "advancement": "realmtweaks:shuttler/root"
       }
     }
   }

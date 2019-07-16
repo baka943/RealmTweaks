@@ -1,5 +1,6 @@
 package baka943.realmtweaks.common.block;
 
+import baka943.realmtweaks.common.fluid.ModFluids;
 import baka943.realmtweaks.common.lib.LibMisc;
 import baka943.realmtweaks.common.lib.Utils;
 import net.minecraft.block.Block;
@@ -17,7 +18,8 @@ public class ModBlocks {
 	public static final Block ALTERNATE_SAPLING = new BlockRealmSapling("alternate_sapling", -1);
 	public static final Block NIGHTMARE_SAPLING = new BlockRealmSapling("nightmare_sapling", 1);
 
-	private static final Block END_PORTAL = new BlockEndPortal();
+	public static final Block MOLTEN_OCTINE = new BlockFluid(ModFluids.OCTINE);
+	public static final Block MOLTEN_SYRMORITE = new BlockFluid(ModFluids.SYRMORITE);
 
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> event) {
@@ -27,7 +29,8 @@ public class ModBlocks {
 		registry.register(ALTERNATE_SAPLING);
 		registry.register(NIGHTMARE_SAPLING);
 
-		registry.register(END_PORTAL);
+		registry.register(MOLTEN_OCTINE);
+		registry.register(MOLTEN_SYRMORITE);
 	}
 
 	@SubscribeEvent

@@ -12,7 +12,7 @@
   },
   "parent": "realmtweaks:adventurer/root",
   "criteria": {
-    "Shuttler": {
+    "Enter Spirit Tree": {
       "trigger": "thebetweenlands:location",
       "conditions": {
         "name": "spirit_tree"

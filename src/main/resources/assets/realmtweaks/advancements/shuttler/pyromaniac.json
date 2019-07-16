@@ -7,12 +7,12 @@
       "translate": "advancements.thebetweenlands.survivalist.pyromaniac.title"
     },
     "description": {
-      "translate": "advancements.thebetweenlands.survivalist.pyromaniac.description"
+      "translate": "advancements.realmtweaks.shuttler.pyromaniac.description"
     }
   },
   "parent": "realmtweaks:shuttler/root",
   "criteria": {
-    "set_fire": {
+    "Get Fire": {
       "trigger": "thebetweenlands:octine_ingot_fire"
     }
   }

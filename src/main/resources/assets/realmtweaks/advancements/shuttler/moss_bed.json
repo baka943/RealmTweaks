@@ -21,6 +21,15 @@
           }
         ]
       }
+    },
+    "Place Moss Bed": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "block": "thebetweenlands:moss_bed",
+        "item": {
+          "item": "thebetweenlands:moss_bed_item"
+        }
+      }
     }
   }
 }
