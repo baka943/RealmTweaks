@@ -1,9 +1,10 @@
 package baka943.realmtweaks.common.core.handler;
 
-import net.minecraft.block.BlockBush;
+import net.minecraft.block.BlockSapling;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -21,9 +22,10 @@ public class ItemUseHandler {
 	@SubscribeEvent
 	public void onItemUse(PlayerInteractEvent.RightClickBlock event) {
 		World world = event.getWorld();
+		BlockPos pos = event.getPos();
 
 		if(!world.isRemote) {
-			IBlockState state = world.getBlockState(event.getPos());
+			IBlockState state = world.getBlockState(pos);
 			ItemStack stack = event.getItemStack();
 			EntityPlayer player = event.getEntityPlayer();
 
@@ -40,7 +42,7 @@ public class ItemUseHandler {
 	}
 
 	private boolean isBlockBush(IBlockState state) {
-		return state.getBlock() instanceof BlockBush;
+		return state.getBlock() instanceof BlockSapling;
 	}
 
 }

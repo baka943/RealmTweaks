@@ -99,7 +99,10 @@ public class EntityBoneHook extends EntityFishHook {
 					if(stack.getItem() == Items.STRING && rand.nextInt(3) == 0) {
 						EntitySwampSpider spider = new EntitySwampSpider(this.world);
 						spider.copyLocationAndAnglesFrom(entityItem);
-						spider.posY += 0.5D;
+
+						spider.motionX = entityItem.motionX;
+						spider.motionY = entityItem.motionY;
+						spider.motionZ = entityItem.motionZ;
 
 						this.world.spawnEntity(spider);
 						this.angler.sendStatusMessage(new TextComponentTranslation("chat." + LibMisc.MOD_ID + ".fishing_spider"), true);
@@ -111,9 +114,7 @@ public class EntityBoneHook extends EntityFishHook {
 				i = 1;
 			}
 
-			if(this.inGround) {
-				i = 2;
-			}
+			if(this.inGround) i = 2;
 
 			this.setDead();
 

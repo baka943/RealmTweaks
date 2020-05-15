@@ -1,6 +1,6 @@
 {
-  "parent": "block/cross",
+  "parent": "block/cube_all",
   "textures": {
-    "cross": "realmtweaks:blocks/alternate_sapling"
+    "all": "realmtweaks:blocks/blooded_end_stone"
   }
 }

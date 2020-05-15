@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "realmtweaks:items/ender_shard"
+    "layer0": "bloodmagic:items/updatetome"
   }
 }

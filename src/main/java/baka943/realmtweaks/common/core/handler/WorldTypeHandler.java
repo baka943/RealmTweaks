@@ -11,7 +11,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class WorldTypeHandler {
 
-	private WorldType atlantis = new WorldTypeAtlantis().enableInfoNotice();
+	private final WorldType atlantis = new WorldTypeAtlantis().enableInfoNotice();
 
 	@SideOnly(Side.CLIENT)
 	@SubscribeEvent

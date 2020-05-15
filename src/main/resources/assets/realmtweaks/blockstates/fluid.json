@@ -9,6 +9,9 @@
     }],
     "syrmorite": [{
       "custom": {"fluid": "syrmorite"}
+    }],
+    "lifecore": [{
+      "custom": {"fluid": "lifecore"}
     }]
   }
 }

@@ -5,15 +5,16 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.structure.MapGenStronghold;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 public class MapGenStrongholdEmpty extends MapGenStronghold {
 
 	@Override
-	public void generate(World world, int x, int z, @Nullable ChunkPrimer primer) {}
+	public void generate(@Nonnull World world, int x, int z, @Nullable ChunkPrimer primer) {}
 
 	@Override
-	public BlockPos getNearestStructurePos(World worldIn, @Nullable BlockPos pos, boolean findUnexplored) {
+	public BlockPos getNearestStructurePos(@Nonnull World worldIn, @Nullable BlockPos pos, boolean findUnexplored) {
 		return new BlockPos(0, 100, 0);
 	}
 

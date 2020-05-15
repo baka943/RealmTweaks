@@ -14,12 +14,13 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockFluid extends BlockFluidClassic implements IModelRegister {
 
-	public BlockFluid(Fluid fluid) {
-		super(fluid, Material.LAVA);
+	public BlockFluid(Fluid fluid, Material material, int quantaPerBlock) {
+		super(fluid, material);
 
 		this.setRegistryName(fluid.getName());
 		this.setTranslationKey(LibMisc.MOD_ID + "." + fluid.getName());
 		fluid.setBlock(this);
+		this.setQuantaPerBlock(quantaPerBlock);
 	}
 
 	@SideOnly(Side.CLIENT)

@@ -29,7 +29,7 @@ public class WorldTypeAtlantis extends WorldType {
 	}
 
 	@Override
-	public boolean handleSlimeSpawnReduction(@Nonnull Random rand, World world) {
+	public boolean handleSlimeSpawnReduction(@Nonnull Random rand, @Nonnull World world) {
 		return false;
 	}
 

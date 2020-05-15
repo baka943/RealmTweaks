@@ -1,7 +1,6 @@
 {
   "variants": {
-    "normal": {
-      "model": "realmtweaks:nightmare_sapling"
-    }
+    "inventory": { "model": "realmtweaks:blooded_end_stone" },
+    "normal": { "model": "realmtweaks:blooded_end_stone" }
   }
 }
