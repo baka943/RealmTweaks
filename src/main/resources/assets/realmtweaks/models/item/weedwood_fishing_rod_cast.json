@@ -1,6 +1,0 @@
-{
-  "parent": "realmtweaks:item/weedwood_fishing_rod",
-  "textures": {
-    "layer0": "realmtweaks:items/weedwood_fishing_rod_cast"
-  }
-}

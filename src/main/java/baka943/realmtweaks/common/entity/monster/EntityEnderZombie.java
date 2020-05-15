@@ -1,5 +1,5 @@
 package baka943.realmtweaks.common.entity.monster;
 
-public class EntitySwampSpider {
+public class EntityEnderZombie {
 
 }
