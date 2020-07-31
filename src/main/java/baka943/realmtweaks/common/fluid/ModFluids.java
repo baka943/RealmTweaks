@@ -1,18 +1,17 @@
 package baka943.realmtweaks.common.fluid;
 
+import baka943.realmtweaks.common.RealmTweaks;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 
 public class ModFluids {
 
-	public static final Fluid OCTINE = new FluidMod("octine");
-	public static final Fluid SYRMORITE = new FluidMod("syrmorite");
-	public static final Fluid LIFE_CORE = new FluidMod("lifecore");
+	public static final Fluid IMPURE_LIFE_ESSENCE = new FluidMod("impure_life_essence");
 
 	public static void registerFluids() {
-		registerFluid(OCTINE);
-		registerFluid(SYRMORITE);
-		registerFluid(LIFE_CORE);
+		if(RealmTweaks.isBloodMagicLoaded) {
+			registerFluid(IMPURE_LIFE_ESSENCE);
+		}
 	}
 
 	private static void registerFluid(Fluid fluid) {

@@ -1,6 +1,7 @@
 package baka943.realmtweaks.common.lib;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.DimensionType;
@@ -11,8 +12,12 @@ public class Utils {
 		return new ResourceLocation(LibMisc.MOD_ID, name);
 	}
 
-	public static int getDimensionId(String dimensionName) {
-		return DimensionType.byName(dimensionName).getId();
+	public static String getModId(ItemStack stack) {
+		return stack.getItem().getCreatorModId(stack);
+	}
+
+	public static int getDimId(String name) {
+		return DimensionType.byName(name).getId();
 	}
 
 	public static NBTTagCompound getTagSafe(NBTTagCompound tag) {

@@ -10,9 +10,11 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.entity.projectile.EntitySpectralArrow;
 import net.minecraft.entity.projectile.EntityTippedArrow;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -21,6 +23,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
@@ -34,6 +37,7 @@ public class EntityEnderSkeleton extends EntityEnderman implements IRangedAttack
 
 	private static final DataParameter<Boolean> SWINGING_ARMS = EntityDataManager.createKey(EntityEnderSkeleton.class, DataSerializers.BOOLEAN);
 	private final EntityAIAttackRangedBow<EntityEnderSkeleton> aiArrowAttack = new EntityAIAttackRangedBow<>(this, 1.0D, 20, 15.0F);
+
 	private final EntityAIAttackMelee aiAttackOnCollide = new EntityAIAttackMelee(this, 1.2D, false) {
 		@Override
 		public void resetTask() {
@@ -61,7 +65,7 @@ public class EntityEnderSkeleton extends EntityEnderman implements IRangedAttack
 		this.tasks.addTask(7, new EntityAIWanderAvoidWater(this, 1.0D, 0.0F));
 		this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
 		this.tasks.addTask(8, new EntityAILookIdle(this));
-		this.targetTasks.addTask(1, new EntityAINearestAttackableTarget<>(this, EntityPlayer.class, true));
+		this.targetTasks.addTask(1, new EntityEnderSkeleton.AIFindPlayer(this));
 		this.targetTasks.addTask(2, new EntityAIHurtByTarget(this, false, new Class[0]));
 		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<>(this, EntityEndermite.class, 10, true, false, new Predicate<EntityEndermite>() {
 			public boolean apply(@Nullable EntityEndermite endermite) {
@@ -96,6 +100,22 @@ public class EntityEnderSkeleton extends EntityEnderman implements IRangedAttack
 		this.setCanPickUpLoot(this.rand.nextFloat() < 0.55F * difficulty.getClampedAdditionalDifficulty());
 
 		return livingdata;
+	}
+
+	private boolean shouldAttackPlayer(EntityPlayer player) {
+		ItemStack itemstack = player.inventory.armorInventory.get(3);
+
+		if(itemstack.getItem() == Item.getItemFromBlock(Blocks.PUMPKIN)) {
+			return false;
+		} else {
+			Vec3d vec3d = player.getLook(1.0F).normalize();
+			Vec3d vec3d1 = new Vec3d(this.posX - player.posX, this.getEntityBoundingBox().minY + (double)this.getEyeHeight() - (player.posY + (double)player.getEyeHeight()), this.posZ - player.posZ);
+			double d0 = vec3d1.length();
+			vec3d1 = vec3d1.normalize();
+			double d1 = vec3d.dotProduct(vec3d1);
+
+			return d1 > 1.0D - 0.025D / d0 ? player.canEntityBeSeen(this) : false;
+		}
 	}
 
 	@Override
@@ -212,6 +232,78 @@ public class EntityEnderSkeleton extends EntityEnderman implements IRangedAttack
 	@Override
 	public void setSwingingArms(boolean swingingArms) {
 		this.dataManager.set(SWINGING_ARMS, swingingArms);
+	}
+
+	static class AIFindPlayer extends EntityAINearestAttackableTarget<EntityPlayer> {
+
+		private final EntityEnderSkeleton enderSkeleton;
+		private EntityPlayer player;
+		private int aggroTime;
+		private int teleportTime;
+
+		public AIFindPlayer(EntityEnderSkeleton enderSkeleton) {
+			super(enderSkeleton, EntityPlayer.class, false);
+			this.enderSkeleton = enderSkeleton;
+		}
+
+		public boolean shouldExecute() {
+			double distance = this.getTargetDistance();
+
+			this.player = this.enderSkeleton.world.getNearestAttackablePlayer(this.enderSkeleton.posX, this.enderSkeleton.posY, this.enderSkeleton.posZ, distance, distance, null, new Predicate<EntityPlayer>() {
+				public boolean apply(@Nullable EntityPlayer player) {
+					return player != null && EntityEnderSkeleton.AIFindPlayer.this.enderSkeleton.shouldAttackPlayer(player);
+				}
+			});
+
+			return this.player != null;
+		}
+
+		public void startExecuting() {
+			this.aggroTime = 5;
+			this.teleportTime = 0;
+		}
+
+		public void resetTask() {
+			this.player = null;
+			super.resetTask();
+		}
+
+		public boolean shouldContinueExecuting() {
+			if(this.player != null) {
+				if(!this.enderSkeleton.shouldAttackPlayer(this.player)) {
+					return false;
+				} else {
+					this.enderSkeleton.faceEntity(this.player, 10.0F, 10.0F);
+					return true;
+				}
+			} else {
+				return this.targetEntity != null && this.targetEntity.isEntityAlive() ? true : super.shouldContinueExecuting();
+			}
+		}
+
+		public void updateTask() {
+			if(this.player != null) {
+				if(--this.aggroTime <= 0) {
+					this.targetEntity = this.player;
+					this.player = null;
+					super.startExecuting();
+				}
+			} else {
+				if(this.targetEntity != null) {
+					if(this.enderSkeleton.shouldAttackPlayer(this.targetEntity)) {
+						if(this.targetEntity.getDistanceSq(this.enderSkeleton) < 16.0D) {
+							this.enderSkeleton.teleportRandomly();
+						}
+
+						this.teleportTime = 0;
+					} else if (this.targetEntity.getDistanceSq(this.enderSkeleton) > 256.0D && this.teleportTime++ >= 30 && this.enderSkeleton.teleportToEntity(this.targetEntity)) {
+						this.teleportTime = 0;
+					}
+				}
+
+				super.updateTask();
+			}
+		}
 	}
 
 }

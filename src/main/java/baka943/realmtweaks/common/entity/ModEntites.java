@@ -18,16 +18,26 @@ public class ModEntites {
 	public static void init() {
 		int id = 1;
 
-		EntityRegistry.registerModEntity(Utils.getRL("swamp_spider"), EntitySwampSpider.class, "realmtweaks.swamp_spider", id++, RealmTweaks.instance, 64, 3, true, 0x00ff00, 0x996600);
-		EntityRegistry.registerModEntity(Utils.getRL("ender_zombie"), EntityEnderZombie.class, "realmtweaks.ender_zombie", id++, RealmTweaks.instance, 64, 3, true, 0x00ff00, 0x996600);
-		EntityRegistry.registerModEntity(Utils.getRL("ender_skeleton"), EntityEnderSkeleton.class, "realmtweaks.ender_skeleton", id++, RealmTweaks.instance, 64, 3, true, 0x00ff00, 0x996600);
+		if(RealmTweaks.isBetweenlandsLoaded) {
+			EntityRegistry.registerModEntity(Utils.getRL("swamp_spider"), EntitySwampSpider.class, "realmtweaks.swamp_spider", id++, RealmTweaks.instance, 64, 3, true, 0x00ff00, 0x996600);
+		}
+
+		if(RealmTweaks.isBloodMagicLoaded) {
+			EntityRegistry.registerModEntity(Utils.getRL("ender_zombie"), EntityEnderZombie.class, "realmtweaks.ender_zombie", id++, RealmTweaks.instance, 64, 3, true, 1447446, 0);
+			EntityRegistry.registerModEntity(Utils.getRL("ender_skeleton"), EntityEnderSkeleton.class, "realmtweaks.ender_skeleton", id++, RealmTweaks.instance, 64, 3, true, 1447446, 0);
+		}
 	}
 
 	@SideOnly(Side.CLIENT)
 	public static void initModels() {
-		RenderingRegistry.registerEntityRenderingHandler(EntitySwampSpider.class, RenderSwampSpider::new);
-		RenderingRegistry.registerEntityRenderingHandler(EntityEnderZombie.class, RenderEnderZombie::new);
-		RenderingRegistry.registerEntityRenderingHandler(EntityEnderSkeleton.class, RenderEnderSkeleton::new);
+		if(RealmTweaks.isBetweenlandsLoaded) {
+			RenderingRegistry.registerEntityRenderingHandler(EntitySwampSpider.class, RenderSwampSpider::new);
+		}
+
+		if(RealmTweaks.isBloodMagicLoaded) {
+			RenderingRegistry.registerEntityRenderingHandler(EntityEnderZombie.class, RenderEnderZombie::new);
+			RenderingRegistry.registerEntityRenderingHandler(EntityEnderSkeleton.class, RenderEnderSkeleton::new);
+		}
 	}
 
 }

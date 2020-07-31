@@ -22,7 +22,6 @@ public class ModelEnderSkeleton extends ModelBiped {
 		this(0.0F, false);
 	}
 
-
 	public ModelEnderSkeleton(float modelSize, boolean flag) {
 		super(modelSize, 0.0F, 64, 32);
 

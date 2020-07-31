@@ -29,7 +29,7 @@ import java.util.List;
 
 public class EntityBoneHook extends EntityFishHook {
 
-	private static final ResourceLocation BETWEENLANDS_FISHING = Utils.getRL("betweenlands/fishing");
+	private static final ResourceLocation BETWEENLANDS_FISHING = Utils.getRL("betweenlands/fishings/fishing");
 
 	private static final DataParameter<Integer> PLAYER_ID = EntityDataManager.createKey(EntityBoneHook.class, DataSerializers.VARINT);
 	private static final DataParameter<BlockPos> POS = EntityDataManager.createKey(EntityBoneHook.class, DataSerializers.BLOCK_POS);
@@ -87,7 +87,7 @@ public class EntityBoneHook extends EntityFishHook {
 					double posX = this.angler.posX - this.posX;
 					double posY = this.angler.posY - this.posY;
 					double posZ = this.angler.posZ - this.posZ;
-					double pos = (double) MathHelper.sqrt(posX * posX + posY * posY + posZ * posZ);
+					double pos = MathHelper.sqrt(posX * posX + posY * posY + posZ * posZ);
 
 					entityItem.motionX = posX * 0.1D;
 					entityItem.motionY = posY * 0.1D + (double) MathHelper.sqrt(pos) * 0.08D;
@@ -96,7 +96,9 @@ public class EntityBoneHook extends EntityFishHook {
 					this.world.spawnEntity(entityItem);
 					this.angler.world.spawnEntity(new EntityXPOrb(this.angler.world, this.angler.posX, this.angler.posY + 0.5D, this.angler.posZ + 0.5D, this.rand.nextInt(6) + 1));
 
-					if(stack.getItem() == Items.STRING && rand.nextInt(3) == 0) {
+					if(stack.getItem() == Items.STRING) {
+						entityItem.setDead();
+
 						EntitySwampSpider spider = new EntitySwampSpider(this.world);
 						spider.copyLocationAndAnglesFrom(entityItem);
 
@@ -106,8 +108,6 @@ public class EntityBoneHook extends EntityFishHook {
 
 						this.world.spawnEntity(spider);
 						this.angler.sendStatusMessage(new TextComponentTranslation("chat." + LibMisc.MOD_ID + ".fishing_spider"), true);
-
-						entityItem.setDead();
 					}
 				}
 

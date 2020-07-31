@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "inventory": { "model": "realmtweaks:meteorite" },
+    "normal": { "model": "realmtweaks:meteorite" }
+  }
+}

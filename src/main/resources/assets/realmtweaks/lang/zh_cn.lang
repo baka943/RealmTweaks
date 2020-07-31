@@ -2,7 +2,7 @@
 tile.realmtweaks.alternate_sapling.name=狱世树苗
 tile.realmtweaks.another_sapling.name=另世树苗
 tile.realmtweaks.nightmare_sapling.name=末世树苗
-tile.realmtweaks.blooded_end_stone.name=血染末地石
+tile.realmtweaks.blooded_end_stone.name=染血末地石
 
 # Items
 item.realmtweaks.ender_shard.name=末影碎片
@@ -10,13 +10,12 @@ item.realmtweaks.advancement_book.name=进度之书
 item.realmtweaks.forest_bat.name=森林蝙蝠
 item.realmtweaks.paper_tool.name=“纸质工具”
 item.realmtweaks.parchment_tool.name=“羊皮纸工具”
-item.realmtweaks.tome_tool.name=“书卷工具”
+item.realmtweaks.ender_tool.name=“末影工具”
 item.realmtweaks.debug_tool.name=“调试工具”
 item.realmtweaks.blood_tear.name=血泪
 
 # Fluid
-fluid.realmtweaks.octine=熔融炽炎铁
-fluid.realmtweaks.syrmorite=熔融赛摩铜
+fluid.realmtweaks.impure_life_essence=不纯的生命源质
 
 # Entity
 entity.realmtweaks.swamp_spider.name=沼泽蜘蛛
@@ -30,7 +29,6 @@ generator.realmtweaks_atlantis.info=注意: 无尽之海
 # Chats
 chat.realmtweaks.wrong=啥子情况?
 chat.realmtweaks.fishing_spider=哇，蜘蛛 —— Francium87
-chat.realmtweaks.end_sky=§3我喜欢这个玩家，它玩得很好，没有放弃过
 
 # Tooltips
 tooltip.realmtweaks.paper_tool=看起来挺“实用”的

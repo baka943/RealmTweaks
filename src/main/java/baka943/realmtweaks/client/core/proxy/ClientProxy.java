@@ -1,5 +1,6 @@
 package baka943.realmtweaks.client.core.proxy;
 
+import baka943.realmtweaks.common.core.handler.RandomChickenTextures;
 import baka943.realmtweaks.common.core.proxy.IProxy;
 import baka943.realmtweaks.common.entity.ModEntites;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -10,6 +11,7 @@ public class ClientProxy implements IProxy {
 
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
+		RandomChickenTextures.preInitClient(event);
 		ModEntites.initModels();
 	}
 

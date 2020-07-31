@@ -13,7 +13,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 
 import java.util.Locale;
-import java.util.Objects;
 
 @Mod.EventBusSubscriber(value = Side.CLIENT, modid = LibMisc.MOD_ID)
 public final class ModelHandler {

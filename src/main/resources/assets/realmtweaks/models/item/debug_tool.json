@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "realmtweaks:items/forest_bat"
+    "layer0": "minecraft:items/stick"
   }
 }

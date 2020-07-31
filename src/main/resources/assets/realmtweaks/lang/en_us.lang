@@ -3,6 +3,10 @@ tile.realmtweaks.alternate_sapling.name=Alternate Sapling
 tile.realmtweaks.another_sapling.name=Another Sapling
 tile.realmtweaks.nightmare_sapling.name=Nightmare Sapling
 tile.realmtweaks.blooded_end_stone.name=Blooded End Stone
+tile.realmtweaks.meteorite.name=Meteorite
+tile.realmtweaks.meteorite_iron_ore.name=Meteorite Iron Ore
+tile.realmtweaks.meteorite_dilithium_ore.name=Meteorite Dilithium Ore
+tile.realmtweaks.meteorite_tritanium_ore.name=Meteorite Tritanium Ore
 
 # Items
 item.realmtweaks.ender_shard.name=Ender Shard
@@ -10,13 +14,15 @@ item.realmtweaks.advancement_book.name=Advancement Book
 item.realmtweaks.forest_bat.name=Forest Bat
 item.realmtweaks.paper_tool.name="Paper Tool"
 item.realmtweaks.parchment_tool.name="Parchment Tool"
-item.realmtweaks.tome_tool.name="Tome Tool"
+item.realmtweaks.ender_tool.name="Ender Tool"
 item.realmtweaks.debug_tool.name="Debug Tool"
 item.realmtweaks.blood_tear.name=Blood Tear
+item.realmtweaks.bark_livingwood.name=Livingwood Bark
+item.realmtweaks.bark_weedwood.name=Weedwood Bark
+item.realmtweaks.octine_flintstones.name=Octine Flintstones
 
 # Fluid
-fluid.realmtweaks.octine=Molten Octine
-fluid.realmtweaks.syrmorite=Molten Syrmorite
+fluid.realmtweaks.impure_life_essence=Impure Life Essence
 
 # Entity
 entity.realmtweaks.swamp_spider.name=Swamp Spider
@@ -30,8 +36,10 @@ generator.realmtweaks_atlantis.info=Notice: Endless Ocean
 # Chats
 chat.realmtweaks.wrong=What went wrong?
 chat.realmtweaks.fishing_spider=Wow, Spider -- Francium87
-chat.realmtweaks.end_sky=§3I like this player. It played well. It did not give up.
+chat.realmtweaks.mod_disable=§3Mr. Torcherino, are you ok?
+chat.realmtweaks.cooldown_attack=§cAttack Cooldown
 
 # Tooltips
 tooltip.realmtweaks.paper_tool=Looks very "practical"
 tooltip.realmtweaks.paper_tool_original=Once this was a %s
+tooltip.realmtweaks.blood_tear=Will drop the end

@@ -51,6 +51,7 @@ public class BlockRealmSapling extends BlockBush implements IModelRegister {
 		return dim;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Nonnull
 	@Override
 	public AxisAlignedBB getBoundingBox(@Nonnull IBlockState state, @Nonnull IBlockAccess source, @Nonnull BlockPos pos) {
@@ -64,7 +65,7 @@ public class BlockRealmSapling extends BlockBush implements IModelRegister {
 		if(!worldIn.isRemote && ItemSwampTalisman.EnumTalisman.SWAMP_TALISMAN_0.isItemOf(stack) || ItemSwampTalisman.EnumTalisman.SWAMP_TALISMAN_5.isItemOf(stack)) {
 			WorldGenWeedwoodPortalTree gen;
 
-			if(worldIn.provider.getDimension() == Utils.getDimensionId("betweenlands")) {
+			if(worldIn.provider.getDimension() == Utils.getDimId("betweenlands")) {
 				gen = new WorldGenWeedwoodPortalTree(this.getDim());
 			} else {
 				gen = new WorldGenWeedwoodPortalTree(worldIn.provider.getDimension());
@@ -75,7 +76,7 @@ public class BlockRealmSapling extends BlockBush implements IModelRegister {
 				playerIn.setLocationAndAngles(pos.getX() + 0.5D, pos.getY() + 2D, pos.getZ() + 0.5D, playerIn.rotationYaw, playerIn.rotationPitch);
 
 				if(playerIn instanceof EntityPlayerMP) {
-					((EntityPlayerMP) playerIn).connection.setPlayerLocation(pos.getX() + 0.5D, pos.getY() + 2D, pos.getZ() + 0.5D, playerIn.rotationYaw, playerIn.rotationPitch);
+					((EntityPlayerMP)playerIn).connection.setPlayerLocation(pos.getX() + 0.5D, pos.getY() + 2D, pos.getZ() + 0.5D, playerIn.rotationYaw, playerIn.rotationPitch);
 				}
 			} else {
 				playerIn.sendStatusMessage(new TextComponentTranslation("chat.talisman.noplace"), true);

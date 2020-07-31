@@ -4,14 +4,8 @@
     "model": "forge:fluid"
   },
   "variants": {
-    "octine": [{
-      "custom": {"fluid": "octine"}
-    }],
-    "syrmorite": [{
-      "custom": {"fluid": "syrmorite"}
-    }],
-    "lifecore": [{
-      "custom": {"fluid": "lifecore"}
+      "impure_life_essence": [{
+      "custom": {"fluid": "impure_life_essence"}
     }]
   }
 }

@@ -14,7 +14,6 @@ public class FluidMod extends Fluid {
 		this.setDensity(4000);
 		this.setViscosity(3000);
 		this.setTemperature(550);
-		this.setLuminosity(15);
 	}
 
 	@Override

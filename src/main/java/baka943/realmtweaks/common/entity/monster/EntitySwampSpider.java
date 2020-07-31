@@ -25,11 +25,11 @@ public class EntitySwampSpider extends EntitySpider {
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(12.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
 	}
 
 	@Override
-	public boolean attackEntityAsMob(Entity entityIn) {
+	public boolean attackEntityAsMob(@Nonnull Entity entityIn) {
 		if(super.attackEntityAsMob(entityIn)) {
 			if(entityIn instanceof EntityLivingBase) {
 				int i = 0;
@@ -59,12 +59,6 @@ public class EntitySwampSpider extends EntitySpider {
 	@Override
 	public float getEyeHeight() {
 		return 0.45F;
-	}
-
-	@Nullable
-	@Override
-	protected ResourceLocation getLootTable() {
-		return null;
 	}
 
 }

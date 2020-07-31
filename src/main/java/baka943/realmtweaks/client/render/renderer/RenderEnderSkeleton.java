@@ -1,6 +1,7 @@
 package baka943.realmtweaks.client.render.renderer;
 
 import baka943.realmtweaks.client.core.model.ModelEnderSkeleton;
+import baka943.realmtweaks.client.render.renderer.layers.LayerEnderSkeletonClothing;
 import baka943.realmtweaks.common.entity.monster.EntityEnderSkeleton;
 import baka943.realmtweaks.common.lib.Utils;
 import net.minecraft.client.renderer.GlStateManager;
@@ -31,6 +32,7 @@ public class RenderEnderSkeleton extends RenderBiped<EntityEnderSkeleton> {
 
 		this.addLayer(layerBipedArmor);
 		this.addLayer(new LayerHeldItem(this));
+		this.addLayer(new LayerEnderSkeletonClothing(this));
 	}
 
 	@Override

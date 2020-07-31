@@ -39,7 +39,7 @@ public class WorldGenSwampCircle extends WorldGenDruidCircle {
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-		if(world.provider.getDimension() == Utils.getDimensionId("betweenlands")) {
+		if(world.provider.getDimension() == Utils.getDimId("betweenlands")) {
 			this.generate(world, random, chunkX * 16, chunkZ * 16);
 		}
 	}
