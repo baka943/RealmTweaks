@@ -1,14 +1,13 @@
 package baka943.realmtweaks.common;
 
-import baka943.realmtweaks.common.integrations.BetweenlandsTweaks;
-import baka943.realmtweaks.common.integrations.BloodMagicTweaks;
-import baka943.realmtweaks.common.integrations.BotaniaTweaks;
-import baka943.realmtweaks.common.integrations.RootsTweaks;
-import baka943.realmtweaks.common.core.handler.*;
+import baka943.realmtweaks.common.core.handler.MapGenHandler;
+import baka943.realmtweaks.common.core.handler.OreDictHandler;
+import baka943.realmtweaks.common.core.handler.WorldTypeHandler;
 import baka943.realmtweaks.common.core.proxy.IProxy;
 import baka943.realmtweaks.common.core.tutorial.BetterGuiToast;
 import baka943.realmtweaks.common.entity.ModEntites;
 import baka943.realmtweaks.common.fluid.ModFluids;
+import baka943.realmtweaks.common.integrations.*;
 import baka943.realmtweaks.common.lib.LibMisc;
 import baka943.realmtweaks.common.world.gen.feature.WorldGenEntityMob;
 import baka943.realmtweaks.common.world.gen.structure.WorldGenSwampCircle;
@@ -30,6 +29,7 @@ public class RealmTweaks {
 	public static boolean isBotaniaLoaded;
 	public static boolean isLostCitiesLoaded;
 	public static boolean isRootsLoaded;
+	public static boolean isEmbersLoaded;
 
 	@Mod.Instance
 	public static RealmTweaks instance;
@@ -56,6 +56,7 @@ public class RealmTweaks {
 		}
 
 		WorldGenEntityMob.init();
+
 		proxy.init(event);
 	}
 
@@ -78,8 +79,6 @@ public class RealmTweaks {
 		if(isRootsLoaded) {
 			RootsTweaks.init();
 		}
-
-		proxy.postInit(event);
 	}
 
 	static {
@@ -89,6 +88,7 @@ public class RealmTweaks {
 		isBotaniaLoaded = Loader.isModLoaded("botania");
 		isLostCitiesLoaded = Loader.isModLoaded("lostcities");
 		isRootsLoaded = Loader.isModLoaded("roots");
+		isEmbersLoaded = Loader.isModLoaded("embers");
 	}
 
 }

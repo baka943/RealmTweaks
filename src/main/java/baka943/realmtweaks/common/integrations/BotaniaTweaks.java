@@ -3,7 +3,6 @@ package baka943.realmtweaks.common.integrations;
 import baka943.realmtweaks.common.RealmTweaks;
 import baka943.realmtweaks.common.item.ModItems;
 import baka943.realmtweaks.common.lib.LibMisc;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
@@ -16,8 +15,7 @@ import thebetweenlands.common.registries.BlockRegistry;
 import vazkii.botania.api.BotaniaAPI;
 import vazkii.botania.api.lexicon.LexiconEntry;
 import vazkii.botania.api.recipe.RecipePetals;
-import vazkii.botania.api.recipe.RecipePureDaisy;
-import vazkii.botania.common.block.ModBlocks;
+import vazkii.botania.common.item.block.ItemBlockFloatingSpecialFlower;
 import vazkii.botania.common.item.block.ItemBlockSpecialFlower;
 
 import java.util.Iterator;
@@ -27,22 +25,14 @@ public class BotaniaTweaks {
 	public static void init() {
 		MinecraftForge.EVENT_BUS.register(BotaniaTweaks.class);
 
-		disableBotaniaFunctionalFlower("orechid");
-		disableBotaniaFunctionalFlower("orechidIgnem");
+		disableBotaniaFunctionalFlower("entropinnyum");
 
 		BotaniaAPI.registerPureDaisyRecipe(Blocks.MAGMA, Blocks.LAVA.getDefaultState());
 
 		if(RealmTweaks.isBetweenlandsLoaded) {
 			BotaniaAPI.registerPureDaisyRecipe(BlockRegistry.SWAMP_WATER, BlockRegistry.BLACK_ICE.getDefaultState());
-
-			disablePureDaisyRecipe(ModBlocks.livingrock.getDefaultState());
-			disablePureDaisyRecipe(ModBlocks.livingwood.getDefaultState());
-			BotaniaAPI.registerPureDaisyRecipe("logWeedwood", ModBlocks.livingwood.getDefaultState(), 0);
-			BotaniaAPI.registerPureDaisyRecipe(BlockRegistry.BETWEENSTONE, ModBlocks.livingrock.getDefaultState(), 0);
-
-			BotaniaAPI.oreWeights.clear();
-			BotaniaAPI.oreWeightsNether.clear();
 		}
+
 	}
 
 	@SubscribeEvent
@@ -63,15 +53,14 @@ public class BotaniaTweaks {
 
 			if(!stack.isEmpty()) {
 				int count = stack.getCount();
-				ItemStack orechid = ItemBlockSpecialFlower.ofType("orechid");
-					orechid.setCount(count);
-				ItemStack orechidIgnem = ItemBlockSpecialFlower.ofType("orechidIgnem");
-					orechidIgnem.setCount(count);
+				ItemStack e0 = ItemBlockSpecialFlower.ofType("entropinnyum");
+					e0.setCount(count);
+				ItemStack e1 = ItemBlockFloatingSpecialFlower.ofType("entropinnyum");
+					e1.setCount(count);
 
-				if(ItemStack.areItemStacksEqual(stack, orechid) || ItemStack.areItemStacksEqual(stack, orechidIgnem)) {
+				if(ItemStack.areItemStacksEqual(stack, e0) || ItemStack.areItemStacksEqual(stack, e1)) {
 					inventory.setInventorySlotContents(i, new ItemStack(ModItems.FOREST_BAT));
-
-					player.sendMessage(new TextComponentTranslation("chat." + LibMisc.MOD_ID + ".mod_disable"));
+					player.sendMessage(new TextComponentTranslation("chat." + LibMisc.MOD_ID + ".entropinnyum_disable"));
 				}
 			}
 		}
@@ -141,20 +130,6 @@ public class BotaniaTweaks {
 
 			if(ItemStack.areItemStacksEqual(stack, output)) {
 				it2.remove();
-
-				break;
-			}
-		}
-	}
-
-	private static void disablePureDaisyRecipe(IBlockState output) {
-		Iterator<RecipePureDaisy> iterator = BotaniaAPI.pureDaisyRecipes.iterator();
-
-		while(iterator.hasNext()) {
-			IBlockState state = iterator.next().getOutputState();
-
-			if(state == output) {
-				iterator.remove();
 
 				break;
 			}

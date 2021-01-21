@@ -6,6 +6,7 @@ import baka943.realmtweaks.common.lib.Utils;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLadder;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
@@ -14,11 +15,10 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.FakePlayer;
 import net.minecraftforge.event.entity.EntityTravelToDimensionEvent;
-import net.minecraftforge.event.entity.player.AttackEntityEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
@@ -45,7 +45,7 @@ public final class EventHandler {
 	}
 
 	@SubscribeEvent
-	public static void autoLadder(PlayerInteractEvent.RightClickBlock event) {
+	public static void rightClickBlock(PlayerInteractEvent.RightClickBlock event) {
 		EntityPlayer player = event.getEntityPlayer();
 		EnumHand hand = event.getHand();
 		ItemStack stack = player.getHeldItem(hand);
@@ -56,28 +56,26 @@ public final class EventHandler {
 			World world = event.getWorld();
 			BlockPos pos = event.getPos();
 
-			while(world.getBlockState(pos).getBlock() == block) {
+			while(world.getBlockState(pos).getBlock().equals(block)) {
 				event.setCanceled(true);
 
 				BlockPos posDown = pos.down();
+				IBlockState stateDown = world.getBlockState(posDown);
 
 				if(world.isOutsideBuildHeight(posDown)) {
 					break;
 				}
 
-				IBlockState stateDown = world.getBlockState(posDown);
-
 				if(stateDown.getBlock() == block) {
 					pos = posDown;
 				} else {
 					if(stateDown.getBlock().isAir(stateDown, world, posDown)) {
-						IBlockState copyState = world.getBlockState(pos);
-
-						EnumFacing facing = copyState.getValue(BlockLadder.FACING);
+						IBlockState state = world.getBlockState(pos);
+						EnumFacing facing = state.getValue(BlockLadder.FACING);
 						BlockPos attachPos = posDown.offset(facing, -1);
 
 						if(((BlockLadder)block).canAttachTo(world, attachPos, facing)) {
-							world.setBlockState(posDown, copyState);
+							world.setBlockState(posDown, state);
 							world.playSound(null, posDown.getX(), posDown.getY(), posDown.getZ(), SoundEvents.BLOCK_LADDER_PLACE, SoundCategory.BLOCKS, 1F, 1F);
 
 							if(world.isRemote) {
@@ -100,7 +98,7 @@ public final class EventHandler {
 		}
 	}
 
-	@SubscribeEvent(priority = EventPriority.HIGH)
+	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public static void chargeDimension(EntityTravelToDimensionEvent event) {
 		if(event.isCanceled()) {
 			return;
@@ -123,13 +121,19 @@ public final class EventHandler {
 	}
 
 	@SubscribeEvent
-	public static void attackPrevent(AttackEntityEvent event) {
-		EntityPlayer player = event.getEntityPlayer();
+	public static void playerHurt(LivingHurtEvent event) {
+		if(event.getEntity() instanceof EntityPlayer) {
+			EntityPlayer player = (EntityPlayer)event.getEntity();
 
-		if(player.getCooledAttackStrength(1) != 1) {
-			event.setCanceled(true);
+			if(!player.world.isRemote && event.getSource().getTrueSource() instanceof EntityMob) {
+				float currentHealth = player.getHealth();
+				float maxHealth = player.getMaxHealth();
+				float damage = event.getAmount();
 
-			player.sendStatusMessage(new TextComponentTranslation("chat." + LibMisc.MOD_ID + ".cooldown_attack"), true);
+				if(currentHealth < maxHealth) {
+					event.setAmount(Math.max(1.0F, damage * (currentHealth / maxHealth)));
+				}
+			}
 		}
 	}
 

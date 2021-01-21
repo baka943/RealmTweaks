@@ -12,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import thebetweenlands.common.registries.BlockRegistry;
@@ -75,63 +76,63 @@ public final class PaperToolHandler {
 					} else inventory.setInventorySlotContents(i, ItemStack.EMPTY);
 				}
 
-				//Parchment Tool
-				if(dimension != Utils.getDimId("betweenlands") && isToolParchmented(stack)) {
-					ItemStack replaceToolStack = new ItemStack(ModItems.PARCHMENT_TOOL);
-
-					ModItems.PARCHMENT_TOOL.setOriginalStack(replaceToolStack, stack);
-					inventory.setInventorySlotContents(i, replaceToolStack);
-				}
-
-				if(dimension == Utils.getDimId("betweenlands")) {
-					if(item == ModItems.PARCHMENT_TOOL) {
-						ItemStack originalStack = ModItems.PARCHMENT_TOOL.getOriginalStack(stack);
-
-						if(!originalStack.isEmpty()) {
-							inventory.setInventorySlotContents(i, originalStack);
-						} else inventory.setInventorySlotContents(i, ItemStack.EMPTY);
-					}
-
-					if(item.equals(new ItemBlock(Blocks.COBBLESTONE))) {
-						inventory.setInventorySlotContents(i, new ItemStack(BlockRegistry.BETWEENSTONE, stack.getCount()));
-					}
-
-					if(item.equals(new ItemBlock(Blocks.STONE)) && item.getMetadata(stack) == 0) {
-						inventory.setInventorySlotContents(i, new ItemStack(BlockRegistry.SMOOTH_BETWEENSTONE, stack.getCount()));
-					}
-				}
-
-				//Ender Tool
-				if(dimension != Utils.getDimId("the_end") && isToolEndered(stack)) {
-					ItemStack replaceToolStack = new ItemStack(ModItems.ENDER_TOOL);
-
-					ModItems.ENDER_TOOL.setOriginalStack(replaceToolStack, stack);
-					inventory.setInventorySlotContents(i, replaceToolStack);
-				}
-
-				if(dimension == Utils.getDimId("the_end") && item == ModItems.ENDER_TOOL) {
-					ItemStack originalStack = ModItems.ENDER_TOOL.getOriginalStack(stack);
-
-					if(!originalStack.isEmpty()) {
-						inventory.setInventorySlotContents(i, originalStack);
-					} else inventory.setInventorySlotContents(i, ItemStack.EMPTY);
-				}
-
-				//Debug Tool
-				if(dimension != Utils.getDimId("lostcities") && isToolDebuged(stack)) {
-					ItemStack replaceToolStack = new ItemStack(ModItems.DEBUG_TOOL);
-
-					ModItems.DEBUG_TOOL.setOriginalStack(replaceToolStack, stack);
-					inventory.setInventorySlotContents(i, replaceToolStack);
-				}
-
-				if(dimension == Utils.getDimId("lostcities") && item == ModItems.DEBUG_TOOL) {
-					ItemStack originalStack = ModItems.DEBUG_TOOL.getOriginalStack(stack);
-
-					if(!originalStack.isEmpty()) {
-						inventory.setInventorySlotContents(i, originalStack);
-					} else inventory.setInventorySlotContents(i, ItemStack.EMPTY);
-				}
+//				//Parchment Tool
+//				if(dimension != Utils.getDimId("betweenlands") && isToolParchmented(stack)) {
+//					ItemStack replaceToolStack = new ItemStack(ModItems.PARCHMENT_TOOL);
+//
+//					ModItems.PARCHMENT_TOOL.setOriginalStack(replaceToolStack, stack);
+//					inventory.setInventorySlotContents(i, replaceToolStack);
+//				}
+//
+//				if(dimension == Utils.getDimId("betweenlands")) {
+//					if(item == ModItems.PARCHMENT_TOOL) {
+//						ItemStack originalStack = ModItems.PARCHMENT_TOOL.getOriginalStack(stack);
+//
+//						if(!originalStack.isEmpty()) {
+//							inventory.setInventorySlotContents(i, originalStack);
+//						} else inventory.setInventorySlotContents(i, ItemStack.EMPTY);
+//					}
+//
+//					if(item.equals(new ItemBlock(Blocks.COBBLESTONE))) {
+//						inventory.setInventorySlotContents(i, new ItemStack(BlockRegistry.BETWEENSTONE, stack.getCount()));
+//					}
+//
+//					if(item.equals(new ItemBlock(Blocks.STONE)) && item.getMetadata(stack) == 0) {
+//						inventory.setInventorySlotContents(i, new ItemStack(BlockRegistry.SMOOTH_BETWEENSTONE, stack.getCount()));
+//					}
+//				}
+//
+//				//Ender Tool
+//				if(dimension != Utils.getDimId("the_end") && isToolEndered(stack)) {
+//					ItemStack replaceToolStack = new ItemStack(ModItems.ENDER_TOOL);
+//
+//					ModItems.ENDER_TOOL.setOriginalStack(replaceToolStack, stack);
+//					inventory.setInventorySlotContents(i, replaceToolStack);
+//				}
+//
+//				if(dimension == Utils.getDimId("the_end") && item == ModItems.ENDER_TOOL) {
+//					ItemStack originalStack = ModItems.ENDER_TOOL.getOriginalStack(stack);
+//
+//					if(!originalStack.isEmpty()) {
+//						inventory.setInventorySlotContents(i, originalStack);
+//					} else inventory.setInventorySlotContents(i, ItemStack.EMPTY);
+//				}
+//
+//				//Debug Tool
+//				if(dimension != Utils.getDimId("lostcities") && isToolDebuged(stack)) {
+//					ItemStack replaceToolStack = new ItemStack(ModItems.DEBUG_TOOL);
+//
+//					ModItems.DEBUG_TOOL.setOriginalStack(replaceToolStack, stack);
+//					inventory.setInventorySlotContents(i, replaceToolStack);
+//				}
+//
+//				if(dimension == Utils.getDimId("lostcities") && item == ModItems.DEBUG_TOOL) {
+//					ItemStack originalStack = ModItems.DEBUG_TOOL.getOriginalStack(stack);
+//
+//					if(!originalStack.isEmpty()) {
+//						inventory.setInventorySlotContents(i, originalStack);
+//					} else inventory.setInventorySlotContents(i, ItemStack.EMPTY);
+//				}
 
 				//Disable Tool
 				if(item instanceof ItemTool && !isToolPapered(stack) && !isToolParchmented(stack) && !isToolEndered(stack) && !isToolDebuged(stack) && !Utils.getModId(stack).equals("psi") && !Utils.getModId(stack).equals("draconicevolution") && !Utils.getModId(stack).equals("redstonearsenal") && !Utils.getModId(stack).equals("pyrotech") && !Utils.getModId(stack).equals("artisanworktables")) {
@@ -222,10 +223,12 @@ public final class PaperToolHandler {
 		DISABLE_LIST.add("projecte");
 		DISABLE_LIST.add("randomthings");
 		DISABLE_LIST.add("cyclicmagic");
-		DISABLE_LIST.add("akashictome");
 		DISABLE_LIST.add("integrateddynamics");
 		DISABLE_LIST.add("notenoughwands");
 		DISABLE_LIST.add("torcherino");
+
+		//
+		PAPERTOOL_LIST.put(Utils.getRL("default"), stack -> stack.getItem() instanceof ItemTool && Utils.getModId(stack).equals("minecraft"));
 	}
 
 }

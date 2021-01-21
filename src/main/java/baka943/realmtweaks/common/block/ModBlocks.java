@@ -4,6 +4,7 @@ import baka943.realmtweaks.common.RealmTweaks;
 import baka943.realmtweaks.common.fluid.ModFluids;
 import baka943.realmtweaks.common.lib.LibMisc;
 import baka943.realmtweaks.common.lib.Utils;
+import epicsquid.roots.api.CustomPlantType;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;

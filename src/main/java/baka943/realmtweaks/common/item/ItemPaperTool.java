@@ -66,7 +66,7 @@ public class ItemPaperTool extends ItemSword implements IModelRegister {
 		ItemStack originalStack = this.getOriginalStack(stack);
 
 		if(!originalStack.isEmpty() && originalStack.getItem() != Items.AIR) {
-			list.addAll(ItemTooltipHandler.splitTooltip(net.minecraft.util.text.translation.I18n.translateToLocalFormatted("tooltip." + LibMisc.MOD_ID + ".paper_tool_original", originalStack.getRarity().color + originalStack.getDisplayName()).trim(), 0));
+			list.addAll(ItemTooltipHandler.splitTooltip(I18n.format("tooltip." + LibMisc.MOD_ID + ".paper_tool_original", originalStack.getRarity().color + originalStack.getDisplayName()).trim(), 0));
 		}
 
 		list.addAll(ItemTooltipHandler.splitTooltip(I18n.format("tooltip." + LibMisc.MOD_ID + ".paper_tool"), 0));

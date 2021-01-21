@@ -217,7 +217,7 @@ public class EntityEnderSkeleton extends EntityEnderman implements IRangedAttack
 			entityArrow.setEnchantmentEffectsFromEntity(this, distanceFactor);
 
 			if(stack.getItem() == Items.TIPPED_ARROW && entityArrow instanceof EntityTippedArrow) {
-				((EntityTippedArrow) entityArrow).setPotionEffect(stack);
+				((EntityTippedArrow)entityArrow).setPotionEffect(stack);
 			}
 
 			return entityArrow;

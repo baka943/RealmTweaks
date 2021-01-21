@@ -46,11 +46,12 @@ public class BetweenlandsTweaks {
 
 		FIRE_TOOL_WHITELIST.put(Utils.getRL("default_whitelist"), stack -> stack.getItem() instanceof ItemOctineFlintstones);
 		TORCH_WHITELIST.put(Utils.getRL("default_whitelist"), stack -> stack.getItem() == Item.getItemFromBlock(Blocks.REDSTONE_TORCH));
-		ROTTING_WHITELIST.put(Utils.getRL("default_whitelist"), stack -> stack.getItem() instanceof ItemFood && (Utils.getModId(stack).equals("minecraft") || Utils.getModId(stack).equals("roots") || Utils.getModId(stack).equals("mysticalworld")));
+		ROTTING_WHITELIST.put(Utils.getRL("default_whitelist"), stack -> stack.getItem() instanceof ItemFood && (Utils.getModId(stack).equals("roots") || Utils.getModId(stack).equals("mysticalworld")));
 
 		if(RealmTweaks.isRootsLoaded) {
 			TOOL_WHITELIST.put(Utils.getRL("default_whitelist"), stack -> stack.getItem() instanceof ItemDruidKnife);
 		}
+
 	}
 
 	@SubscribeEvent
@@ -165,8 +166,8 @@ public class BetweenlandsTweaks {
 
 			if(block == BlockRegistry.SWAMP_TALLGRASS) {
 				for(ItemStack stack : drops) {
-					if(stack.isEmpty()) {
-						drops.add(new ItemStack(rand.nextInt(3) == 0 ? ModItems.wildroot : null));
+					if(stack.isEmpty() && rand.nextInt(10) == 0) {
+						drops.add(new ItemStack(ModItems.wildroot));
 					}
 				}
 			}

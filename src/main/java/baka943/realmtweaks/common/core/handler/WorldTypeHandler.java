@@ -19,7 +19,7 @@ public class WorldTypeHandler {
 		GuiScreen screen = event.getGui();
 
 		if(screen instanceof GuiCreateWorld) {
-			GuiCreateWorld createWorld = (GuiCreateWorld) screen;
+			GuiCreateWorld createWorld = (GuiCreateWorld)screen;
 
 			if(createWorld.selectedIndex == WorldType.DEFAULT.getId()) {
 				createWorld.selectedIndex = atlantis.getId();

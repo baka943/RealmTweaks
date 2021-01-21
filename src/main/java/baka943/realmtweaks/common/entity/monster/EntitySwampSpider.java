@@ -7,7 +7,6 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.init.MobEffects;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
@@ -34,15 +33,15 @@ public class EntitySwampSpider extends EntitySpider {
 			if(entityIn instanceof EntityLivingBase) {
 				int i = 0;
 
-				if(this.world.getDifficulty() == EnumDifficulty.NORMAL) {
-					i = 7;
-				} else if(this.world.getDifficulty() == EnumDifficulty.HARD) {
+				if(this.world.getDifficulty() == EnumDifficulty.HARD) {
 					i = 15;
+				} else if(this.world.getDifficulty() == EnumDifficulty.NORMAL) {
+					i = 7;
 				}
 
 				if(i > 0) {
-					((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(MobEffects.POISON, i * 20, 0));
-					((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(MobEffects.WEAKNESS, i * 20, 0));
+					((EntityLivingBase)entityIn).addPotionEffect(new PotionEffect(MobEffects.POISON, i * 20, 0));
+					((EntityLivingBase)entityIn).addPotionEffect(new PotionEffect(MobEffects.WEAKNESS, i * 20, 0));
 				}
 			}
 

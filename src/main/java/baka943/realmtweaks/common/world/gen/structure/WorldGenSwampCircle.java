@@ -27,16 +27,6 @@ public class WorldGenSwampCircle extends WorldGenDruidCircle {
 
 	private static final IBlockState[] RUNE_STONES;
 
-	static {
-		RUNE_STONES = new IBlockState[]{
-				BlockRegistry.DRUID_STONE_1.getDefaultState(),
-				BlockRegistry.DRUID_STONE_2.getDefaultState(),
-				BlockRegistry.DRUID_STONE_3.getDefaultState(),
-				BlockRegistry.DRUID_STONE_4.getDefaultState(),
-				BlockRegistry.DRUID_STONE_5.getDefaultState()
-		};
-	}
-
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
 		if(world.provider.getDimension() == Utils.getDimId("betweenlands")) {
@@ -90,9 +80,9 @@ public class WorldGenSwampCircle extends WorldGenDruidCircle {
 		for(int x = -6; x <= 6; x++) {
 			for(int z = -6; z <= 6; z++) {
 				pos.setPos(altarX + x, altarY, altarZ + z);
-				int dSq = (int)Math.round(Math.sqrt(x * x + z * z));
+				int range = (int)Math.round(Math.sqrt(x * x + z * z));
 
-				if(dSq == 6) {
+				if(range == 6) {
 					if(x % 2 == 0 && z % 2 == 0) {
 						placePillar(world, pos, rand);
 					} else {
@@ -100,8 +90,8 @@ public class WorldGenSwampCircle extends WorldGenDruidCircle {
 					}
 				}
 
-				if(dSq <= 6) {
-					for(int yo = 0; yo < 16; yo++) {
+				if(range <= 6) {
+					for(int i = 0; i < 16; i++) {
 						Biome biome = world.getBiomeForCoordsBody(pos);
 						IBlockState state = world.getBlockState(pos);
 
@@ -121,9 +111,9 @@ public class WorldGenSwampCircle extends WorldGenDruidCircle {
 						offset -= 1;
 					}
 
-					for(int yo = 0; yo < 10; yo++) {
-						if(dSq <= 6 / 10.0F * (10 - yo) + offset) {
-							pos.setY(altarY - 2 -yo);
+					for(int i = 0; i < 10; i++) {
+						if(range <= 6 / 10.0F * (10 - i) + offset) {
+							pos.setY(altarY - 2 -i);
 							world.setBlockState(pos.toImmutable(), filler);
 						}
 					}
@@ -132,13 +122,14 @@ public class WorldGenSwampCircle extends WorldGenDruidCircle {
 		}
 
 		world.setBlockState(altar, BlockRegistry.DRUID_ALTAR.getDefaultState());
-		world.setBlockState(altar.down(), BlockRegistry.MOB_SPAWNER.getDefaultState());
-		TileEntity entity = world.getTileEntity(altar.down());
+		world.setBlockState(altar.up(3), BlockRegistry.MOB_SPAWNER.getDefaultState());
+
+		TileEntity entity = world.getTileEntity(altar.up(3));
 
 		if(entity instanceof TileEntityMobSpawnerBetweenlands) {
 			MobSpawnerLogicBetweenlands logic = ((TileEntityMobSpawnerBetweenlands)entity).getSpawnerLogic();
 
-			logic.setNextEntityName("thebetweenlands:dark_druid").setCheckRange(32.0D).setSpawnRange(6).setSpawnInAir(false).setMaxEntities(1 + world.rand.nextInt(3));
+			logic.setNextEntityName("realmtweaks:swamp_spider").setCheckRange(32.0D).setSpawnRange(6).setSpawnInAir(false).setMaxEntities(1 + world.rand.nextInt(3));
 		}
 	}
 
@@ -186,4 +177,15 @@ public class WorldGenSwampCircle extends WorldGenDruidCircle {
 	private IBlockState getRandomRuneBlock(@Nonnull Random rand) {
 		return RUNE_STONES[rand.nextInt(RUNE_STONES.length)];
 	}
+
+	static {
+		RUNE_STONES = new IBlockState[]{
+				BlockRegistry.DRUID_STONE_1.getDefaultState(),
+				BlockRegistry.DRUID_STONE_2.getDefaultState(),
+				BlockRegistry.DRUID_STONE_3.getDefaultState(),
+				BlockRegistry.DRUID_STONE_4.getDefaultState(),
+				BlockRegistry.DRUID_STONE_5.getDefaultState()
+		};
+	}
+
 }

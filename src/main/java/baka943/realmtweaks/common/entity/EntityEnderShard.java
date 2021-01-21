@@ -16,11 +16,7 @@ import net.minecraftforge.event.entity.living.EnderTeleportEvent;
 
 public class EntityEnderShard extends EntityEnderPearl {
 
-	private EntityLivingBase perlThrower;
-
-	public EntityEnderShard(World worldIn) {
-		super(worldIn);
-	}
+	private final EntityLivingBase perlThrower;
 
 	public EntityEnderShard(World worldIn, EntityLivingBase throwerIn) {
 		super(worldIn, throwerIn);
@@ -30,10 +26,9 @@ public class EntityEnderShard extends EntityEnderPearl {
 	@Override
 	protected void onImpact(RayTraceResult result) {
 		EntityLivingBase entitylivingbase = this.getThrower();
-		if (result.entityHit != null) {
-			if (result.entityHit == this.perlThrower) {
-				return;
-			}
+
+		if(result.entityHit != null) {
+			if(result.entityHit == this.perlThrower) return;
 
 			result.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, entitylivingbase), 0.0F);
 		}
@@ -52,10 +47,12 @@ public class EntityEnderShard extends EntityEnderPearl {
 
 					tileentityendgateway.teleportEntity(entitylivingbase);
 					this.setDead();
+
 					return;
 				}
 
 				tileentityendgateway.teleportEntity(this);
+
 				return;
 			}
 		}
@@ -69,7 +66,7 @@ public class EntityEnderShard extends EntityEnderPearl {
 				EntityPlayerMP entityplayermp = (EntityPlayerMP)entitylivingbase;
 
 				if(entityplayermp.connection.getNetworkManager().isChannelOpen() && entityplayermp.world == this.world && !entityplayermp.isPlayerSleeping()) {
-					EnderTeleportEvent event = new EnderTeleportEvent(entityplayermp, this.posX, this.posY, this.posZ, 5.0F);
+					EnderTeleportEvent event = new EnderTeleportEvent(entityplayermp, this.posX, this.posY, this.posZ, 1.0F);
 
 					if(!MinecraftForge.EVENT_BUS.post(event)) {
 						if(entitylivingbase.isRiding()) {
@@ -78,7 +75,7 @@ public class EntityEnderShard extends EntityEnderPearl {
 
 						entitylivingbase.setPositionAndUpdate(event.getTargetX(), event.getTargetY(), event.getTargetZ());
 						entitylivingbase.fallDistance = 0.0F;
-						entitylivingbase.attackEntityFrom(DamageSource.FALL, 1.0F);
+						entitylivingbase.attackEntityFrom(DamageSource.FALL, event.getAttackDamage());
 					}
 				}
 			} else if(entitylivingbase != null) {

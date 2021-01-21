@@ -6,7 +6,6 @@ import baka943.realmtweaks.common.entity.monster.EntityEnderZombie;
 import baka943.realmtweaks.common.entity.monster.EntitySwampSpider;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.monster.EntityBlaze;
-import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.monster.EntityGuardian;
 import net.minecraft.entity.monster.EntityWitherSkeleton;
 import net.minecraft.init.Biomes;
@@ -25,9 +24,8 @@ public class WorldGenEntityMob {
 		}
 
 		if(RealmTweaks.isBloodMagicLoaded) {
-			Biomes.SKY.getSpawnableList(EnumCreatureType.MONSTER).add(new SpawnListEntry(EntityEnderman.class, 90, 4, 4));
 			Biomes.SKY.getSpawnableList(EnumCreatureType.MONSTER).add(new SpawnListEntry(EntityEnderSkeleton.class, 5, 1, 1));
-			Biomes.SKY.getSpawnableList(EnumCreatureType.MONSTER).add(new SpawnListEntry(EntityEnderZombie.class, 5, 1, 2));
+			Biomes.SKY.getSpawnableList(EnumCreatureType.MONSTER).add(new SpawnListEntry(EntityEnderZombie.class, 20, 1, 2));
 		}
 
 		if(RealmTweaks.isBetweenlandsLoaded) {

@@ -62,7 +62,7 @@ public class BlockRealmSapling extends BlockBush implements IModelRegister {
 	public boolean onBlockActivated(World worldIn, @Nonnull BlockPos pos, @Nonnull IBlockState state, EntityPlayer playerIn, @Nonnull EnumHand hand, @Nonnull EnumFacing facing, float hitX, float hitY, float hitZ) {
 		ItemStack stack = playerIn.getHeldItem(hand);
 
-		if(!worldIn.isRemote && ItemSwampTalisman.EnumTalisman.SWAMP_TALISMAN_0.isItemOf(stack) || ItemSwampTalisman.EnumTalisman.SWAMP_TALISMAN_5.isItemOf(stack)) {
+		if(!worldIn.isRemote && (ItemSwampTalisman.EnumTalisman.SWAMP_TALISMAN_0.isItemOf(stack) || ItemSwampTalisman.EnumTalisman.SWAMP_TALISMAN_5.isItemOf(stack))) {
 			WorldGenWeedwoodPortalTree gen;
 
 			if(worldIn.provider.getDimension() == Utils.getDimId("betweenlands")) {
@@ -90,15 +90,14 @@ public class BlockRealmSapling extends BlockBush implements IModelRegister {
 	@Override
 	public void randomDisplayTick(@Nonnull IBlockState stateIn, @Nonnull World worldIn, @Nonnull BlockPos pos, @Nonnull Random rand) {
 		for (int i = 0; i < 3; ++i) {
-			int j = rand.nextInt(4) - 1;
-			int k = rand.nextInt(4) - 1;
+			int j = rand.nextInt(4) - 1, k = rand.nextInt(4) - 1;
 
-			double posX = (double)pos.getX() + 0.5D + 0.25D * (double)j;
-			double posY = (float)pos.getY() + rand.nextFloat();
-			double posZ = (double)pos.getZ() + 0.5D + 0.25D * (double)k;
-			double xV = rand.nextFloat() * (float)j;
-			double yV = ((double)rand.nextFloat() - 0.5D) * 0.125D;
-			double zV = rand.nextFloat() * (float)k;
+			double posX = pos.getX() + 0.5D + 0.25D * j;
+			double posY = pos.getY() + rand.nextFloat();
+			double posZ = pos.getZ() + 0.5D + 0.25D * k;
+			double xV = rand.nextFloat() * j;
+			double yV = (rand.nextFloat() - 0.5D) * 0.125D;
+			double zV = rand.nextFloat() * k;
 
 			worldIn.spawnParticle(EnumParticleTypes.PORTAL, posX, posY, posZ, xV, yV, zV);
 		}

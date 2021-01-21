@@ -12,15 +12,14 @@ import net.minecraftforge.registries.IForgeRegistry;
 public class ModItems {
 
 	public static final Item ENDER_SHARD = new ItemEnderShard();
-	public static final Item FOREST_BAT = new ItemMod("forest_bat");
+	public static final Item FOREST_BAT = new ItemForestBat();
 	public static final ItemPaperTool PAPER_TOOL = new ItemPaperTool("paper_tool");
 	public static final ItemPaperTool PARCHMENT_TOOL = new ItemPaperTool("parchment_tool");
 	public static final ItemPaperTool ENDER_TOOL = new ItemPaperTool("ender_tool");
 	public static final ItemPaperTool DEBUG_TOOL = new ItemPaperTool("debug_tool");
 	public static final Item ADVANCEMENT_BOOK = new ItemAdvancementBook();
-	public static final Item BLOOD_TEAR = new ItemBloodTear();
+	public static Item BLOOD_TEAR;
 	public static final Item BARK_LIVINGWOOD = new ItemMod("bark_livingwood");
-	public static final Item BARK_WEEDWOOD = new ItemMod("bark_weedwood");
 	public static Item OCTINE_FLINTSTONES;
 
 	@SubscribeEvent
@@ -29,12 +28,11 @@ public class ModItems {
 
 		if(RealmTweaks.isBloodMagicLoaded) {
 			registry.register(ENDER_SHARD);
-			registry.register(BLOOD_TEAR);
+			registry.register(BLOOD_TEAR = new ItemBloodTear());
 		}
 
 		if(RealmTweaks.isRootsLoaded) {
 			registry.register(BARK_LIVINGWOOD);
-			registry.register(BARK_WEEDWOOD);
 		}
 
 		registry.register(FOREST_BAT);

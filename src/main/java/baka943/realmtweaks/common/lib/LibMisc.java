@@ -5,14 +5,7 @@ public class LibMisc {
 	public static final String MOD_ID = "realmtweaks";
 	public static final String MOD_NAME = "Realm Tweaks";
 	public static final String VERSION = "@version@";
-	public static final String DEPENDENCIES = "required-after:crafttweaker;"
-			+ "after:thebetweenlands;"
-			+ "after:bloodmagic;"
-			+ "after:botania;"
-			+ "after:betternether;"
-			+ "after:lostcities;"
-			+ "after:roots;"
-			+ "after:jei";
+	public static final String DEPENDENCIES = "";
 
 	public static final String PROXY_SERVER = "baka943.realmtweaks.common.core.proxy.ServerProxy";
 	public static final String PROXY_CLIENT = "baka943.realmtweaks.client.core.proxy.ClientProxy";

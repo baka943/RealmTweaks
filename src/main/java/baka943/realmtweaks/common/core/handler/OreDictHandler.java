@@ -29,7 +29,6 @@ public class OreDictHandler {
 
 		if(RealmTweaks.isRootsLoaded) {
 			OreDictionary.registerOre("rootsBark", ModItems.BARK_LIVINGWOOD);
-			OreDictionary.registerOre("rootsBark", ModItems.BARK_WEEDWOOD);
 		}
 	}
 
