@@ -1,6 +1,14 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "minecraft:items/paper"
-  }
+    "layer0": "realmtweaks:items/octine_flintstones"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "toolType": 1
+      },
+      "model": "realmtweaks:item/ender_shard"
+    }
+  ]
 }

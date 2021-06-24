@@ -77,9 +77,7 @@ public class ItemBloodTear extends ItemMod implements IAltarManipulator {
 
 						((IBloodAltar)tile).fillMainTank(250);
 						world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
-					} else{
-						return super.onItemRightClick(world, player, hand);
-					}
+					} else return super.onItemRightClick(world, player, hand);
 				}
 			}
 		}
@@ -91,7 +89,7 @@ public class ItemBloodTear extends ItemMod implements IAltarManipulator {
 	@Override
 	public void addInformation(@Nonnull ItemStack stack, @Nullable World worldIn, @Nonnull List<String> tooltip, @Nonnull ITooltipFlag flagIn) {
 		tooltip.add(I18n.format("tooltip." + LibMisc.MOD_ID + ".blood_tear"));
-		tooltip.add(I18n.format("tooltip." + LibMisc.MOD_ID + "blood_tear.stored", 250));
+		tooltip.add(I18n.format("tooltip." + LibMisc.MOD_ID + ".blood_tear.stored", 250));
 	}
 
 }

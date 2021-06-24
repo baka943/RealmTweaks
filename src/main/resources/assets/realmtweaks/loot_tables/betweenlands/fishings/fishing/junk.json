@@ -122,13 +122,6 @@
             }
           ],
           "name": "thebetweenlands:items_misc"
-        },
-        {
-          "entryName": "minecraft:string",
-          "weight": 5,
-          "quality": 0,
-          "type": "item",
-          "name": "minecraft:string"
         }
       ],
       "rolls": 1.0

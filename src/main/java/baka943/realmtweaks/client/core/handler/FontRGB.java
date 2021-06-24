@@ -10,25 +10,22 @@ import java.awt.*;
 
 public class FontRGB extends FontRenderer {
 
-	private static final Minecraft mc = Minecraft.getMinecraft();
+	private static final Minecraft MINECRAFT = Minecraft.getMinecraft();
 	private float hue;
-	private float r;
-	private float g;
-	private float b;
-	private float a;
+	private float r, g, b;
 	private boolean firstLine;
 	public static FontRGB INSTANCE = new FontRGB();
 
 	private FontRGB() {
-		super(mc.gameSettings, new ResourceLocation("minecraft:textures/font/ascii.png"), mc.getTextureManager(), mc.isUnicode());
+		super(MINECRAFT.gameSettings, new ResourceLocation("minecraft:textures/font/ascii.png"), MINECRAFT.getTextureManager(), MINECRAFT.isUnicode());
 
-		((IReloadableResourceManager)mc.getResourceManager()).registerReloadListener(this);
+		((IReloadableResourceManager) MINECRAFT.getResourceManager()).registerReloadListener(this);
 	}
 
 	@Override
 	public int drawStringWithShadow(@Nonnull String text, float x, float y, int color) {
 		int length = super.drawStringWithShadow(text, x, y, color);
-		firstLine = false;
+		this.firstLine = false;
 
 		return length;
 	}
@@ -36,16 +33,16 @@ public class FontRGB extends FontRenderer {
 	@Override
 	public void drawSplitString(@Nonnull String str, int x, int y, int wrapWidth, int textColor) {
 		super.drawSplitString(str, x, y, wrapWidth, textColor);
-		firstLine = false;
+		this.firstLine = false;
 	}
 
 	public FontRGB init() {
-		hue = ((int)(Minecraft.getSystemTime() / 80) / 16F);
-		FontRenderer renderer = mc.fontRenderer;
+		this.hue = Minecraft.getSystemTime() / 960F;
+		FontRenderer renderer = MINECRAFT.fontRenderer;
 		setUnicodeFlag(renderer.getUnicodeFlag());
 		setBidiFlag(renderer.getBidiFlag());
 
-		firstLine = true;
+		this.firstLine = true;
 
 		return this;
 	}
@@ -55,49 +52,48 @@ public class FontRGB extends FontRenderer {
 		this.r = r;
 		this.g = g;
 		this.b = b;
-		this.a = a;
 
-		setHueColor();
+		this.setHueColor();
 	}
 
 	@Override
 	protected float renderDefaultChar(int ch, boolean italic) {
-		advanceHue();
-		setHueColor();
+		this.advanceHue();
+		this.setHueColor();
 
 		return super.renderDefaultChar(ch, italic);
 	}
 
 	private void advanceHue() {
-		hue += 1 / 16F;
+		this.hue += 1 / 16F;
 	}
 
 	private void setHueColor() {
-		int rgb = Color.HSBtoRGB(hue, 1.0F, 1.0F);
+		int rgb = Color.HSBtoRGB(this.hue, 1.0F, 1.0F);
 
-		if(!firstLine) {
-			super.setColor(r, g, b, a);
+		if(!this.firstLine) {
+			super.setColor(this.r, this.g, this.b, 1.0F);
 		} else {
-			if(r == g && g == b) {
+			if(this.r == this.g && this.g == this.b) {
 				super.setColor(
-						r * ColorHelper.getR(rgb),
-						g * ColorHelper.getG(rgb),
-						b * ColorHelper.getB(rgb),
-						a);
+						this.r * ColorHelper.getR(rgb),
+						this.g * ColorHelper.getG(rgb),
+						this.b * ColorHelper.getB(rgb),
+						1.0F);
 			} else {
 				super.setColor(
 						r * 0.5F * (1.0F + ColorHelper.getR(rgb)),
 						g * 0.5F * (1.0F + ColorHelper.getG(rgb)),
 						b * 0.5F * (1.0F + ColorHelper.getB(rgb)),
-						a);
+						1.0F);
 			}
 		}
 	}
 
 	@Override
 	protected float renderUnicodeChar(char ch, boolean italic) {
-		advanceHue();
-		setHueColor();
+		this.advanceHue();
+		this.setHueColor();
 
 		return super.renderUnicodeChar(ch, italic);
 	}

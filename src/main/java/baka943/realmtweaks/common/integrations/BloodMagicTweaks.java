@@ -2,7 +2,6 @@ package baka943.realmtweaks.common.integrations;
 
 import WayofTime.bloodmagic.core.RegistrarBloodMagicItems;
 import WayofTime.bloodmagic.core.data.SoulNetwork;
-import WayofTime.bloodmagic.core.data.SoulTicket;
 import WayofTime.bloodmagic.soul.IDemonWill;
 import WayofTime.bloodmagic.util.helper.NetworkHelper;
 import baka943.realmtweaks.common.block.ModBlocks;
@@ -30,7 +29,6 @@ import net.minecraftforge.event.entity.item.ItemTossEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 import java.util.Random;
 
@@ -48,41 +46,11 @@ public class BloodMagicTweaks {
 
 		if(entity != null && !entity.getEntityWorld().isRemote && entity instanceof EntityPlayer) {
 			double souls = rand.nextDouble() * 20;
-			ItemStack stack = ((IDemonWill)RegistrarBloodMagicItems.MONSTER_SOUL).createWill(0, souls);
+			ItemStack stack = ((IDemonWill) RegistrarBloodMagicItems.MONSTER_SOUL).createWill(0, souls);
 
 			if(attackedEntity instanceof EntityEnderman) {
 				if(rand.nextInt(5) == 0) {
 					event.getDrops().add(new EntityItem(attackedEntity.getEntityWorld(), attackedEntity.posX, attackedEntity.posY, attackedEntity.posZ, stack));
-				}
-			}
-		}
-	}
-
-	@SubscribeEvent
-	public static void lifeDrop(TickEvent.PlayerTickEvent event) {
-		EntityPlayer player = event.player;
-		World world = player.world;
-
-		if(event.phase == TickEvent.Phase.START) {
-			SoulNetwork network = NetworkHelper.getSoulNetwork(player);
-
-			if(network.getOrbTier() > 0 && !world.isRemote) {
-				int amount = (int)Math.ceil(network.getCurrentEssence() * 0.01);
-
-				amount *= network.getOrbTier();
-
-				if(world.getTotalWorldTime() % 30 == 0) {
-					network.syphonAndDamage(network.getPlayer(), new SoulTicket(Math.min(amount, 2500)));
-
-					if(network.getCurrentEssence() == 0) {
-						float syphon = 1.0F;
-
-						if(player.getHealth() <= 1.0F) {
-							syphon = 0.0F;
-						}
-
-						network.hurtPlayer(player, syphon);
-					}
 				}
 			}
 		}

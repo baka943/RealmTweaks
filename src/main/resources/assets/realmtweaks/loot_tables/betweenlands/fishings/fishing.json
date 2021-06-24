@@ -16,6 +16,19 @@
           "quality": 2,
           "type": "loot_table",
           "name": "realmtweaks:betweenlands/fishings/fishing/treasure"
+        },
+        {
+          "entryName": "thebetweenlands:angler_tooth",
+          "weight": 85,
+          "quality": -1,
+          "type": "item",
+          "functions": [
+            {
+              "data": 21.0,
+              "function": "minecraft:set_data"
+            }
+          ],
+          "name": "thebetweenlands:items_misc"
         }
       ],
       "rolls": 1.0

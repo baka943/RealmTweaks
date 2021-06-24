@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "inventory": { "model": "realmtweaks:between_apothecary" },
+    "normal": { "model": "realmtweaks:between_apothecary" }
+  }
+}

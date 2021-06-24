@@ -1,14 +1,11 @@
 package baka943.realmtweaks.common.entity;
 
-import baka943.realmtweaks.common.entity.monster.EntitySwampSpider;
-import baka943.realmtweaks.common.lib.LibMisc;
 import baka943.realmtweaks.common.lib.Utils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityFishHook;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -16,7 +13,6 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
@@ -24,6 +20,8 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ItemFishedEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import thebetweenlands.common.entity.mobs.EntityAngler;
+import thebetweenlands.common.registries.ItemRegistry;
 
 import java.util.List;
 
@@ -96,18 +94,17 @@ public class EntityBoneHook extends EntityFishHook {
 					this.world.spawnEntity(entityItem);
 					this.angler.world.spawnEntity(new EntityXPOrb(this.angler.world, this.angler.posX, this.angler.posY + 0.5D, this.angler.posZ + 0.5D, this.rand.nextInt(6) + 1));
 
-					if(stack.getItem() == Items.STRING) {
+					if(stack.isItemEqual(new ItemStack(ItemRegistry.ITEMS_MISC, 1, 21))) {
 						entityItem.setDead();
 
-						EntitySwampSpider spider = new EntitySwampSpider(this.world);
-						spider.copyLocationAndAnglesFrom(entityItem);
+						EntityAngler angler = new EntityAngler(this.world);
+						angler.copyLocationAndAnglesFrom(entityItem);
 
-						spider.motionX = entityItem.motionX;
-						spider.motionY = entityItem.motionY;
-						spider.motionZ = entityItem.motionZ;
+						angler.motionX = entityItem.motionX;
+						angler.motionY = entityItem.motionY;
+						angler.motionZ = entityItem.motionZ;
 
-						this.world.spawnEntity(spider);
-						this.angler.sendStatusMessage(new TextComponentTranslation("chat." + LibMisc.MOD_ID + ".fishing_spider"), true);
+						this.world.spawnEntity(angler);
 					}
 				}
 
@@ -119,9 +116,7 @@ public class EntityBoneHook extends EntityFishHook {
 			this.setDead();
 
 			return event == null ? i : event.getRodDamage();
-		} else {
-			return 0;
-		}
+		} else return 0;
 	}
 
 }

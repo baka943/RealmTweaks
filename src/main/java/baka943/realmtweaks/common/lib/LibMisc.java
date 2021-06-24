@@ -10,6 +10,4 @@ public class LibMisc {
 	public static final String PROXY_SERVER = "baka943.realmtweaks.common.core.proxy.ServerProxy";
 	public static final String PROXY_CLIENT = "baka943.realmtweaks.client.core.proxy.ClientProxy";
 
-	public static final String TAG_HAS_STARTING_ITEM = LibMisc.MOD_ID + ".starting_item";
-
 }

@@ -15,7 +15,7 @@ public class MapGenStrongholdEmpty extends MapGenStronghold {
 
 	@Override
 	public BlockPos getNearestStructurePos(@Nonnull World worldIn, @Nullable BlockPos pos, boolean findUnexplored) {
-		return new BlockPos(0, 100, 0);
+		return new BlockPos(0, 93, 0);
 	}
 
 	@Override

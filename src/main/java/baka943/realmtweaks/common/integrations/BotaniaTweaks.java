@@ -1,6 +1,5 @@
 package baka943.realmtweaks.common.integrations;
 
-import baka943.realmtweaks.common.RealmTweaks;
 import baka943.realmtweaks.common.item.ModItems;
 import baka943.realmtweaks.common.lib.LibMisc;
 import net.minecraft.entity.player.EntityPlayer;
@@ -29,10 +28,7 @@ public class BotaniaTweaks {
 
 		BotaniaAPI.registerPureDaisyRecipe(Blocks.MAGMA, Blocks.LAVA.getDefaultState());
 
-		if(RealmTweaks.isBetweenlandsLoaded) {
-			BotaniaAPI.registerPureDaisyRecipe(BlockRegistry.SWAMP_WATER, BlockRegistry.BLACK_ICE.getDefaultState());
-		}
-
+		BotaniaAPI.registerPureDaisyRecipe(BlockRegistry.SWAMP_WATER, BlockRegistry.BLACK_ICE.getDefaultState());
 	}
 
 	@SubscribeEvent

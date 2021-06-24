@@ -8,12 +8,11 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
@@ -26,22 +25,18 @@ import java.util.List;
 
 public class ItemPaperTool extends ItemSword implements IModelRegister {
 
-	public ItemPaperTool(String name) {
-		super(ToolMaterial.STONE);
-		this.setRegistryName(Utils.getRL(name));
-		this.setTranslationKey(LibMisc.MOD_ID + "." + name);
+	public ItemPaperTool() {
+		super(ToolMaterial.WOOD);
+		this.setRegistryName(Utils.getRL("paper_tool"));
+		this.setTranslationKey(LibMisc.MOD_ID + ".paper_tool");
 		this.setMaxDamage(-1);
 		this.setCreativeTab(null);
+//		this.addToolTypePropertyOverrides(this);
 	}
 
 	@Override
 	public float getDestroySpeed(@Nonnull ItemStack stack, @Nonnull IBlockState state) {
 		return 0.0F;
-	}
-
-	@Override
-	public boolean canDestroyBlockInCreative(@Nonnull World world, @Nonnull BlockPos pos, @Nonnull ItemStack stack, @Nonnull EntityPlayer player) {
-		return false;
 	}
 
 	@Override
@@ -72,13 +67,32 @@ public class ItemPaperTool extends ItemSword implements IModelRegister {
 		list.addAll(ItemTooltipHandler.splitTooltip(I18n.format("tooltip." + LibMisc.MOD_ID + ".paper_tool"), 0));
 	}
 
-	public void setOriginalStack(ItemStack stack, ItemStack originalStack) {
-		stack.setTagInfo("originalStack", originalStack.writeToNBT(new NBTTagCompound()));
-	}
-
 	public ItemStack getOriginalStack(ItemStack stack) {
 		return stack.getTagCompound() != null ? new ItemStack(stack.getTagCompound().getCompoundTag("originalStack")) : ItemStack.EMPTY;
 	}
+//
+//	public void addToolTypePropertyOverrides(Item item) {
+//		item.addPropertyOverride(new ResourceLocation("toolType"), (stack, worldIn, entityIn) -> {
+//			int type = 0;
+//
+//			for(String s : stack.getItem().getToolClasses(this.getOriginalStack(stack))) {
+//				switch(s) {
+//					case "pickaxe":
+//						type = 1;
+//						continue;
+//					case "axe":
+//						type = 2;
+//						continue;
+//					case "shovel":
+//						type = 3;
+//						continue;
+//					default:
+//						type = 0;
+//				}
+//			}
+//			return type;
+//		});
+//	}
 
 	@SideOnly(Side.CLIENT)
 	@Override

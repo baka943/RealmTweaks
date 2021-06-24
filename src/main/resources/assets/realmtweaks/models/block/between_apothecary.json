@@ -1,0 +1,10 @@
+{
+  "Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
+  "parent": "botania:block/shapes/petal_apothecary",
+  "textures": {
+    "side": "realmtweaks:blocks/apothecary/betweenstone_side",
+    "goblet": "realmtweaks:blocks/apothecary/betweenstone_goblet",
+    "top_bottom": "realmtweaks:blocks/apothecary/betweenstone_top_bottom",
+    "particle": "realmtweaks:blocks/apothecary/betweenstone_top_bottom"
+  }
+}
