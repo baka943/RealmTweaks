@@ -1,5 +1,6 @@
 package baka943.realmtweaks.common.item;
 
+import baka943.realmtweaks.common.RealmTweaks;
 import baka943.realmtweaks.common.lib.LibMisc;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
@@ -16,25 +17,32 @@ public class ModItems {
 	public static final ItemMod POWDER_WATER = new ItemMod("powder_water");
 	public static final ItemMod POWDER_AIR = new ItemMod("powder_air");
 	public static final ItemMod POWDER_EARTH = new ItemMod("powder_earth");
-	public static final ItemMod ENDSTONE_SHARD = new ItemMod("end_stone_shard");
-	public static Item BLOOD_TEAR = new ItemBloodTear();
-	public static Item OCTINE_FLINTSTONES = new ItemOctineFlintstones();
+	public static final ItemMod LEVITATED_STONE = new ItemMod("levitated_stone");
+	public static final Item BLOOD_TEAR = new ItemBloodTear();
+	public static final Item OCTINE_FLINTSTONES = new ItemOctineFlintstones();
+	public static final ItemMod BITCOIN = new ItemMod("bitcoin");
 
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event) {
 		IForgeRegistry<Item> registry = event.getRegistry();
 
-		registry.register(ENDER_SHARD);
-		registry.register(BLOOD_TEAR);
-		registry.register(ENDSTONE_SHARD);
+		if(RealmTweaks.BMLoaded) {
+			registry.register(ENDER_SHARD);
+			registry.register(BLOOD_TEAR);
+			registry.register(LEVITATED_STONE);
+		}
+
+		if(RealmTweaks.BTLoaded) {
+			registry.register(POWDER_AIR);
+			registry.register(POWDER_WATER);
+			registry.register(POWDER_EARTH);
+
+			registry.register(OCTINE_FLINTSTONES);
+		}
 
 		registry.register(FOREST_BAT);
 		registry.register(PAPER_TOOL);
-		registry.register(POWDER_AIR);
-		registry.register(POWDER_WATER);
-		registry.register(POWDER_EARTH);
-
-		registry.register(OCTINE_FLINTSTONES);
+		registry.register(BITCOIN);
 	}
 
 }

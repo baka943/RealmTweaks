@@ -1,3 +1,13 @@
+/**
+ * Sorry, I used some codes from the Botania Mod. Thanks <Vazkii> created the Botania Mod.
+ * Get the Botania Mod Source Code in github: https://github.com/Vazkii/Botania
+ *
+ * Botania is Open Source and distributed under the
+ * Botania License: http://botaniamod.net/license.php
+ *
+ * Thanks again!
+ */
+
 package baka943.realmtweaks.common.block;
 
 import baka943.realmtweaks.common.block.tile.TileBetweenAltar;
@@ -35,6 +45,7 @@ import vazkii.botania.common.lexicon.LexiconData;
 
 import javax.annotation.Nonnull;
 
+@SuppressWarnings("deprecation")
 public class BlockBetweenAltar extends BlockMod implements ILexiconable {
 
 	private static final AxisAlignedBB AABB = new AxisAlignedBB(0.125, 0.125, 0.125, 0.875, 20.0/16, 0.875);
@@ -43,8 +54,6 @@ public class BlockBetweenAltar extends BlockMod implements ILexiconable {
 		super(Material.ROCK, "between_altar");
 		setHardness(3.5F);
 		setSoundType(SoundType.STONE);
-//		setDefaultState(blockState.getBaseState()
-//				.withProperty(BotaniaStateProps.ALTAR_VARIANT, AltarVariant.DEFAULT));
 	}
 
 	@Nonnull
@@ -55,31 +64,11 @@ public class BlockBetweenAltar extends BlockMod implements ILexiconable {
 
 //	@Nonnull
 //	@Override
-//	public BlockStateContainer createBlockState() {
-//		return new BlockStateContainer(this, BotaniaStateProps.ALTAR_VARIANT);
+//	public IBlockState getActualState(@Nonnull IBlockState state, @Nonnull IBlockAccess worldIn, @Nonnull BlockPos pos) {
+//		TileEntity te = worldIn instanceof ChunkCache ? ((ChunkCache)worldIn).getTileEntity(pos, Chunk.EnumCreateEntityType.CHECK) : worldIn.getTileEntity(pos);
+//
+//		return state;
 //	}
-
-//	@Override
-//	public int getMetaFromState(IBlockState state) {
-//		return state.getValue(BotaniaStateProps.ALTAR_VARIANT).ordinal();
-//	}
-
-//	@Nonnull
-//	@Override
-//	public IBlockState getStateFromMeta(int meta) {
-//		if (meta < 0 || meta >= AltarVariant.values().length ) {
-//			meta = 0;
-//		}
-//		return getDefaultState().withProperty(BotaniaStateProps.ALTAR_VARIANT, AltarVariant.values()[meta]);
-//	}
-
-	@Nonnull
-	@Override
-	public IBlockState getActualState(@Nonnull IBlockState state, @Nonnull IBlockAccess worldIn, @Nonnull BlockPos pos) {
-		TileEntity te = worldIn instanceof ChunkCache ? ((ChunkCache)worldIn).getTileEntity(pos, Chunk.EnumCreateEntityType.CHECK) : worldIn.getTileEntity(pos);
-
-		return state;
-	}
 
 	@SideOnly(Side.CLIENT)
 	@Nonnull
@@ -88,34 +77,30 @@ public class BlockBetweenAltar extends BlockMod implements ILexiconable {
 		return BlockRenderLayer.CUTOUT;
 	}
 
-//	@Override
-//	public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
-//		for(int i = 0; i < 9; i++)
-//			list.add(new ItemStack(this, 1, i));
-//	}
-
 	@Override
 	public void onEntityCollision(World world, @Nonnull BlockPos pos, @Nonnull IBlockState state, @Nonnull Entity entity) {
 		if(!world.isRemote && entity instanceof EntityItem) {
 			TileBetweenAltar tile = (TileBetweenAltar) world.getTileEntity(pos);
+
 			if(tile.collideEntityItem((EntityItem) entity))
 				VanillaPacketDispatcher.dispatchTEToNearbyPlayers(tile);
 		}
 	}
 
-	@Override
-	public int getLightValue(@Nonnull IBlockState state, @Nonnull IBlockAccess world, @Nonnull BlockPos pos) {
-		return 0;
-	}
+//	@Override
+//	public int getLightValue(@Nonnull IBlockState state, @Nonnull IBlockAccess world, @Nonnull BlockPos pos) {
+//		return 0;
+//	}
 
 	@Override
-	public boolean onBlockActivated(World world, @Nonnull BlockPos pos, @Nonnull IBlockState state, EntityPlayer player, @Nonnull EnumHand hand, @Nonnull EnumFacing par6, float par7, float par8, float par9) {
-		TileBetweenAltar tile = (TileBetweenAltar)world.getTileEntity(pos);
+	public boolean onBlockActivated(World world, @Nonnull BlockPos pos, @Nonnull IBlockState state, EntityPlayer player, @Nonnull EnumHand hand, @Nonnull EnumFacing facing, float hitX, float hitY, float hitZ) {
+		TileBetweenAltar tile = (TileBetweenAltar) world.getTileEntity(pos);
 		ItemStack stack = player.getHeldItem(hand);
 
 		if(player.isSneaking()) {
 			InventoryHelper.withdrawFromInventory(tile, player);
 			VanillaPacketDispatcher.dispatchTEToNearbyPlayers(tile);
+
 			return true;
 		} else {
 			if(!stack.isEmpty() && isValidWaterContainer(stack)) {
@@ -129,43 +114,11 @@ public class BlockBetweenAltar extends BlockMod implements ILexiconable {
 				}
 
 				return true;
-//			} else if(!stack.isEmpty() && stack.getItem() == Items.BUCKET && tile.hasWater && !Botania.gardenOfGlassLoaded) {
-//				ItemStack bucket = new ItemStack(Items.WATER_BUCKET);
-//				if(stack.getCount() == 1)
-//					player.setHeldItem(hand, bucket);
-//				else {
-//					ItemHandlerHelper.giveItemToPlayer(player, bucket);
-//					stack.shrink(1);
-//				}
-//
-//				tile.setWater(false);
-//				world.updateComparatorOutputLevel(pos, this);
-//				world.checkLight(pos);
-//
-//				return true;
 			}
 		}
 
 		return false;
 	}
-
-	@Override
-	public void fillWithRain(World world, BlockPos pos) {
-		if(world.rand.nextInt(20) == 1) {
-			TileEntity tile = world.getTileEntity(pos);
-			if(tile instanceof TileBetweenAltar) {
-				TileBetweenAltar altar = (TileBetweenAltar) tile;
-				if(!altar.hasWater)
-					altar.setWater(true);
-				world.updateComparatorOutputLevel(pos, this);
-			}
-		}
-	}
-
-//	@Override
-//	public int damageDropped(IBlockState state) {
-//		return getMetaFromState(state);
-//	}
 
 	private boolean isValidWaterContainer(ItemStack stack) {
 		if(stack.isEmpty() || stack.getCount() != 1)
@@ -174,8 +127,8 @@ public class BlockBetweenAltar extends BlockMod implements ILexiconable {
 		if(stack.hasCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY, null)) {
 			IFluidHandler handler = stack.getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY, null);
 			FluidStack simulate = handler.drain(new FluidStack(FluidRegistry.SWAMP_WATER, Fluid.BUCKET_VOLUME), false);
-			if(simulate != null && simulate.getFluid() == FluidRegistry.SWAMP_WATER && simulate.amount == Fluid.BUCKET_VOLUME)
-				return true;
+
+			return simulate != null && simulate.getFluid() == FluidRegistry.SWAMP_WATER && simulate.amount == Fluid.BUCKET_VOLUME;
 		}
 
 		return false;
@@ -184,21 +137,22 @@ public class BlockBetweenAltar extends BlockMod implements ILexiconable {
 	private ItemStack drain(Fluid fluid, ItemStack stack) {
 		IFluidHandlerItem handler = stack.getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY, null);
 		handler.drain(new FluidStack(fluid, Fluid.BUCKET_VOLUME), true);
+
 		return handler.getContainer();
 	}
 
 	@Override
-	public boolean isOpaqueCube(IBlockState state) {
+	public boolean isOpaqueCube(@Nonnull IBlockState state) {
 		return false;
 	}
 
 	@Override
-	public boolean isFullCube(IBlockState state) {
+	public boolean isFullCube(@Nonnull IBlockState state) {
 		return false;
 	}
 
 	@Override
-	public boolean hasTileEntity(IBlockState state) {
+	public boolean hasTileEntity(@Nonnull IBlockState state) {
 		return true;
 	}
 
@@ -218,13 +172,14 @@ public class BlockBetweenAltar extends BlockMod implements ILexiconable {
 	}
 
 	@Override
-	public boolean hasComparatorInputOverride(IBlockState state) {
+	public boolean hasComparatorInputOverride(@Nonnull IBlockState state) {
 		return true;
 	}
 
 	@Override
-	public int getComparatorInputOverride(IBlockState state, World world, BlockPos pos) {
+	public int getComparatorInputOverride(@Nonnull IBlockState state, World world, @Nonnull BlockPos pos) {
 		TileBetweenAltar altar = (TileBetweenAltar) world.getTileEntity(pos);
+
 		return altar.hasWater ? 15 : 0;
 	}
 
@@ -232,11 +187,5 @@ public class BlockBetweenAltar extends BlockMod implements ILexiconable {
 	public LexiconEntry getEntry(World world, BlockPos pos, EntityPlayer player, ItemStack lexicon) {
 		return LexiconData.apothecary;
 	}
-
-//	@SideOnly(Side.CLIENT)
-//	@Override
-//	public void registerModels() {
-//		ModelHandler.registerBlockToState(this, AltarVariant.values().length - 1);
-//	}
 
 }

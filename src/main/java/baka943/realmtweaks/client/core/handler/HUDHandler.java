@@ -1,3 +1,13 @@
+/**
+ * Sorry, I used some codes from the Botania Mod. Thanks <Vazkii> created the Botania Mod.
+ * Get the Botania Mod Source Code in github: https://github.com/Vazkii/Botania
+ *
+ * Botania is Open Source and distributed under the
+ * Botania License: http://botaniamod.net/license.php
+ *
+ * Thanks again!
+ */
+
 package baka943.realmtweaks.client.core.handler;
 
 import baka943.realmtweaks.common.block.tile.TileBetweenAltar;
@@ -26,7 +36,7 @@ public class HUDHandler {
 				TileEntity tile = MC.world.getTileEntity(ray.getBlockPos());
 
 				if(!PlayerHelper.hasHeldItemClass(MC.player, ILexicon.class) && tile instanceof TileBetweenAltar) {
-					((TileBetweenAltar)tile).renderHUD(MC, event.getResolution());
+					((TileBetweenAltar) tile).renderHUD(MC, event.getResolution());
 				}
 			}
 		}

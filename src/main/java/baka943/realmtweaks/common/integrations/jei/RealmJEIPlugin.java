@@ -1,11 +1,12 @@
 package baka943.realmtweaks.common.integrations.jei;
 
-import ferro2000.immersivetech.common.ITContent;
+import baka943.realmtweaks.common.block.ModBlocks;
 import mezz.jei.api.IJeiHelpers;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.IModRegistry;
 import mezz.jei.api.JEIPlugin;
 import net.minecraft.item.ItemStack;
+import vazkii.botania.client.integration.jei.petalapothecary.PetalApothecaryRecipeCategory;
 
 @JEIPlugin
 public class RealmJEIPlugin implements IModPlugin {
@@ -16,7 +17,7 @@ public class RealmJEIPlugin implements IModPlugin {
 	public void register(IModRegistry registry) {
 		HELPERS = registry.getJeiHelpers();
 
-		registry.addRecipeCatalyst(new ItemStack(ITContent.blockStoneMultiblock), "ie.cokeoven");
+		registry.addRecipeCatalyst(new ItemStack(ModBlocks.BETWEEN_ALTAR), PetalApothecaryRecipeCategory.UID);
 	}
 
 }

@@ -5,27 +5,23 @@ tile.realmtweaks.nightmare_sapling.name=Nightmare Sapling
 tile.realmtweaks.blooded_end_stone.name=Blooded End Stone
 tile.realmtweaks.meteorite.name=Meteorite
 tile.realmtweaks.meteorite_iron_ore.name=Meteorite Iron Ore
-tile.realmtweaks.meteorite_dilithium_ore.name=Meteorite Dilithium Ore
-tile.realmtweaks.meteorite_tritanium_ore.name=Meteorite Tritanium Ore
+tile.realmtweaks.between_altar.name=Between Altar
 
 # Items
 item.realmtweaks.ender_shard.name=Ender Shard
-item.realmtweaks.advancement_book.name=Advancement Book
 item.realmtweaks.forest_bat.name=Forest Bat
 item.realmtweaks.paper_tool.name=Paper Tool
-item.realmtweaks.parchment_tool.name=Paper Tool
-item.realmtweaks.ender_tool.name=Paper Tool
-item.realmtweaks.debug_tool.name=Paper Tool
-item.realmtweaks.blood_tear.name=Blood Tear
-item.realmtweaks.bark_livingwood.name=Livingwood Bark
-item.realmtweaks.bark_weedwood.name=Weedwood Bark
 item.realmtweaks.octine_flintstones.name=Octine Flintstones
+item.realmtweaks.powder_air.name=Air Powder
+item.realmtweaks.powder_earth.name=Earth Powder
+item.realmtweaks.powder_water.name=Water Powder
+item.realmtweaks.bitcoin.name=Bitcoin
+item.realmtweaks.levitated_stone.name=Levitated Stone
 
 # Fluid
 fluid.realmtweaks.impure_life_essence=Impure Life Essence
 
 # Entity
-entity.realmtweaks.swamp_spider.name=Swamp Spider
 entity.realmtweaks.ender_zombie.name=Ender Zombie
 entity.realmtweaks.ender_skeleton.name=Ender Skeleton
 

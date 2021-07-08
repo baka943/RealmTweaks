@@ -10,6 +10,7 @@ import epicsquid.roots.ritual.RitualRegistry;
 import epicsquid.roots.spell.SpellRegistry;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import thebetweenlands.common.entity.mobs.EntityLurker;
 
 public class RootsTweaks {
@@ -36,14 +37,14 @@ public class RootsTweaks {
 		ModRecipes.getRunicShearRecipes().clear();
 		ModRecipes.getRunicShearEntityRecipes().clear();
 
-		ModRecipes.addRunicShearRecipe(new RunicShearRecipe(Utils.getRL("wildewheet"), ModBlocks.wildroot, null, new ItemStack(ModItems.wildewheet), new ItemStack(ModItems.wildroot)));
-		ModRecipes.addRunicShearRecipe(new RunicShearRecipe(Utils.getRL("spirit_herb"), ModBlocks.wildewheet, null, new ItemStack(ModItems.spirit_herb), new ItemStack(ModItems.wildewheet)));
-		ModRecipes.addRunicShearRecipe(new RunicShearRecipe(Utils.getRL("crystal_air"), ModBlocks.cloud_berry, null, new ItemStack(baka943.realmtweaks.common.item.ModItems.POWDER_AIR), new ItemStack(ModItems.cloud_berry)));
-		ModRecipes.addRunicShearRecipe(new RunicShearRecipe(Utils.getRL("crystal_earth"), ModBlocks.stalicripe, null, new ItemStack(baka943.realmtweaks.common.item.ModItems.POWDER_EARTH), new ItemStack(ModItems.stalicripe)));
-		ModRecipes.addRunicShearRecipe(new RunicShearRecipe(Utils.getRL("crystal_fire"), ModBlocks.infernal_bulb, null, new ItemStack(Items.BLAZE_POWDER), new ItemStack(ModItems.infernal_bulb)));
-		ModRecipes.addRunicShearRecipe(new RunicShearRecipe(Utils.getRL("crystal_water"), ModBlocks.dewgonia, null, new ItemStack(baka943.realmtweaks.common.item.ModItems.POWDER_WATER), new ItemStack(ModItems.dewgonia)));
+		ModRecipes.addRunicShearRecipe(new RunicShearRecipe(new ResourceLocation("roots", "wildewheet"), ModBlocks.wildroot, null, new ItemStack(ModItems.wildewheet), new ItemStack(ModItems.wildroot)));
+		ModRecipes.addRunicShearRecipe(new RunicShearRecipe(new ResourceLocation("roots", "spirit_herb"), ModBlocks.wildewheet, null, new ItemStack(ModItems.spirit_herb), new ItemStack(ModItems.wildewheet)));
+		ModRecipes.addRunicShearRecipe(new RunicShearRecipe(new ResourceLocation("roots", "crystal_air"), ModBlocks.cloud_berry, null, new ItemStack(baka943.realmtweaks.common.item.ModItems.POWDER_AIR), new ItemStack(ModItems.cloud_berry)));
+		ModRecipes.addRunicShearRecipe(new RunicShearRecipe(new ResourceLocation("roots", "crystal_earth"), ModBlocks.stalicripe, null, new ItemStack(baka943.realmtweaks.common.item.ModItems.POWDER_EARTH), new ItemStack(ModItems.stalicripe)));
+		ModRecipes.addRunicShearRecipe(new RunicShearRecipe(new ResourceLocation("roots", "crystal_fire"), ModBlocks.infernal_bulb, null, new ItemStack(Items.BLAZE_POWDER), new ItemStack(ModItems.infernal_bulb)));
+		ModRecipes.addRunicShearRecipe(new RunicShearRecipe(new ResourceLocation("roots", "crystal_water"), ModBlocks.dewgonia, null, new ItemStack(baka943.realmtweaks.common.item.ModItems.POWDER_WATER), new ItemStack(ModItems.dewgonia)));
 
-		ModRecipes.addRunicShearRecipe(new RunicShearEntityRecipe(Utils.getRL("fey_leather"), new ItemStack(ModItems.fey_leather), EntityLurker.class, 600));
+		ModRecipes.addRunicShearRecipe(new RunicShearEntityRecipe(new ResourceLocation("roots", "fey_leather"), new ItemStack(ModItems.fey_leather), EntityLurker.class, 600));
 	}
 
 }

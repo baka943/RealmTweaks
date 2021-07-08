@@ -1,3 +1,13 @@
+/**
+ * Sorry, I used some codes from the Botania Mod. Thanks <Vazkii> created the Botania Mod.
+ * Get the Botania Mod Source Code in github: https://github.com/Vazkii/Botania
+ *
+ * Botania is Open Source and distributed under the
+ * Botania License: http://botaniamod.net/license.php
+ *
+ * Thanks again!
+ */
+
 package baka943.realmtweaks.common.block.tile;
 
 import epicsquid.roots.init.ModItems;
@@ -50,8 +60,8 @@ public class TileBetweenAltar extends TileSimpleInventory implements IPetalApoth
 
 	public boolean collideEntityItem(EntityItem item) {
 		ItemStack stack = item.getItem();
-		if(world.isRemote || stack.isEmpty() || item.isDead)
-			return false;
+
+		if(world.isRemote || stack.isEmpty() || item.isDead) return false;
 
 		boolean hasFluidCapability = stack.hasCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY, null);
 
@@ -66,6 +76,7 @@ public class TileBetweenAltar extends TileSimpleInventory implements IPetalApoth
 					world.updateComparatorOutputLevel(pos, world.getBlockState(pos).getBlock());
 					fluidHandler.drain(new FluidStack(FluidRegistry.SWAMP_WATER, Fluid.BUCKET_VOLUME), true);
 					item.setItem(fluidHandler.getContainer());
+
 					return true;
 				}
 			}
@@ -112,6 +123,7 @@ public class TileBetweenAltar extends TileSimpleInventory implements IPetalApoth
 
 	private IFlowerComponent getFlowerComponent(ItemStack stack) {
 		IFlowerComponent c = null;
+
 		if(stack.getItem() instanceof IFlowerComponent)
 			c = (IFlowerComponent) stack.getItem();
 		else if(stack.getItem() instanceof ItemBlock && ((ItemBlock) stack.getItem()).getBlock() instanceof IFlowerComponent)
@@ -122,8 +134,7 @@ public class TileBetweenAltar extends TileSimpleInventory implements IPetalApoth
 
 	public boolean isEmpty() {
 		for(int i = 0; i < getSizeInventory(); i++)
-			if(!itemHandler.getStackInSlot(i).isEmpty())
-				return false;
+			if(!itemHandler.getStackInSlot(i).isEmpty()) return false;
 
 		return true;
 	}
@@ -137,13 +148,12 @@ public class TileBetweenAltar extends TileSimpleInventory implements IPetalApoth
 			for(EntityItem item : items)
 				didChange = collideEntityItem(item) || didChange;
 
-			if(didChange)
-				VanillaPacketDispatcher.dispatchTEToNearbyPlayers(world, pos);
+			if(didChange) VanillaPacketDispatcher.dispatchTEToNearbyPlayers(world, pos);
 		} else {
 			for(int i = 0; i < getSizeInventory(); i++) {
 				ItemStack stackAt = itemHandler.getStackInSlot(i);
-				if(stackAt.isEmpty())
-					break;
+
+				if(stackAt.isEmpty()) break;
 
 				if(Math.random() >= 0.97) {
 					IFlowerComponent comp = getFlowerComponent(stackAt);
@@ -151,6 +161,7 @@ public class TileBetweenAltar extends TileSimpleInventory implements IPetalApoth
 					float red = color.getRed() / 255F;
 					float green = color.getGreen() / 255F;
 					float blue = color.getBlue() / 255F;
+
 					if(Math.random() >= 0.75F)
 						world.playSound(null, pos, SoundEvents.ENTITY_GENERIC_SPLASH, SoundCategory.BLOCKS, 0.1F, 10F);
 					Botania.proxy.sparkleFX(pos.getX() + 0.5 + Math.random() * 0.4 - 0.2, pos.getY() + 1.2, pos.getZ() + 0.5 + Math.random() * 0.4 - 0.2, red, green, blue, (float)Math.random(), 10);
@@ -162,7 +173,6 @@ public class TileBetweenAltar extends TileSimpleInventory implements IPetalApoth
 	@Override
 	public void writePacketNBT(NBTTagCompound cmp) {
 		cmp.merge(this.itemHandler.serializeNBT());
-
 		cmp.setBoolean(TAG_HAS_WATER, hasWater());
 	}
 
@@ -170,7 +180,6 @@ public class TileBetweenAltar extends TileSimpleInventory implements IPetalApoth
 	public void readPacketNBT(NBTTagCompound cmp) {
 		this.itemHandler = this.createItemHandler();
 		this.itemHandler.deserializeNBT(cmp);
-
 		hasWater = cmp.getBoolean(TAG_HAS_WATER);
 	}
 
@@ -181,21 +190,22 @@ public class TileBetweenAltar extends TileSimpleInventory implements IPetalApoth
 
 	@Override
 	public boolean receiveClientEvent(int id, int param) {
-		switch(id) {
-			case CRAFT_EFFECT_EVENT: {
-				if(world.isRemote) {
-					for(int i = 0; i < 25; i++) {
-						float red = (float) Math.random();
-						float green = (float) Math.random();
-						float blue = (float) Math.random();
-						Botania.proxy.sparkleFX(pos.getX() + 0.5 + Math.random() * 0.4 - 0.2, pos.getY() + 1, pos.getZ() + 0.5 + Math.random() * 0.4 - 0.2, red, green, blue, (float) Math.random(), 10);
-					}
-					world.playSound(pos.getX(), pos.getY(), pos.getZ(), ModSounds.altarCraft, SoundCategory.BLOCKS, 1F, 1F, false);
+		if(id == CRAFT_EFFECT_EVENT) {
+			if(world.isRemote) {
+				for(int i = 0; i < 25; i++) {
+					float red = (float) Math.random();
+					float green = (float) Math.random();
+					float blue = (float) Math.random();
+					Botania.proxy.sparkleFX(pos.getX() + 0.5 + Math.random() * 0.4 - 0.2, pos.getY() + 1, pos.getZ() + 0.5 + Math.random() * 0.4 - 0.2, red, green, blue, (float) Math.random(), 10);
 				}
-				return true;
+
+				world.playSound(pos.getX(), pos.getY(), pos.getZ(), ModSounds.altarCraft, SoundCategory.BLOCKS, 1F, 1F, false);
 			}
-			default: return super.receiveClientEvent(id, param);
+
+			return true;
 		}
+
+		return super.receiveClientEvent(id, param);
 	}
 
 	@Override
@@ -232,6 +242,7 @@ public class TileBetweenAltar extends TileSimpleInventory implements IPetalApoth
 		float angle = -90;
 		int radius = 24;
 		int amt = 0;
+
 		for(int i = 0; i < getSizeInventory(); i++) {
 			if(itemHandler.getStackInSlot(i).isEmpty())
 				break;
@@ -257,6 +268,7 @@ public class TileBetweenAltar extends TileSimpleInventory implements IPetalApoth
 				}
 
 			net.minecraft.client.renderer.RenderHelper.enableGUIStandardItemLighting();
+
 			for(int i = 0; i < amt; i++) {
 				double xPos = xc + Math.cos(angle * Math.PI / 180D) * radius - 8;
 				double yPos = yc + Math.sin(angle * Math.PI / 180D) * radius - 8;
@@ -266,6 +278,7 @@ public class TileBetweenAltar extends TileSimpleInventory implements IPetalApoth
 
 				angle += anglePer;
 			}
+
 			net.minecraft.client.renderer.RenderHelper.disableStandardItemLighting();
 		}
 	}

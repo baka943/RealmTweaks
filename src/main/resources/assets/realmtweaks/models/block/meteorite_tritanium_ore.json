@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "realmtweaks:blocks/meteorite_tritanium_ore"
-  }
-}

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "realmtweaks:items/advancement_book"
+    "layer0": "realmtweaks:items/powder_water"
   }
 }

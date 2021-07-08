@@ -27,7 +27,6 @@ public class BotaniaTweaks {
 		disableBotaniaFunctionalFlower("entropinnyum");
 
 		BotaniaAPI.registerPureDaisyRecipe(Blocks.MAGMA, Blocks.LAVA.getDefaultState());
-
 		BotaniaAPI.registerPureDaisyRecipe(BlockRegistry.SWAMP_WATER, BlockRegistry.BLACK_ICE.getDefaultState());
 	}
 

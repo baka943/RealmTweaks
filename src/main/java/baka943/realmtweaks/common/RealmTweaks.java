@@ -13,6 +13,7 @@ import baka943.realmtweaks.common.integrations.RootsTweaks;
 import baka943.realmtweaks.common.lib.LibMisc;
 import baka943.realmtweaks.common.world.gen.feature.WorldGenEntityMob;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -22,6 +23,9 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 @Mod(modid = LibMisc.MOD_ID, name = LibMisc.MOD_NAME, version = LibMisc.VERSION, dependencies = LibMisc.DEPENDENCIES)
 public class RealmTweaks {
 
+	public static boolean BMLoaded = false;
+	public static boolean BTLoaded = false;
+
 	@Mod.Instance
 	public static RealmTweaks instance;
 
@@ -30,11 +34,15 @@ public class RealmTweaks {
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+		BMLoaded = Loader.isModLoaded("bloodmagic");
+		BTLoaded = Loader.isModLoaded("thebetweenlands");
+
 		MinecraftForge.EVENT_BUS.register(new WorldTypeHandler());
 		MinecraftForge.TERRAIN_GEN_BUS.register(new MapGenHandler());
 
 		ModEntites.init();
-		ModFluids.registerFluids();
+
+		if(BMLoaded) ModFluids.registerFluids();
 
 		proxy.preInit(event);
 	}
@@ -50,10 +58,13 @@ public class RealmTweaks {
 	public void postInit(FMLPostInitializationEvent event) {
 		OreDictHandler.registerOreDict();
 
-		BetweenlandsTweaks.init();
-		BloodMagicTweaks.init();
-		BotaniaTweaks.init();
-		RootsTweaks.init();
+		if(BTLoaded) {
+			BetweenlandsTweaks.init();
+			BotaniaTweaks.init();
+			RootsTweaks.init();
+		}
+
+		if(BMLoaded) BloodMagicTweaks.init();
 	}
 
 }

@@ -5,27 +5,19 @@ tile.realmtweaks.nightmare_sapling.name=末世树苗
 tile.realmtweaks.blooded_end_stone.name=染血末地石
 tile.realmtweaks.meteorite.name=陨石
 tile.realmtweaks.meteorite_iron_ore.name=铁陨石
-tile.realmtweaks.meteorite_dilithium_ore.name=双锂陨石
-tile.realmtweaks.meteorite_tritanium_ore.name=钛陨石
 
 # Items
 item.realmtweaks.ender_shard.name=末影碎片
 item.realmtweaks.advancement_book.name=进度之书
 item.realmtweaks.forest_bat.name=森林蝙蝠
 item.realmtweaks.paper_tool.name=纸质工具
-item.realmtweaks.parchment_tool.name=纸质工具
-item.realmtweaks.ender_tool.name=纸质工具
-item.realmtweaks.debug_tool.name=纸质工具
 item.realmtweaks.blood_tear.name=血泪
-item.realmtweaks.bark_livingwood.name=活木树皮
-item.realmtweaks.bark_weedwood.name=杂草树皮
 item.realmtweaks.octine_flintstones.name=燧石与炽炎铁粒
 
 # Fluid
 fluid.realmtweaks.impure_life_essence=不纯的生命源质
 
 # Entity
-entity.realmtweaks.swamp_spider.name=沼泽蜘蛛
 entity.realmtweaks.ender_zombie.name=末影僵尸
 entity.realmtweaks.ender_skeleton.name=末影骷髅
 

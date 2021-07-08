@@ -1,3 +1,13 @@
+/**
+ * Sorry, I used some codes from the Botania Mod. Thanks <Vazkii> created the Botania Mod.
+ * Get the Botania Mod Source Code in github: https://github.com/Vazkii/Botania
+ *
+ * Botania is Open Source and distributed under the
+ * Botania License: http://botaniamod.net/license.php
+ *
+ * Thanks again!
+ */
+
 package baka943.realmtweaks.client.render;
 
 import baka943.realmtweaks.common.block.ModBlocks;
@@ -23,7 +33,7 @@ public class RenderTileBetweenAltar extends TileEntitySpecialRenderer<TileBetwee
 	@Override
 	public void render(@Nonnull TileBetweenAltar altar, double d0, double d1, double d2, float pticks, int digProgress, float unused) {
 		if(!altar.getWorld().isBlockLoaded(altar.getPos(), false)
-				|| altar.getWorld().getBlockState(altar.getPos()).getBlock() != ModBlocks.ALTAR)
+				|| altar.getWorld().getBlockState(altar.getPos()).getBlock() != ModBlocks.BETWEEN_ALTAR)
 			return;
 
 		GlStateManager.pushMatrix();
@@ -40,6 +50,7 @@ public class RenderTileBetweenAltar extends TileEntitySpecialRenderer<TileBetwee
 			float w = -v * 2.5F;
 
 			int petals = 0;
+
 			for(int i = 0; i < altar.getSizeInventory(); i++)
 				if(!altar.getItemHandler().getStackInSlot(i).isEmpty())
 					petals++;
@@ -57,6 +68,7 @@ public class RenderTileBetweenAltar extends TileEntitySpecialRenderer<TileBetwee
 				GlStateManager.pushMatrix();
 				GlStateManager.translate(-0.05F, -0.5F, 0F);
 				GlStateManager.scale(v, v, v);
+
 				for(int i = 0; i < petals; i++) {
 					float offset = offsetPerPetal * i;
 					float deg = (int) (ticks / rotationModifier % 360F + offset);

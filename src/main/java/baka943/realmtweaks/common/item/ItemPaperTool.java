@@ -9,10 +9,8 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
@@ -31,7 +29,6 @@ public class ItemPaperTool extends ItemSword implements IModelRegister {
 		this.setTranslationKey(LibMisc.MOD_ID + ".paper_tool");
 		this.setMaxDamage(-1);
 		this.setCreativeTab(null);
-//		this.addToolTypePropertyOverrides(this);
 	}
 
 	@Override
@@ -70,29 +67,6 @@ public class ItemPaperTool extends ItemSword implements IModelRegister {
 	public ItemStack getOriginalStack(ItemStack stack) {
 		return stack.getTagCompound() != null ? new ItemStack(stack.getTagCompound().getCompoundTag("originalStack")) : ItemStack.EMPTY;
 	}
-//
-//	public void addToolTypePropertyOverrides(Item item) {
-//		item.addPropertyOverride(new ResourceLocation("toolType"), (stack, worldIn, entityIn) -> {
-//			int type = 0;
-//
-//			for(String s : stack.getItem().getToolClasses(this.getOriginalStack(stack))) {
-//				switch(s) {
-//					case "pickaxe":
-//						type = 1;
-//						continue;
-//					case "axe":
-//						type = 2;
-//						continue;
-//					case "shovel":
-//						type = 3;
-//						continue;
-//					default:
-//						type = 0;
-//				}
-//			}
-//			return type;
-//		});
-//	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
