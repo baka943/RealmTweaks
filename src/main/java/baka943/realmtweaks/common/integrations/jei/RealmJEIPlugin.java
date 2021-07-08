@@ -1,5 +1,6 @@
 package baka943.realmtweaks.common.integrations.jei;
 
+import baka943.realmtweaks.common.RealmTweaks;
 import baka943.realmtweaks.common.block.ModBlocks;
 import mezz.jei.api.IJeiHelpers;
 import mezz.jei.api.IModPlugin;
@@ -17,7 +18,8 @@ public class RealmJEIPlugin implements IModPlugin {
 	public void register(IModRegistry registry) {
 		HELPERS = registry.getJeiHelpers();
 
-		registry.addRecipeCatalyst(new ItemStack(ModBlocks.BETWEEN_ALTAR), PetalApothecaryRecipeCategory.UID);
+		if(RealmTweaks.BTLoaded)
+			registry.addRecipeCatalyst(new ItemStack(ModBlocks.BETWEEN_ALTAR), PetalApothecaryRecipeCategory.UID);
 	}
 
 }
