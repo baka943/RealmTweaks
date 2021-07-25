@@ -151,10 +151,12 @@ public class EntityEnderZombie extends EntityEnderman {
 			this.enderZombie = enderZombie;
 		}
 
+		@Override
 		public boolean shouldExecute() {
 			double distance = this.getTargetDistance();
 
 			this.player = this.enderZombie.world.getNearestAttackablePlayer(this.enderZombie.posX, this.enderZombie.posY, this.enderZombie.posZ, distance, distance, null, new Predicate<EntityPlayer>() {
+				@Override
 				public boolean apply(@Nullable EntityPlayer player) {
 					return player != null && AIFindPlayer.this.enderZombie.shouldAttackPlayer(player);
 				}
@@ -163,16 +165,19 @@ public class EntityEnderZombie extends EntityEnderman {
 			return this.player != null;
 		}
 
+		@Override
 		public void startExecuting() {
 			this.aggroTime = 5;
 			this.teleportTime = 0;
 		}
 
+		@Override
 		public void resetTask() {
 			this.player = null;
 			super.resetTask();
 		}
 
+		@Override
 		public boolean shouldContinueExecuting() {
 			if(this.player != null) {
 				if(!this.enderZombie.shouldAttackPlayer(this.player)) {
@@ -186,6 +191,7 @@ public class EntityEnderZombie extends EntityEnderman {
 			}
 		}
 
+		@Override
 		public void updateTask() {
 			if(this.player != null) {
 				if(--this.aggroTime <= 0) {

@@ -24,15 +24,14 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.ChunkCache;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandlerItem;
+import net.minecraftforge.fml.common.Optional;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import thebetweenlands.common.registries.FluidRegistry;
@@ -62,14 +61,6 @@ public class BlockBetweenAltar extends BlockMod implements ILexiconable {
 		return AABB;
 	}
 
-//	@Nonnull
-//	@Override
-//	public IBlockState getActualState(@Nonnull IBlockState state, @Nonnull IBlockAccess worldIn, @Nonnull BlockPos pos) {
-//		TileEntity te = worldIn instanceof ChunkCache ? ((ChunkCache)worldIn).getTileEntity(pos, Chunk.EnumCreateEntityType.CHECK) : worldIn.getTileEntity(pos);
-//
-//		return state;
-//	}
-
 	@SideOnly(Side.CLIENT)
 	@Nonnull
 	@Override
@@ -86,11 +77,6 @@ public class BlockBetweenAltar extends BlockMod implements ILexiconable {
 				VanillaPacketDispatcher.dispatchTEToNearbyPlayers(tile);
 		}
 	}
-
-//	@Override
-//	public int getLightValue(@Nonnull IBlockState state, @Nonnull IBlockAccess world, @Nonnull BlockPos pos) {
-//		return 0;
-//	}
 
 	@Override
 	public boolean onBlockActivated(World world, @Nonnull BlockPos pos, @Nonnull IBlockState state, EntityPlayer player, @Nonnull EnumHand hand, @Nonnull EnumFacing facing, float hitX, float hitY, float hitZ) {

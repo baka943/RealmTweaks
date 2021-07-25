@@ -4,8 +4,8 @@
     "model": "forge:fluid"
   },
   "variants": {
-      "impure_life_essence": [{
-      "custom": {"fluid": "impure_life_essence"}
+      "ender_essence": [{
+      "custom": {"fluid": "ender_essence"}
     }]
   }
 }

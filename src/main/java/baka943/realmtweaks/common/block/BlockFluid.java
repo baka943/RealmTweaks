@@ -12,6 +12,8 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nonnull;
+
 public class BlockFluid extends BlockFluidClassic implements IModelRegister {
 
 	public BlockFluid(Fluid fluid, Material material, int quantaPerBlock) {
@@ -31,7 +33,8 @@ public class BlockFluid extends BlockFluidClassic implements IModelRegister {
 		ModelLoader.setCustomStateMapper(this, new StateMapperBase() {
 
 			@Override
-			protected ModelResourceLocation getModelResourceLocation(IBlockState state) {
+			@Nonnull
+			protected ModelResourceLocation getModelResourceLocation(@Nonnull IBlockState state) {
 				return modelResourceLocation;
 			}
 

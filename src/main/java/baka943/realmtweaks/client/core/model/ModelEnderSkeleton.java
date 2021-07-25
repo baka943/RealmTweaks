@@ -54,9 +54,7 @@ public class ModelEnderSkeleton extends ModelBiped {
 		if(stack.getItem() instanceof ItemBow && ((EntityEnderSkeleton) entityLivingBase).isSwingingArms()) {
 			if(entityLivingBase.getPrimaryHand() == EnumHandSide.RIGHT) {
 				this.rightArmPose = ArmPose.BOW_AND_ARROW;
-			} else {
-				this.leftArmPose = ArmPose.BOW_AND_ARROW;
-			}
+			} else this.leftArmPose = ArmPose.BOW_AND_ARROW;
 		}
 
 		super.setLivingAnimations(entityLivingBase, limbSwing, limbSwingAmount, partialTickTime);
@@ -66,7 +64,7 @@ public class ModelEnderSkeleton extends ModelBiped {
 	public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, @Nonnull Entity entity) {
 		super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor, entity);
 
-		ItemStack stack = ((EntityLivingBase)entity).getHeldItemMainhand();
+		ItemStack stack = ((EntityLivingBase) entity).getHeldItemMainhand();
 		EntityEnderSkeleton skeleton = (EntityEnderSkeleton) entity;
 
 		if(skeleton.isSwingingArms() && (stack.isEmpty() || !(stack.getItem() instanceof ItemBow))) {

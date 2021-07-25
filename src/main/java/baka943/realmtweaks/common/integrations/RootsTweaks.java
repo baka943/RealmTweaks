@@ -1,6 +1,5 @@
 package baka943.realmtweaks.common.integrations;
 
-import baka943.realmtweaks.common.lib.Utils;
 import epicsquid.roots.init.ModBlocks;
 import epicsquid.roots.init.ModItems;
 import epicsquid.roots.init.ModRecipes;
@@ -25,6 +24,7 @@ public class RootsTweaks {
 		RitualRegistry.ritualRegistry.remove("ritual_spreading_forest");
 		RitualRegistry.ritualRegistry.remove("ritual_summon_creatures");
 		RitualRegistry.ritualRegistry.remove("ritual_transmutation");
+		RitualRegistry.ritualRegistry.remove("ritual_gathering");
 
 		SpellRegistry.spellRegistry.remove("spell_growth_infusion");
 		SpellRegistry.spellRegistry.remove("spell_iced_touch");
@@ -36,6 +36,7 @@ public class RootsTweaks {
 
 		ModRecipes.getRunicShearRecipes().clear();
 		ModRecipes.getRunicShearEntityRecipes().clear();
+		ModRecipes.getLifeEssenceList().clear();
 
 		ModRecipes.addRunicShearRecipe(new RunicShearRecipe(new ResourceLocation("roots", "wildewheet"), ModBlocks.wildroot, null, new ItemStack(ModItems.wildewheet), new ItemStack(ModItems.wildroot)));
 		ModRecipes.addRunicShearRecipe(new RunicShearRecipe(new ResourceLocation("roots", "spirit_herb"), ModBlocks.wildewheet, null, new ItemStack(ModItems.spirit_herb), new ItemStack(ModItems.wildewheet)));
@@ -44,7 +45,7 @@ public class RootsTweaks {
 		ModRecipes.addRunicShearRecipe(new RunicShearRecipe(new ResourceLocation("roots", "crystal_fire"), ModBlocks.infernal_bulb, null, new ItemStack(Items.BLAZE_POWDER), new ItemStack(ModItems.infernal_bulb)));
 		ModRecipes.addRunicShearRecipe(new RunicShearRecipe(new ResourceLocation("roots", "crystal_water"), ModBlocks.dewgonia, null, new ItemStack(baka943.realmtweaks.common.item.ModItems.POWDER_WATER), new ItemStack(ModItems.dewgonia)));
 
-		ModRecipes.addRunicShearRecipe(new RunicShearEntityRecipe(new ResourceLocation("roots", "fey_leather"), new ItemStack(ModItems.fey_leather), EntityLurker.class, 600));
+		ModRecipes.addRunicShearRecipe(new RunicShearEntityRecipe(new ResourceLocation("roots", "fey_leather"), new ItemStack(ModItems.fey_leather, 2), EntityLurker.class, 600));
 	}
 
 }

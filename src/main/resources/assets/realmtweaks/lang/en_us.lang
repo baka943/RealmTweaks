@@ -2,7 +2,7 @@
 tile.realmtweaks.alternate_sapling.name=Alternate Sapling
 tile.realmtweaks.another_sapling.name=Another Sapling
 tile.realmtweaks.nightmare_sapling.name=Nightmare Sapling
-tile.realmtweaks.blooded_end_stone.name=Blooded End Stone
+tile.realmtweaks.end_dirt.name=End Dirt
 tile.realmtweaks.meteorite.name=Meteorite
 tile.realmtweaks.meteorite_iron_ore.name=Meteorite Iron Ore
 tile.realmtweaks.between_altar.name=Between Altar
@@ -11,6 +11,8 @@ tile.realmtweaks.between_altar.name=Between Altar
 item.realmtweaks.ender_shard.name=Ender Shard
 item.realmtweaks.forest_bat.name=Forest Bat
 item.realmtweaks.paper_tool.name=Paper Tool
+item.realmtweaks.blood_tear.name=Blood Tear
+item.realmtweaks.dragon_fruit.name=Dragon Fruit
 item.realmtweaks.octine_flintstones.name=Octine Flintstones
 item.realmtweaks.powder_air.name=Air Powder
 item.realmtweaks.powder_earth.name=Earth Powder
@@ -19,7 +21,7 @@ item.realmtweaks.bitcoin.name=Bitcoin
 item.realmtweaks.levitated_stone.name=Levitated Stone
 
 # Fluid
-fluid.realmtweaks.impure_life_essence=Impure Life Essence
+fluid.realmtweaks.ender_essence=Ender Essence
 
 # Entity
 entity.realmtweaks.ender_zombie.name=Ender Zombie
@@ -35,7 +37,9 @@ chat.realmtweaks.mod_disable=§3Mr. Torcherino, hello?
 chat.realmtweaks.entropinnyum_disable=§3Mr. BOOM, it is fire.
 
 # Tooltips
-tooltip.realmtweaks.paper_tool=Knowledge is power
-tooltip.realmtweaks.paper_tool_original=About a %s
-tooltip.realmtweaks.blood_tear=Will drop the end
+tooltip.realmtweaks.paper_tool=
+tooltip.realmtweaks.paper_tool_original=§o%s
+tooltip.realmtweaks.octine_flintstones=§6I'm Fire!
+tooltip.realmtweaks.dragon_fruit=§dDragon's Breath
+tooltip.realmtweaks.blood_tear=§5§oplayer's tears
 tooltip.realmtweaks.blood_tear.stored=Stored: %d LP

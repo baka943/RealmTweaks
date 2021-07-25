@@ -24,7 +24,7 @@ import java.util.List;
 public class ItemPaperTool extends ItemSword implements IModelRegister {
 
 	public ItemPaperTool() {
-		super(ToolMaterial.WOOD);
+		super(ToolMaterial.IRON);
 		this.setRegistryName(Utils.getRL("paper_tool"));
 		this.setTranslationKey(LibMisc.MOD_ID + ".paper_tool");
 		this.setMaxDamage(-1);

@@ -2,33 +2,44 @@
 tile.realmtweaks.alternate_sapling.name=狱世树苗
 tile.realmtweaks.another_sapling.name=另世树苗
 tile.realmtweaks.nightmare_sapling.name=末世树苗
-tile.realmtweaks.blooded_end_stone.name=染血末地石
+tile.realmtweaks.end_dirt.name=末地土
 tile.realmtweaks.meteorite.name=陨石
 tile.realmtweaks.meteorite_iron_ore.name=铁陨石
+tile.realmtweaks.between_altar.name=交错花药台
 
 # Items
 item.realmtweaks.ender_shard.name=末影碎片
-item.realmtweaks.advancement_book.name=进度之书
 item.realmtweaks.forest_bat.name=森林蝙蝠
 item.realmtweaks.paper_tool.name=纸质工具
 item.realmtweaks.blood_tear.name=血泪
-item.realmtweaks.octine_flintstones.name=燧石与炽炎铁粒
+item.realmtweaks.dragon_fruit.name=火龙果
+item.realmtweaks.octine_flintstones.name=燧石与炽炎铁
+item.realmtweaks.powder_air.name=Air Powder
+item.realmtweaks.powder_earth.name=Earth Powder
+item.realmtweaks.powder_water.name=Water Powder
+item.realmtweaks.bitcoin.name=比特币
+item.realmtweaks.levitated_stone.name=失重石
 
 # Fluid
-fluid.realmtweaks.impure_life_essence=不纯的生命源质
+fluid.realmtweaks.ender_essence=末影源质
 
 # Entity
 entity.realmtweaks.ender_zombie.name=末影僵尸
 entity.realmtweaks.ender_skeleton.name=末影骷髅
 
 # World Type
-generator.realmtweaks_atlantis=Atlantis
+generator.realmtweaks_atlantis=亚特兰蒂斯
 generator.realmtweaks_atlantis.info=注意: 无尽之海
 
 # Chats
 chat.realmtweaks.wrong=什么情况?
+chat.realmtweaks.mod_disable=§3Mr. Torcherino, hello?
+chat.realmtweaks.entropinnyum_disable=§3Mr. BOOM, it is fire.
 
 # Tooltips
-tooltip.realmtweaks.paper_tool=知识即是力量
-tooltip.realmtweaks.paper_tool_original=与 %s §r有关
-tooltip.realmtweaks.blood_tear=终将消逝于末地
+tooltip.realmtweaks.paper_tool=
+tooltip.realmtweaks.paper_tool_original=§o%s
+tooltip.realmtweaks.octine_flintstones=§6I'm Fire!
+tooltip.realmtweaks.dragon_fruit=§d龙之吐息
+tooltip.realmtweaks.blood_tear=§5§o玩家之泪
+tooltip.realmtweaks.blood_tear.stored=储存：%d LP

@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "inventory": { "model": "realmtweaks:end_dirt" },
+    "normal": { "model": "realmtweaks:end_dirt" }
+  }
+}

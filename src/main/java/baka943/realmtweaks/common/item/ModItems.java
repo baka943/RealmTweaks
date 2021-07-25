@@ -11,16 +11,17 @@ import net.minecraftforge.registries.IForgeRegistry;
 @Mod.EventBusSubscriber(modid = LibMisc.MOD_ID)
 public class ModItems {
 
-	public static final Item ENDER_SHARD = new ItemEnderShard();
+	public static final Item ENDER_SHARD = new ItemMod("ender_shard");
 	public static final Item FOREST_BAT = new ItemForestBat();
-	public static final ItemPaperTool PAPER_TOOL = new ItemPaperTool();
-	public static final ItemMod POWDER_WATER = new ItemMod("powder_water");
-	public static final ItemMod POWDER_AIR = new ItemMod("powder_air");
-	public static final ItemMod POWDER_EARTH = new ItemMod("powder_earth");
-	public static final ItemMod LEVITATED_STONE = new ItemMod("levitated_stone");
+	public static final Item PAPER_TOOL = new ItemPaperTool();
+	public static final Item POWDER_AIR = new ItemMod("powder_air");
+	public static final Item POWDER_EARTH = new ItemMod("powder_earth");
+	public static final Item POWDER_WATER = new ItemMod("powder_water");
+	public static final Item LEVITATED_STONE = new ItemMod("levitated_stone");
 	public static final Item BLOOD_TEAR = new ItemBloodTear();
 	public static final Item OCTINE_FLINTSTONES = new ItemOctineFlintstones();
-	public static final ItemMod BITCOIN = new ItemMod("bitcoin");
+	public static final Item BITCOIN = new ItemMod("bitcoin");
+	public static final Item DRAGON_FRUIT = new ItemDragonFruit();
 
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event) {
@@ -30,12 +31,13 @@ public class ModItems {
 			registry.register(ENDER_SHARD);
 			registry.register(BLOOD_TEAR);
 			registry.register(LEVITATED_STONE);
+			registry.register(DRAGON_FRUIT);
 		}
 
 		if(RealmTweaks.BTLoaded) {
 			registry.register(POWDER_AIR);
-			registry.register(POWDER_WATER);
 			registry.register(POWDER_EARTH);
+			registry.register(POWDER_WATER);
 
 			registry.register(OCTINE_FLINTSTONES);
 		}

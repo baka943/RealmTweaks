@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "realmtweaks:blocks/blooded_end_stone"
+    "all": "realmtweaks:blocks/end_dirt"
   }
 }

@@ -24,12 +24,12 @@ public class ModBlocks {
 
 	public static final Block BETWEEN_ALTAR = new BlockBetweenAltar();
 
-	public static final Block BLOODED_ENDSTONE = new BlockBloodedEndstone();
-	public static Block IMPURE_LIFE_ESSENCE;
+	public static final Block ENDER_ESSENCE = new BlockFluid(ModFluids.ENDER_ESSENCE, Material.WATER, 2);
 	public static final Block END_PORTAL = new BlockEndPortal();
+	public static final Block END_DIRT = new BlockEndDirt();
 
-	public static final Block METEORITE = new BlockOres("meteorite", 4);
-	public static final Block METEORITE_IRON_ORE = new BlockOres("meteorite_iron_ore", 4);
+	public static final Block METEORITE = new BlockOres("meteorite", 3);
+	public static final Block METEORITE_IRON_ORE = new BlockOres("meteorite_iron_ore", 3);
 
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> event) {
@@ -42,8 +42,8 @@ public class ModBlocks {
 
 		if(RealmTweaks.BMLoaded) {
 			registry.register(END_PORTAL);
-			registry.register(BLOODED_ENDSTONE);
-			registry.register(IMPURE_LIFE_ESSENCE = new BlockFluid(ModFluids.IMPURE_LIFE_ESSENCE, Material.WATER, 2));
+			registry.register(END_DIRT);
+			registry.register(ENDER_ESSENCE);
 
 			registry.register(METEORITE);
 			registry.register(METEORITE_IRON_ORE);
@@ -62,8 +62,7 @@ public class ModBlocks {
 			registry.register(new ItemBlock(BETWEEN_ALTAR).setRegistryName(BETWEEN_ALTAR.getRegistryName()));
 
 		if(RealmTweaks.BMLoaded) {
-			registry.register(new ItemBlock(BLOODED_ENDSTONE).setRegistryName(Utils.getRL("blooded_end_stone")));
-
+			registry.register(new ItemBlock(END_DIRT).setRegistryName(Utils.getRL("end_dirt")));
 			registry.register(new ItemBlock(METEORITE).setRegistryName(Utils.getRL("meteorite")));
 			registry.register(new ItemBlock(METEORITE_IRON_ORE).setRegistryName(Utils.getRL("meteorite_iron_ore")));
 		}

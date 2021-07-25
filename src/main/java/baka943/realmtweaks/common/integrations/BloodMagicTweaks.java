@@ -4,7 +4,6 @@ import WayofTime.bloodmagic.core.RegistrarBloodMagicItems;
 import WayofTime.bloodmagic.core.data.SoulNetwork;
 import WayofTime.bloodmagic.soul.IDemonWill;
 import WayofTime.bloodmagic.util.helper.NetworkHelper;
-import baka943.realmtweaks.common.block.ModBlocks;
 import baka943.realmtweaks.common.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
@@ -13,21 +12,18 @@ import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldProviderEnd;
 import net.minecraft.world.end.DragonFightManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.FakePlayer;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
-import net.minecraftforge.event.entity.item.ItemExpireEvent;
-import net.minecraftforge.event.entity.item.ItemTossEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.util.Random;
@@ -48,10 +44,8 @@ public class BloodMagicTweaks {
 			double souls = rand.nextDouble() * 20;
 			ItemStack stack = ((IDemonWill) RegistrarBloodMagicItems.MONSTER_SOUL).createWill(0, souls);
 
-			if(attackedEntity instanceof EntityEnderman) {
-				if(rand.nextInt(5) == 0) {
-					event.getDrops().add(new EntityItem(attackedEntity.getEntityWorld(), attackedEntity.posX, attackedEntity.posY, attackedEntity.posZ, stack));
-				}
+			if(attackedEntity instanceof EntityEnderman && rand.nextInt(5) == 0) {
+				event.getDrops().add(new EntityItem(attackedEntity.getEntityWorld(), attackedEntity.posX, attackedEntity.posY, attackedEntity.posZ, stack));
 			}
 		}
 	}
@@ -65,37 +59,9 @@ public class BloodMagicTweaks {
 			EntityPlayer player = (EntityPlayer)event.getEntity();
 			SoulNetwork network = NetworkHelper.getSoulNetwork(player);
 
-			if(!player.world.isRemote && network.getOrbTier() == 0) {
-				if(source.getTrueSource() instanceof EntityEnderman && rand.nextInt(8) == 0) {
-					EntityItem item = new EntityItem(player.world, player.posX, player.posY, player.posZ, new ItemStack(ModItems.BLOOD_TEAR));
-
-					player.world.spawnEntity(item);
-					item.setDefaultPickupDelay();
-				}
-			}
-		}
-	}
-
-	@SubscribeEvent
-	public static void itemDecay(ItemExpireEvent event) {
-		if(!event.getEntityItem().getItem().isEmpty()) {
-			Item item = event.getEntityItem().getItem().getItem();
-			BlockPos pos = event.getEntityItem().getPosition();
-			Block block = event.getEntityItem().getEntityWorld().getBlockState(pos.down()).getBlock();
-
-			if(item == ModItems.BLOOD_TEAR && block == Blocks.END_STONE) {
-				event.getEntityItem().getEntityWorld().setBlockState(pos.down(), ModBlocks.BLOODED_ENDSTONE.getDefaultState());
-			}
-		}
-	}
-
-	@SubscribeEvent
-	public static void itemToss(ItemTossEvent event) {
-		if(!event.getEntityItem().getItem().isEmpty()) {
-			Item item = event.getEntityItem().getItem().getItem();
-
-			if(item == ModItems.BLOOD_TEAR) {
-				event.getEntityItem().lifespan = 100;
+			if(!player.world.isRemote && network.getOrbTier() == 0
+					&& source.getTrueSource() instanceof EntityEnderman && rand.nextInt(5) == 0) {
+				player.dropItem(new ItemStack(ModItems.BLOOD_TEAR), false);
 			}
 		}
 	}
@@ -106,20 +72,27 @@ public class BloodMagicTweaks {
 		World world = event.getWorld();
 
 		if(!world.isRemote) {
-			if(!(world.provider instanceof WorldProviderEnd)
-					&& entity instanceof EntityEnderman) {
+			if(world.provider instanceof WorldProviderEnd) {
+				DragonFightManager manager = ((WorldProviderEnd) world.provider).getDragonFightManager();
+
+				if(entity.getClass().equals(EntityDragon.class) && !manager.hasPreviouslyKilledDragon()) {
+					((EntityDragon) entity).setHealth(0.0F);
+					manager.processDragonDeath((EntityDragon) entity);
+				}
+			} else if(entity instanceof EntityEnderman) {
 				event.setCanceled(true);
 				entity.setDead();
 			}
+		}
+	}
 
-			if(world.provider instanceof WorldProviderEnd) {
-				DragonFightManager manager = ((WorldProviderEnd)world.provider).getDragonFightManager();
+	@SubscribeEvent
+	public static void onCreateFluidSource(BlockEvent.CreateFluidSourceEvent event) {
+		Block block = event.getState().getBlock();
 
-				if(entity.getClass().equals(EntityDragon.class) && !manager.hasPreviouslyKilledDragon()) {
-					((EntityDragon)entity).setHealth(0.0F);
-					manager.processDragonDeath((EntityDragon)entity);
-				}
-			}
+		if(block.getRegistryName().toString().contains("realmtweaks:ender_essence")
+				&& event.getWorld().provider instanceof WorldProviderEnd) {
+			event.setResult(Event.Result.ALLOW);
 		}
 	}
 

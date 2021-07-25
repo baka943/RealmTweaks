@@ -246,10 +246,12 @@ public class EntityEnderSkeleton extends EntityEnderman implements IRangedAttack
 			this.enderSkeleton = enderSkeleton;
 		}
 
+		@Override
 		public boolean shouldExecute() {
 			double distance = this.getTargetDistance();
 
 			this.player = this.enderSkeleton.world.getNearestAttackablePlayer(this.enderSkeleton.posX, this.enderSkeleton.posY, this.enderSkeleton.posZ, distance, distance, null, new Predicate<EntityPlayer>() {
+				@Override
 				public boolean apply(@Nullable EntityPlayer player) {
 					return player != null && EntityEnderSkeleton.AIFindPlayer.this.enderSkeleton.shouldAttackPlayer(player);
 				}
@@ -258,16 +260,19 @@ public class EntityEnderSkeleton extends EntityEnderman implements IRangedAttack
 			return this.player != null;
 		}
 
+		@Override
 		public void startExecuting() {
 			this.aggroTime = 5;
 			this.teleportTime = 0;
 		}
 
+		@Override
 		public void resetTask() {
 			this.player = null;
 			super.resetTask();
 		}
 
+		@Override
 		public boolean shouldContinueExecuting() {
 			if(this.player != null) {
 				if(!this.enderSkeleton.shouldAttackPlayer(this.player)) {
@@ -281,6 +286,7 @@ public class EntityEnderSkeleton extends EntityEnderman implements IRangedAttack
 			}
 		}
 
+		@Override
 		public void updateTask() {
 			if(this.player != null) {
 				if(--this.aggroTime <= 0) {

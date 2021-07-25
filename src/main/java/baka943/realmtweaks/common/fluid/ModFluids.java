@@ -5,10 +5,10 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 public class ModFluids {
 
-	public static final Fluid IMPURE_LIFE_ESSENCE = new FluidMod("impure_life_essence");
+	public static final Fluid ENDER_ESSENCE = new FluidMod("ender_essence");
 
 	public static void registerFluids() {
-		registerFluid(IMPURE_LIFE_ESSENCE);
+		registerFluid(ENDER_ESSENCE);
 	}
 
 	private static void registerFluid(Fluid fluid) {

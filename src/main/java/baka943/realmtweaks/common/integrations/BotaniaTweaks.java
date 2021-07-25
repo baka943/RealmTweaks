@@ -1,6 +1,5 @@
 package baka943.realmtweaks.common.integrations;
 
-import baka943.realmtweaks.common.item.ModItems;
 import baka943.realmtweaks.common.lib.LibMisc;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -54,7 +53,7 @@ public class BotaniaTweaks {
 					e1.setCount(count);
 
 				if(ItemStack.areItemStacksEqual(stack, e0) || ItemStack.areItemStacksEqual(stack, e1)) {
-					inventory.setInventorySlotContents(i, new ItemStack(ModItems.FOREST_BAT));
+					inventory.setInventorySlotContents(i, ItemStack.EMPTY);
 					player.sendMessage(new TextComponentTranslation("chat." + LibMisc.MOD_ID + ".entropinnyum_disable"));
 				}
 			}

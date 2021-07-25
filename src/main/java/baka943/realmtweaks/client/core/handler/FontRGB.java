@@ -11,8 +11,7 @@ import java.awt.*;
 public class FontRGB extends FontRenderer {
 
 	private static final Minecraft MINECRAFT = Minecraft.getMinecraft();
-	private float hue;
-	private float r, g, b;
+	private float hue, r, g, b;
 	private boolean firstLine;
 	public static FontRGB INSTANCE = new FontRGB();
 
@@ -37,10 +36,10 @@ public class FontRGB extends FontRenderer {
 	}
 
 	public FontRGB init() {
-		this.hue = Minecraft.getSystemTime() / 960F;
+		this.hue = Minecraft.getSystemTime() / 1920F;
 		FontRenderer renderer = MINECRAFT.fontRenderer;
-		setUnicodeFlag(renderer.getUnicodeFlag());
-		setBidiFlag(renderer.getBidiFlag());
+		this.setUnicodeFlag(renderer.getUnicodeFlag());
+		this.setBidiFlag(renderer.getBidiFlag());
 
 		this.firstLine = true;
 
