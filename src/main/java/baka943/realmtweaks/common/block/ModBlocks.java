@@ -24,12 +24,8 @@ public class ModBlocks {
 
 	public static final Block BETWEEN_ALTAR = new BlockBetweenAltar();
 
-	public static final Block ENDER_ESSENCE = new BlockFluid(ModFluids.ENDER_ESSENCE, Material.WATER, 2);
+	public static final Block ENDER_ESSENCE = new BlockFluid(ModFluids.ENDER_ESSENCE, Material.WATER, 1);
 	public static final Block END_PORTAL = new BlockEndPortal();
-	public static final Block END_DIRT = new BlockEndDirt();
-
-	public static final Block METEORITE = new BlockOres("meteorite", 3);
-	public static final Block METEORITE_IRON_ORE = new BlockOres("meteorite_iron_ore", 3);
 
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> event) {
@@ -42,11 +38,7 @@ public class ModBlocks {
 
 		if(RealmTweaks.BMLoaded) {
 			registry.register(END_PORTAL);
-			registry.register(END_DIRT);
 			registry.register(ENDER_ESSENCE);
-
-			registry.register(METEORITE);
-			registry.register(METEORITE_IRON_ORE);
 		}
 
 		registry.register(ANOTHER_SAPLING);
@@ -60,12 +52,6 @@ public class ModBlocks {
 
 		if(RealmTweaks.BTLoaded)
 			registry.register(new ItemBlock(BETWEEN_ALTAR).setRegistryName(BETWEEN_ALTAR.getRegistryName()));
-
-		if(RealmTweaks.BMLoaded) {
-			registry.register(new ItemBlock(END_DIRT).setRegistryName(Utils.getRL("end_dirt")));
-			registry.register(new ItemBlock(METEORITE).setRegistryName(Utils.getRL("meteorite")));
-			registry.register(new ItemBlock(METEORITE_IRON_ORE).setRegistryName(Utils.getRL("meteorite_iron_ore")));
-		}
 
 		registry.register(new ItemBlock(ANOTHER_SAPLING).setRegistryName(Utils.getRL("another_sapling")));
 		registry.register(new ItemBlock(ALTERNATE_SAPLING).setRegistryName(Utils.getRL("alternate_sapling")));

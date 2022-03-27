@@ -18,6 +18,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.Optional;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.lwjgl.input.Keyboard;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -58,7 +59,12 @@ public class ItemBloodTear extends ItemMod implements IAltarManipulator {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void addInformation(@Nonnull ItemStack stack, @Nullable World worldIn, @Nonnull List<String> tooltip, @Nonnull ITooltipFlag flagIn) {
-		tooltip.add(I18n.format("tooltip." + LibMisc.MOD_ID + ".blood_tear"));
+		if(Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+			tooltip.add(I18n.format("tooltip." + LibMisc.MOD_ID + ".blood_tear"));
+		} else {
+			tooltip.add(I18n.format("tooltip." + LibMisc.MOD_ID + ".shiftinfo"));
+		}
+
 		tooltip.add(I18n.format("tooltip." + LibMisc.MOD_ID + ".blood_tear.stored", 250));
 	}
 

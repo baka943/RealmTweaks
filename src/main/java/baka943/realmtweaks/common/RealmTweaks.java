@@ -6,10 +6,7 @@ import baka943.realmtweaks.common.core.handler.WorldTypeHandler;
 import baka943.realmtweaks.common.core.proxy.IProxy;
 import baka943.realmtweaks.common.entity.ModEntites;
 import baka943.realmtweaks.common.fluid.ModFluids;
-import baka943.realmtweaks.common.integrations.BetweenlandsTweaks;
-import baka943.realmtweaks.common.integrations.BloodMagicTweaks;
-import baka943.realmtweaks.common.integrations.BotaniaTweaks;
-import baka943.realmtweaks.common.integrations.RootsTweaks;
+import baka943.realmtweaks.common.integrations.*;
 import baka943.realmtweaks.common.lib.LibMisc;
 import baka943.realmtweaks.common.world.gen.feature.WorldGenEntityMob;
 import net.minecraftforge.common.MinecraftForge;
@@ -63,6 +60,8 @@ public class RealmTweaks {
 			BotaniaTweaks.init();
 			RootsTweaks.init();
 		}
+
+		TinkersTweaks.init();
 
 		if(BMLoaded) BloodMagicTweaks.init();
 	}

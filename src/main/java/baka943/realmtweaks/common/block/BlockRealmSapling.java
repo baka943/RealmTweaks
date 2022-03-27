@@ -7,8 +7,11 @@ import baka943.realmtweaks.common.lib.Utils;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -16,9 +19,12 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.lwjgl.input.Keyboard;
 import thebetweenlands.client.tab.BLCreativeTabs;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.List;
 import java.util.Random;
 
 public class BlockRealmSapling extends BlockBush implements IModelRegister {
@@ -54,6 +60,16 @@ public class BlockRealmSapling extends BlockBush implements IModelRegister {
 			double zV = rand.nextFloat() * k;
 
 			worldIn.spawnParticle(EnumParticleTypes.PORTAL, posX, posY, posZ, xV, yV, zV);
+		}
+	}
+
+	@SideOnly(Side.CLIENT)
+	@Override
+	public void addInformation(@Nonnull ItemStack stack, @Nullable World worldIn, @Nonnull List<String> tooltip, @Nonnull ITooltipFlag flagIn) {
+		if(Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+			tooltip.add(I18n.format("tooltip." + LibMisc.MOD_ID + ".realm_sapling"));
+		} else {
+			tooltip.add(I18n.format("tooltip." + LibMisc.MOD_ID + ".shiftinfo"));
 		}
 	}
 

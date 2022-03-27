@@ -9,16 +9,18 @@ tile.realmtweaks.between_altar.name=交错花药台
 
 # Items
 item.realmtweaks.ender_shard.name=末影碎片
+item.realmtweaks.nether_star_shard.name=下界之星碎片
 item.realmtweaks.forest_bat.name=森林蝙蝠
 item.realmtweaks.paper_tool.name=纸质工具
 item.realmtweaks.blood_tear.name=血泪
 item.realmtweaks.dragon_fruit.name=火龙果
 item.realmtweaks.octine_flintstones.name=燧石与炽炎铁
-item.realmtweaks.powder_air.name=Air Powder
-item.realmtweaks.powder_earth.name=Earth Powder
-item.realmtweaks.powder_water.name=Water Powder
+item.realmtweaks.powder_air.name=天空粉
+item.realmtweaks.powder_earth.name=大地粉
+item.realmtweaks.powder_water.name=泽水粉
 item.realmtweaks.bitcoin.name=比特币
-item.realmtweaks.levitated_stone.name=失重石
+item.realmtweaks.levitated_stone.name=失重石片
+item.realmtweaks.end_stone_rod.name=末地石棍
 
 # Fluid
 fluid.realmtweaks.ender_essence=末影源质
@@ -37,9 +39,12 @@ chat.realmtweaks.mod_disable=§3Mr. Torcherino, hello?
 chat.realmtweaks.entropinnyum_disable=§3Mr. BOOM, it is fire.
 
 # Tooltips
-tooltip.realmtweaks.paper_tool=
+tooltip.realmtweaks.shiftinfo=§o<按下Shift以查看信息>
 tooltip.realmtweaks.paper_tool_original=§o%s
 tooltip.realmtweaks.octine_flintstones=§6I'm Fire!
-tooltip.realmtweaks.dragon_fruit=§d龙之吐息
+tooltip.realmtweaks.dragon_fruit=§5§o龙之吐息
 tooltip.realmtweaks.blood_tear=§5§o玩家之泪
 tooltip.realmtweaks.blood_tear.stored=储存：%d LP
+tooltip.realmtweaks.nether_star_shard=§5§o于下界坠落的星辰
+tooltip.realmtweaks.levitated_stone=§5§o来自于《失重》
+tooltip.realmtweaks.realm_sapling=§5§o连接异世界的树苗

@@ -9,6 +9,7 @@ tile.realmtweaks.between_altar.name=Between Altar
 
 # Items
 item.realmtweaks.ender_shard.name=Ender Shard
+item.realmtweaks.nether_star_shard.name=Nether Star Shard
 item.realmtweaks.forest_bat.name=Forest Bat
 item.realmtweaks.paper_tool.name=Paper Tool
 item.realmtweaks.blood_tear.name=Blood Tear
@@ -18,7 +19,8 @@ item.realmtweaks.powder_air.name=Air Powder
 item.realmtweaks.powder_earth.name=Earth Powder
 item.realmtweaks.powder_water.name=Water Powder
 item.realmtweaks.bitcoin.name=Bitcoin
-item.realmtweaks.levitated_stone.name=Levitated Stone
+item.realmtweaks.levitated_stone.name=Levitated Shard
+item.realmtweaks.end_stone_rod.name=End Stone Rod
 
 # Fluid
 fluid.realmtweaks.ender_essence=Ender Essence
@@ -37,9 +39,12 @@ chat.realmtweaks.mod_disable=§3Mr. Torcherino, hello?
 chat.realmtweaks.entropinnyum_disable=§3Mr. BOOM, it is fire.
 
 # Tooltips
-tooltip.realmtweaks.paper_tool=
+tooltip.realmtweaks.shiftinfo=§o<Shift for info>
 tooltip.realmtweaks.paper_tool_original=§o%s
 tooltip.realmtweaks.octine_flintstones=§6I'm Fire!
-tooltip.realmtweaks.dragon_fruit=§dDragon's Breath
-tooltip.realmtweaks.blood_tear=§5§oplayer's tears
+tooltip.realmtweaks.dragon_fruit=§5§oDracarys!
+tooltip.realmtweaks.blood_tear=§5§oPlayer's tears...
 tooltip.realmtweaks.blood_tear.stored=Stored: %d LP
+tooltip.realmtweaks.nether_star_shard=§5§oStars falling from the Nether.
+tooltip.realmtweaks.levitated_stone=§5§oFrom the Levitated.
+tooltip.realmtweaks.realm_sapling=§5§oA sapling connecting another world.

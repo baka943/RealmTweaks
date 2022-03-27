@@ -3,6 +3,7 @@ package baka943.realmtweaks.common.block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -13,14 +14,16 @@ import java.util.Random;
 public class BlockEndPortal extends net.minecraft.block.BlockEndPortal {
 
 	protected BlockEndPortal() {
-		super(Material.WATER);
+		super(Material.PORTAL);
 		this.setRegistryName(new ResourceLocation("end_portal"));
 		this.setTranslationKey("end_portal");
 	}
 
 	@Override
 	public void onEntityCollision(@Nonnull World worldIn, @Nonnull BlockPos pos, @Nonnull IBlockState state, @Nonnull Entity entityIn) {
-		this.turnIntoEnder(worldIn, pos);
+		if(entityIn instanceof EntityXPOrb) {
+			return;
+		} else this.turnIntoEnder(worldIn, pos);
 	}
 
 	@Override

@@ -59,6 +59,7 @@ public class EntityEnderZombie extends EntityEnderman {
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(35.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23000000417232513D);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2.0D);
@@ -132,7 +133,7 @@ public class EntityEnderZombie extends EntityEnderman {
 	protected void setEquipmentBasedOnDifficulty(@Nonnull DifficultyInstance difficulty) {
 		super.setEquipmentBasedOnDifficulty(difficulty);
 
-		if(this.rand.nextInt(100) == 0) {
+		if(this.rand.nextInt(10) == 0) {
 			this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(Items.ENDER_PEARL));
 		} else {
 			this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(ModItems.ENDER_SHARD));

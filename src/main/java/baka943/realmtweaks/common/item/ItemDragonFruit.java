@@ -16,6 +16,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.lwjgl.input.Keyboard;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -49,7 +50,11 @@ public class ItemDragonFruit extends ItemFood implements IModelRegister {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void addInformation(@Nonnull ItemStack stack, @Nullable World worldIn, @Nonnull List<String> tooltip, @Nonnull ITooltipFlag flagIn) {
-		tooltip.add(I18n.format("tooltip." + LibMisc.MOD_ID + ".dragon_fruit"));
+		if(Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+			tooltip.add(I18n.format("tooltip." + LibMisc.MOD_ID + ".dragon_fruit"));
+		} else {
+			tooltip.add(I18n.format("tooltip." + LibMisc.MOD_ID + ".shiftinfo"));
+		}
 	}
 
 	@SideOnly(Side.CLIENT)
