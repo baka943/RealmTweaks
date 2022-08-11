@@ -21,6 +21,9 @@ item.realmtweaks.powder_water.name=Water Powder
 item.realmtweaks.bitcoin.name=Bitcoin
 item.realmtweaks.levitated_stone.name=Levitated Shard
 item.realmtweaks.end_stone_rod.name=End Stone Rod
+item.realmtweaks.snowneee_snowball_i.name=Snowneee's Snowball I
+item.realmtweaks.snowneee_snowball_ii.name=Snowneee's Snowball II
+item.realmtweaks.snowneee_snowball_iii.name=Snowneee's Snowball III
 
 # Fluid
 fluid.realmtweaks.ender_essence=Ender Essence
@@ -39,8 +42,7 @@ chat.realmtweaks.mod_disable=§3Mr. Torcherino, hello?
 chat.realmtweaks.entropinnyum_disable=§3Mr. BOOM, it is fire.
 
 # Tooltips
-tooltip.realmtweaks.shiftinfo=§o<Shift for info>
-tooltip.realmtweaks.paper_tool_original=§o%s
+tooltip.realmtweaks.shiftinfo=Hold §bSHIFT§7 for more info
 tooltip.realmtweaks.octine_flintstones=§6I'm Fire!
 tooltip.realmtweaks.dragon_fruit=§5§oDracarys!
 tooltip.realmtweaks.blood_tear=§5§oPlayer's tears...
@@ -48,3 +50,12 @@ tooltip.realmtweaks.blood_tear.stored=Stored: %d LP
 tooltip.realmtweaks.nether_star_shard=§5§oStars falling from the Nether.
 tooltip.realmtweaks.levitated_stone=§5§oFrom the Levitated.
 tooltip.realmtweaks.realm_sapling=§5§oA sapling connecting another world.
+tooltip.realmtweaks.snowneee_chest.desc=§6Have you seen my pumpkin?
+tooltip.realmtweaks.snowneee_legs.desc=Snowball Effect
+tooltip.realmtweaks.snowneee_boots.desc=§bFrost Walker
+
+# Misc
+misc.realmtweaks.shiftinfo=Hold §bSHIFT§7 for more info
+misc.realmtweaks.armorset=§bArmor Set§r:
+realmtweaks.armorset.snowneee.name=Snowneee's Love
+realmtweaks.armorset.snowneee.desc=Just Like A Snow Golem

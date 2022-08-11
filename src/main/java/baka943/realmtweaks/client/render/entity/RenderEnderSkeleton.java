@@ -1,7 +1,7 @@
-package baka943.realmtweaks.client.render.renderer;
+package baka943.realmtweaks.client.render.entity;
 
 import baka943.realmtweaks.client.core.model.ModelEnderSkeleton;
-import baka943.realmtweaks.client.render.renderer.layers.LayerEnderSkeletonClothing;
+import baka943.realmtweaks.client.render.entity.layers.LayerEnderSkeletonClothing;
 import baka943.realmtweaks.common.entity.monster.EntityEnderSkeleton;
 import baka943.realmtweaks.common.lib.Utils;
 import net.minecraft.client.renderer.GlStateManager;

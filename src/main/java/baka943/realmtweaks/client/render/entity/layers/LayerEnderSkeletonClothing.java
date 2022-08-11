@@ -1,4 +1,4 @@
-package baka943.realmtweaks.client.render.renderer.layers;
+package baka943.realmtweaks.client.render.entity.layers;
 
 import baka943.realmtweaks.client.core.model.ModelEnderSkeleton;
 import baka943.realmtweaks.common.entity.monster.EntityEnderSkeleton;

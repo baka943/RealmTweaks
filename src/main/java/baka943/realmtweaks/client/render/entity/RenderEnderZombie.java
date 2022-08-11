@@ -1,4 +1,4 @@
-package baka943.realmtweaks.client.render.renderer;
+package baka943.realmtweaks.client.render.entity;
 
 import baka943.realmtweaks.common.entity.monster.EntityEnderZombie;
 import baka943.realmtweaks.common.lib.Utils;

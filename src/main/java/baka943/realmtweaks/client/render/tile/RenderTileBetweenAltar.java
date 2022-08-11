@@ -8,7 +8,7 @@
  * Thanks again!
  */
 
-package baka943.realmtweaks.client.render;
+package baka943.realmtweaks.client.render.tile;
 
 import baka943.realmtweaks.common.block.ModBlocks;
 import baka943.realmtweaks.common.block.tile.TileBetweenAltar;

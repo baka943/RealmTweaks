@@ -56,7 +56,6 @@ public class RealmTweaks {
 		OreDictHandler.registerOreDict();
 
 		if(BTLoaded) {
-			BetweenlandsTweaks.init();
 			BotaniaTweaks.init();
 			RootsTweaks.init();
 		}

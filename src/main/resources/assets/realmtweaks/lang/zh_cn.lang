@@ -21,6 +21,9 @@ item.realmtweaks.powder_water.name=泽水粉
 item.realmtweaks.bitcoin.name=比特币
 item.realmtweaks.levitated_stone.name=失重石片
 item.realmtweaks.end_stone_rod.name=末地石棍
+item.realmtweaks.snowneee_snowball_i.name=雪泥的雪球 I
+item.realmtweaks.snowneee_snowball_ii.name=雪泥的雪球 II
+item.realmtweaks.snowneee_snowball_iii.name=雪泥的雪球 III
 
 # Fluid
 fluid.realmtweaks.ender_essence=末影源质
@@ -39,12 +42,19 @@ chat.realmtweaks.mod_disable=§3Mr. Torcherino, hello?
 chat.realmtweaks.entropinnyum_disable=§3Mr. BOOM, it is fire.
 
 # Tooltips
-tooltip.realmtweaks.shiftinfo=§o<按下Shift以查看信息>
-tooltip.realmtweaks.paper_tool_original=§o%s
-tooltip.realmtweaks.octine_flintstones=§6I'm Fire!
+tooltip.realmtweaks.shiftinfo=按住§bSHIFT§7显示更多
 tooltip.realmtweaks.dragon_fruit=§5§o龙之吐息
 tooltip.realmtweaks.blood_tear=§5§o玩家之泪
 tooltip.realmtweaks.blood_tear.stored=储存：%d LP
 tooltip.realmtweaks.nether_star_shard=§5§o于下界坠落的星辰
 tooltip.realmtweaks.levitated_stone=§5§o来自于《失重》
 tooltip.realmtweaks.realm_sapling=§5§o连接异世界的树苗
+tooltip.realmtweaks.snowneee_chest.desc=§6你有见过我的南瓜吗？
+tooltip.realmtweaks.snowneee_legs.desc=滚雪球效应
+tooltip.realmtweaks.snowneee_boots.desc=§b冰霜行者
+
+# Misc
+misc.realmtweaks.shiftinfo=按住§bSHIFT§7显示更多
+misc.realmtweaks.armorset=§b套装§r:
+realmtweaks.armorset.snowneee.name=雪泥的爱
+realmtweaks.armorset.snowneee.desc=就像雪傀儡一样

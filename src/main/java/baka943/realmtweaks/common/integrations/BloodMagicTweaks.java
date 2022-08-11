@@ -16,28 +16,35 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldProviderEnd;
+import net.minecraft.world.WorldServer;
 import net.minecraft.world.end.DragonFightManager;
 import net.minecraft.world.gen.feature.WorldGenEndPodium;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.EntityJoinWorldEvent;
+import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import sonar.fluxnetworks.common.registry.RegistryItems;
+import thebetweenlands.common.config.BetweenlandsConfig;
+import thebetweenlands.common.world.teleporter.TeleporterHandler;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import static thebetweenlands.common.handler.PlayerJoinWorldHandler.NOT_FIRST_SPAWN_NBT;
+
 public class BloodMagicTweaks {
+
+	private static final Map<Double, Double> podium_location = new HashMap<>();
 
 	public static void init() {
 		MinecraftForge.EVENT_BUS.register(BloodMagicTweaks.class);
@@ -50,35 +57,23 @@ public class BloodMagicTweaks {
 
 		if(!world.isRemote && event.phase == TickEvent.Phase.END && world.provider instanceof WorldProviderEnd && world.getTotalWorldTime() % 192000 == 0) {
 			world.loadedEntityList.forEach(entity -> {
-				if(entity instanceof EntityDragon) {
-					hasDragon.set(true);
-				}
+				if(entity instanceof EntityDragon) hasDragon.set(true);
 			});
 
 			if(!hasDragon.get()) {
-				EntityEnderCrystal crystal = new EntityEnderCrystal(world, 0.5D, world.getHeight(WorldGenEndPodium.END_PODIUM_LOCATION).getY() - 3, 3.5D);
-				crystal.setShowBottom(false);
-				crystal.setEntityInvulnerable(true);
-				world.spawnEntity(crystal);
+				double podY = world.getHeight(WorldGenEndPodium.END_PODIUM_LOCATION).getY() - 3;
 
-				EntityEnderCrystal crystal1 = new EntityEnderCrystal(world, 0.5D, world.getHeight(WorldGenEndPodium.END_PODIUM_LOCATION).getY() - 3, -2.5D);
-				crystal1.setShowBottom(false);
-				crystal1.setEntityInvulnerable(true);
-				world.spawnEntity(crystal1);
-
-				EntityEnderCrystal crystal2 = new EntityEnderCrystal(world, 3.5D, world.getHeight(WorldGenEndPodium.END_PODIUM_LOCATION).getY() - 3, 0.5D);
-				crystal2.setShowBottom(false);
-				crystal2.setEntityInvulnerable(true);
-				world.spawnEntity(crystal2);
-
-				EntityEnderCrystal crystal3 = new EntityEnderCrystal(world, -2.5D, world.getHeight(WorldGenEndPodium.END_PODIUM_LOCATION).getY() - 3, 0.5D);
-				crystal3.setShowBottom(false);
-				crystal3.setEntityInvulnerable(true);
-				world.spawnEntity(crystal3);
-
+				podium_location.forEach((x, z) -> {
+					EntityEnderCrystal crystal = new EntityEnderCrystal(world, x, podY, z);
+					crystal.setShowBottom(false);
+					crystal.setEntityInvulnerable(true);
+					world.spawnEntity(crystal);
+				});
 
 				DragonFightManager dragonfightmanager = ((WorldProviderEnd) world.provider).getDragonFightManager();
 				dragonfightmanager.respawnDragon();
+
+				//todo 公告末影龙复活
 			}
 		}
 	}
@@ -99,18 +94,6 @@ public class BloodMagicTweaks {
                     && rand.nextInt(5) == 0) {
 				event.getDrops().add(new EntityItem(attackedEntity.getEntityWorld(), attackedEntity.posX, attackedEntity.posY, attackedEntity.posZ, stack));
 			}
-		}
-	}
-
-	@SubscribeEvent
-	public static void mobControl(EntityJoinWorldEvent event) {
-		Entity entity = event.getEntity();
-		World world = event.getWorld();
-
-		if(!world.isRemote
-		        && !(world.provider instanceof WorldProviderEnd) && entity instanceof EntityEnderman) {
-			event.setCanceled(true);
-			entity.setDead();
 		}
 	}
 
@@ -149,6 +132,33 @@ public class BloodMagicTweaks {
 				event.setCanceled(true);
 			}
 		}
+	}
+
+	@SubscribeEvent
+	public static void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event) {
+		if(!event.player.world.isRemote && BetweenlandsConfig.WORLD_AND_DIMENSION.startInBetweenlands && event.player.world.provider.getDimension() != BetweenlandsConfig.WORLD_AND_DIMENSION.dimensionId && event.player.world instanceof WorldServer) {
+			NBTTagCompound dataNbt = event.player.getEntityData();
+			NBTTagCompound persistentNbt = dataNbt.getCompoundTag(EntityPlayer.PERSISTED_NBT_TAG);
+
+			boolean isFirstTimeSpawning = !(persistentNbt.hasKey(NOT_FIRST_SPAWN_NBT, Constants.NBT.TAG_BYTE) && persistentNbt.getBoolean(NOT_FIRST_SPAWN_NBT));
+
+			if(isFirstTimeSpawning) {
+				//Set before teleporting because recursion
+				persistentNbt.setBoolean(NOT_FIRST_SPAWN_NBT, true);
+				dataNbt.setTag(EntityPlayer.PERSISTED_NBT_TAG, persistentNbt);
+
+				WorldServer blWorld = event.player.world.getMinecraftServer().getWorld(BetweenlandsConfig.WORLD_AND_DIMENSION.dimensionId);
+
+				TeleporterHandler.transferToDim(event.player, blWorld, BetweenlandsConfig.WORLD_AND_DIMENSION.startInPortal, true);
+			}
+		}
+	}
+
+	static {
+		podium_location.put(-0.5D, -2.5D);
+		podium_location.put(3.5D, -0.5D);
+		podium_location.put(-2.5D, 1.5D);
+		podium_location.put(1.5D, 3.5D);
 	}
 
 }

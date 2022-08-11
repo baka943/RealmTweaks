@@ -1,7 +1,7 @@
 package baka943.realmtweaks.common.entity;
 
-import baka943.realmtweaks.client.render.renderer.RenderEnderSkeleton;
-import baka943.realmtweaks.client.render.renderer.RenderEnderZombie;
+import baka943.realmtweaks.client.render.entity.RenderEnderSkeleton;
+import baka943.realmtweaks.client.render.entity.RenderEnderZombie;
 import baka943.realmtweaks.common.RealmTweaks;
 import baka943.realmtweaks.common.entity.monster.EntityEnderSkeleton;
 import baka943.realmtweaks.common.entity.monster.EntityEnderZombie;

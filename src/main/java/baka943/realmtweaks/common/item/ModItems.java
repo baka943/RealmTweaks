@@ -1,6 +1,9 @@
 package baka943.realmtweaks.common.item;
 
 import baka943.realmtweaks.common.RealmTweaks;
+import baka943.realmtweaks.common.item.armor.ItemSnowneeeBoots;
+import baka943.realmtweaks.common.item.armor.ItemSnowneeeChest;
+import baka943.realmtweaks.common.item.armor.ItemSnowneeeLegs;
 import baka943.realmtweaks.common.lib.LibMisc;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
@@ -20,6 +23,10 @@ public class ModItems {
 	public static final Item OCTINE_FLINTSTONES = new ItemOctineFlintstones();
 	public static final Item DRAGON_FRUIT = new ItemDragonFruit();
 	public static final Item END_STONE_ROD = new ItemMod("end_stone_rod");
+
+	public static final Item SNOWNEEE_CHEST = new ItemSnowneeeChest();
+	public static final Item SNOWNEEE_LEGS = new ItemSnowneeeLegs();
+	public static final Item SNOWNEEE_BOOTS = new ItemSnowneeeBoots();
 
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event) {
@@ -41,6 +48,9 @@ public class ModItems {
 		}
 
 		registry.register(FOREST_BAT);
+		registry.register(SNOWNEEE_CHEST);
+		registry.register(SNOWNEEE_LEGS);
+		registry.register(SNOWNEEE_BOOTS);
 	}
 
 }
